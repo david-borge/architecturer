@@ -1,0 +1,56 @@
+<!doctype html>
+
+<html amp lang="${{ _lang.codigo-de-idioma }}$">
+
+<head>
+
+
+
+
+    <!-- TODO: quitar en producción -->
+    <!-- NO indexer la web en los motores de búsqueda (como Google) -->
+    <meta name="robots" content="noindex,nofollow" />
+
+
+
+
+
+
+    <!-- Content type y charset -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+    <!-- Author -->
+    <!-- TODO: cambiar si es necesario. -->
+    <meta name="author" content="David Borge Olmedo" />
+
+    <!-- Safari 15 Theming (color de la barra de Safari al ver la web en iOS 15). Fuente: https://useyourloaf.com/blog/safari-15-theme-color/ -->
+    <!-- TODO: poner el color principal de la web. -->
+    <meta name="theme-color" content="#000000">
+
+    <!-- Hash del script #script-copyright-con-ano-actual -->
+    <!-- TODO: hay que actualizarlo cada vez que se cambie el contenido de #script-copyright-con-ano-actual. Sacarlo del error de la consola de desarrollador de Chrome. -->
+    <meta name="amp-script-src" content="sha384-yNYNZEr9kpCedh5w9RMdLshB0p-hA6a-XL56YTmc6VEr0JblVkQfYusIgmJFn8hp">
+
+
+
+    <!-- AMP Preloads -->
+    @@include('head-tag-preloads.html')
+    
+    <!-- AMP script principal -->
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+
+
+
+    <!-- <?php
+    // Detectar si el navegador soporta archivos webp
+    $browser_supports_webp = false;
+    if (isset($_SERVER['HTTP_ACCEPT'])) {
+        $accept = $_SERVER['HTTP_ACCEPT'];
+        $pos = stripos($accept, 'image/webp');
+        if ($pos === false) {
+            $browser_supports_webp = false;
+        } else {
+            $browser_supports_webp = true;
+        }
+    } -->

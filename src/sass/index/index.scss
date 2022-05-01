@@ -1,0 +1,18 @@
+// Importar variables SASS de Bootstrap personalizadas
+@import "../vendor/bootstrap/_variables.scss";
+
+
+
+
+// Hero
+#hero {
+    background-position: center;
+    opacity: 0.85;
+}
+
+// Hero - Imagen de fondo con distintos tamaños
+@@include('../partials/img/hero-fondo-con-distintos-tamanos.scss',
+            {
+                "url":     "https://192.168.1.33:3000/img/inicio/imagen-fondo",
+                "version": "1"
+            })

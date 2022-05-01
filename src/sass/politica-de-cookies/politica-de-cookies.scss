@@ -1,0 +1,91 @@
+// Importar variables SASS de Bootstrap personalizadas
+@import "../vendor/bootstrap/_variables.scss";
+
+
+
+
+// Cabecera
+#header-transparente {
+    display: none;
+}
+
+#header-con-fondo {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+// Texto
+main p,
+main li {
+    text-align: justify;
+}
+
+main ul li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+// Tabla "Cookies de terceros"
+#tabla-cookies-de-terceros {
+    border: 1px solid #777;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#tabla-cookies-de-terceros th,
+#tabla-cookies-de-terceros td {
+    border: 1px solid #777;
+    padding: 15px;
+}
+
+#tabla-cookies-de-terceros p {
+    text-align: left;
+}
+
+#tabla-cookies-de-terceros th {
+    font-weight: 700;
+}
+
+#tabla-cookies-de-terceros tr > td:first-child {
+    min-width: 80px;
+    font-style: italic;
+}
+
+#tabla-cookies-de-terceros tr > td:nth-child(2) {
+    min-width: 270px;
+}
+
+#tabla-cookies-de-terceros tr > td:nth-child(3) {
+    min-width: 140px;
+}
+
+#tabla-cookies-de-terceros tr > td:nth-child(4) {
+    min-width: 230px;
+}
+
+#tabla-cookies-de-terceros tr > td:nth-child(5) {
+    min-width: 135px;
+}
+
+#tabla-cookies-de-terceros tr > td:nth-child(6) {
+    min-width: 120px;
+}
+
+#tabla-cookies-de-terceros td > ul {
+    padding-left: 17px;
+}
+
+#tabla-cookies-de-terceros td > p:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+#tabla-cookies-de-terceros td > p:last-child {
+    margin-bottom: 0;
+}
+
+#tabla-cookies-de-terceros ul {
+    margin: 0;
+}
+
+#tabla-cookies-de-terceros ul > li:last-child {
+    margin: 0;
+}

@@ -1,0 +1,24 @@
+// Importar variables SASS de Bootstrap personalizadas
+@import "../vendor/bootstrap/_variables.scss";
+
+
+
+
+// Main
+main {
+    margin-top: 76px;
+}
+
+// Formulario de contacto
+#comments {
+    resize: vertical;
+    height: 100px;
+    min-height: 100px;
+    max-height: 300px;
+}
+
+// Recaptcha
+// CUIDADO: como .grecaptcha-badge no existe en el HTML a la hora de hacer la build, purgecss lo borra. Para que esto no pase, hay que poner el HTML auxiliar en contacto.html, y rodearlo del comentario remove para que htmlmin lo borre al hacer la build.
+.grecaptcha-badge {
+    display: none;
+}

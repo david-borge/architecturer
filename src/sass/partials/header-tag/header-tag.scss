@@ -1,0 +1,185 @@
+// Importar variables SASS de Bootstrap personalizadas
+@import "../../vendor/bootstrap/_variables.scss";
+
+
+
+header ul {
+    margin-bottom: 0;
+    list-style-type: none;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+header .menu-ordenador > ul {
+    height: 100%;
+}
+
+header li {
+    margin-left: 20px;
+    height: 100%;
+}
+
+.menu-ordenador > ul > li > a {
+    text-align: center;
+}
+
+header ul > li > a {
+    color: $body-color;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+header ul > li > a {
+    height: 82px;
+}
+
+#header-transparente .menu-ordenador > ul > li > a {
+    // color: white;  // Cuando haya hero bajo el header
+}
+
+#header-con-fondo,
+#header-transparente,
+#header-con-fondo > div,
+#header-transparente> div {
+    max-height: 76px;  // Arreglo en iPhone y macOS
+}
+
+#header-con-fondo {
+    opacity: 0;
+    transform: translateY(-162px);
+}
+
+#header-transparente .menu-ordenador > ul > li > a:hover {
+    text-decoration: underline;
+}
+
+#header-con-fondo a:hover {
+    color: $color-principal;
+}
+
+#header-con-fondo {
+    margin-top: -1px;
+    background-color: white;
+}
+
+@media (max-width: 1200px) {
+    .menu-ordenador {
+        display: none;
+    }
+}
+
+
+// FIXME: Mostrar el header con fondo al hacer hover sobre el transparente
+/* header:hover #header-con-fondo {
+    opacity: 1;
+    transform: translateY(0);
+    margin-top: 81px;
+}
+
+header:hover #header-transparente {
+    visibility: hidden;
+} */
+
+
+// Icono ángulo
+.menu-ordenador svg {
+    margin-left: 8px;
+    height: 12px;
+}
+
+#header-transparente .menu-ordenador svg {
+    fill: white;
+}
+
+#header-con-fondo .menu-ordenador svg {
+    fill: #484f60;
+}
+
+#header-con-fondo a:hover svg {
+    fill: $color-principal;
+}
+
+#sidebar-menu-movil svg {
+    display: none;
+}
+
+
+// Submenús
+.menu-ordenador ul ul {
+    display: none;
+    margin-top: -6px;
+    padding: 0;
+}
+
+header ul ul li {
+    margin-left: 0;
+}
+
+header ul ul a {
+    padding: 0 15px;
+    height: 50px;
+}
+
+header ul ul a:hover {
+    color: $color-principal;
+}
+
+.menu-ordenador li:hover ul {
+    display: block;
+    position: absolute;
+    background-color: #fff;
+    padding: 0;
+    z-index: 9999;
+    box-shadow: 0 5px 2px 0 rgb(0 0 0 / 14%), 0 10px 10px 0 rgb(0 0 0 / 12%), 0 4px 4px -1px rgb(0 0 0 / 30%);
+}
+
+
+// Botón de la hamburguesa
+.btn-menu-hamburguesa {
+    display: flex;
+    padding: 20px;
+}
+
+.btn-menu-hamburguesa svg {
+    width: 19px;
+}
+
+
+// Menú móvil
+#sidebar-menu-movil ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+#sidebar-menu-movil li {
+    padding: 0 2rem;
+}
+
+#sidebar-menu-movil ul ul {
+    margin-left: 0.5rem;
+    border-left: 1px solid #77777736;
+}
+
+#sidebar-menu-movil ul ul li {
+    padding-left: 0.9rem;
+}
+
+#sidebar-menu-movil ul a {
+    display: block;
+    padding: 10px 0;
+    color: $body-color;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+@media (min-width: 1201px) {
+    .btn-menu-hamburguesa {
+        display: none;
+    }
+}

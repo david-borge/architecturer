@@ -1,0 +1,28 @@
+/***** Variables SASS de Bootstrap personalizadas *****/
+// Documentación: https://getbootstrap.com/docs/5.1/customize/sass/
+
+
+
+
+// Fuente
+$font-family-base: 'Roboto', sans-serif;
+
+:root {
+    --bs-body-font-family: 'Roboto', sans-serif;
+}
+
+
+// Colores - Body
+$body-color-rgb: 32 33 36;
+$body-color: #202124;
+:root {
+    --bs-body-color-rgb: $body-color-rgb;
+    --bs-body-color: $body-color;
+    color: $body-color;
+}
+
+// Colores - Color principal (corporativo)
+$color-principal: #1a73e8;
+
+// Colores - Color de acento
+$color-acento: orange;

@@ -1,0 +1,83 @@
+<!-- Mostrar u ocultar el header transparente o con fondo según la visibilidad de #div-auxiliar-mostrar-ocultar-headers. Abajo están las animaciones necesarias. -->
+<amp-position-observer target="div-auxiliar-mostrar-ocultar-headers" intersection-ratios="0.0001" on="enter: ocultarHeaderTransparente.start, mostrarHeaderConFondo.start; exit: mostrarHeaderTransparente.start, ocultarHeaderConFondo.start;" layout="nodisplay"></amp-position-observer>
+
+<amp-animation id="ocultarHeaderTransparente" layout="nodisplay">
+    <script type="application/json">
+        [
+            {
+                "selector":"#header-transparente",
+                "duration":"0.3s",
+                "easing":"ease-in",
+                "fill":"forwards",
+                "iterations":"1",
+                "keyframes":[
+                    {
+                        "opacity":"0",
+                        "visibility":"hidden"
+                    }
+                ]
+            }
+        ]
+    </script>
+</amp-animation>
+
+<amp-animation id="mostrarHeaderTransparente" layout="nodisplay">
+    <script type="application/json">
+        [
+            {
+                "selector": "#header-transparente",
+                "duration": "0.3s",
+                "easing": "ease-in",
+                "fill": "forwards",
+                "iterations": "1",
+                "keyframes": [
+                    {
+                        "opacity": "1",
+                        "visibility": "visible"
+                    }
+                ]
+            }
+        ]
+    </script>
+</amp-animation>
+
+<amp-animation id="ocultarHeaderConFondo" layout="nodisplay">
+    <script type="application/json">
+        [
+            {
+                "selector": "#header-con-fondo",
+                "duration": "0.3s",
+                "easing": "ease-in",
+                "fill": "forwards",
+                "iterations": "1",
+                "keyframes": [
+                    {
+                        "opacity": "0",
+                        "visibility": "hidden"
+                    }
+                ]
+            }
+        ]
+    </script>
+</amp-animation>
+
+<amp-animation id="mostrarHeaderConFondo" layout="nodisplay">
+    <script type="application/json">
+        [
+            {
+                "selector": "#header-con-fondo",
+                "duration": "0.3s",
+                "easing": "ease-in",
+                "fill": "forwards",
+                "iterations": "1",
+                "keyframes": [
+                    {
+                        "opacity": "1",
+                        "visibility": "visible",
+                        "transform": "translateY(-81px)"
+                    }
+                ]
+            }
+        ]
+    </script>
+</amp-animation>

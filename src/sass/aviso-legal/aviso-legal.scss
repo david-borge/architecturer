@@ -1,0 +1,25 @@
+// Importar variables SASS de Bootstrap personalizadas
+@import "../vendor/bootstrap/_variables.scss";
+
+
+
+// Cabecera
+#header-transparente {
+    visibility: hidden;
+}
+
+#header-con-fondo {
+    opacity: 1;
+    transform: translateY(-82px);
+}
+
+
+// Texto
+main p,
+main li {
+    text-align: justify;
+}
+
+main ul li:not(:last-child) {
+    margin-bottom: 10px;
+}

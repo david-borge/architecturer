@@ -1,0 +1,49 @@
+#hero {
+    background-image: url('@@url.jpg?v=@@version');
+    background-image: -webkit-image-set(url('@@url.webp?v=@@version') 1x);
+}
+
+@media (max-width: 576px) {
+    
+    #hero {
+        background-image: url('@@url@576w.jpg?v=@@version');
+        background-image: -webkit-image-set(url('@@url@576w.webp?v=@@version') 1x);
+    }
+    
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+    
+    #hero {
+        background-image: url('@@url@768w.jpg?v=@@version');
+        background-image: -webkit-image-set(url('@@url@768w.webp?v=@@version') 1x);
+    }
+
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+    
+    #hero {
+        background-image: url('@@url@992w.jpg?v=@@version');
+        background-image: -webkit-image-set(url('@@url@992w.webp?v=@@version') 1x);
+    }
+
+}
+
+@media (min-width: 993px) and (max-width: 1200px) {
+    
+    #hero {
+        background-image: url('@@url@1200w.jpg?v=@@version');
+        background-image: -webkit-image-set(url('@@url@1200w.webp?v=@@version') 1x);
+    }
+
+}
+
+@media (min-width: 1201px) {
+    
+    #hero {
+        background-image: url('@@url@1400w.jpg?v=@@version');
+        background-image: -webkit-image-set(url('@@url@1400w.webp?v=@@version') 1x);
+    }
+
+}

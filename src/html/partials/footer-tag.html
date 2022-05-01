@@ -1,0 +1,17 @@
+<footer>
+    <div class="container">
+
+        <p>${{ _footer.titulo }}$</p>
+
+        <p><amp-script script="script-copyright-con-ano-actual" layout="fixed-height" height="25" style="display: flex; flex-direction: column; justify-content: flex-end;"><span id="copyright-con-ano-actual">© NOMBRE EMPRESA <span class="text-nowrap">2000 - 2022</span></span></amp-script></p>
+        
+    </div>
+</footer>
+
+<!-- Script para sacar el año actual y ponerlo en el copyright -->
+<!-- TODO: Para que funcione, hay que poner el hash que te indique la consola de desarrollador: <meta name="amp-script-src" content="XXXXXXX">; y cambiarlo cada vez que cambie el contenido del script. -->
+<script id="script-copyright-con-ano-actual" type="text/plain" target="amp-script">
+
+    document.getElementById("copyright-con-ano-actual").innerHTML = "© NOMBRE EMPRESA <span class='text-nowrap'>2000 - " + new Date().getFullYear() + "</span>";
+
+</script>

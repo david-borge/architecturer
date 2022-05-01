@@ -1,0 +1,187 @@
+// Importar variables SASS de Bootstrap personalizadas
+@import "../vendor/bootstrap/_variables.scss";
+
+
+
+
+// Main
+main {
+    overflow-x: hidden;  // Solucionar overflow horizontal en iPhone provocado por las imágenes y vídeos con algún margen lateral inusual para su colocación.
+}
+
+
+
+// Colores
+.color-principal {
+    color: $color-principal;
+}
+
+.color-acento {
+    color: $color-acento;
+}
+
+
+
+// Fondos
+.fondo-color-principal {
+    background-color: $color-principal;
+}
+
+.fondo-color-acento {
+    background-color: $color-acento;
+}
+
+
+
+// Pesos de fuente
+.fw-800 {
+    font-weight: 800;
+}
+
+
+
+// Ancla (con offset para compensar el menú)
+.ancla {
+    display: block;
+    position: relative;
+    top: -81px;
+    visibility: hidden;
+}
+
+
+
+// Filas
+@media (max-width: 767px) {
+    .invertir-orden-en-movil > div:first-child {
+        order: 2;
+    }
+}
+
+@media (max-width: 991px) {
+    .invertir-orden-en-tablet-y-movil > div:first-child {
+        order: 2;
+    }
+}
+
+
+
+// Sección
+.seccion {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+
+
+// Botones - CTA
+.cta {
+    display: block;
+    border-radius: 10px;
+    padding: 10px 30px;
+    width: max-content;
+    background-color: $color-principal;
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all .3s ease-in-out;
+}
+
+.cta:hover {
+    color: white;
+    background-color: $color-acento;
+}
+
+@media (max-width: 450px) {
+
+    .cta {
+        padding-right: 10px;
+        padding-left: 10px;
+        width: 100%;
+    }
+
+}
+
+.centrar-cta {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+
+// Botones - FABs
+.fab {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1;
+    width: 60px;
+    height: 60px;
+}
+
+
+
+// Botones - FABs - WhatsApp
+.whatsapp {
+    background: #25d366;
+    padding: 10px 13px 13px;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.57) 0px 1px 3px;
+}
+
+.whatsapp:hover {
+    background: #1fad53;
+}
+
+.whatsapp svg {
+    fill: white;
+}
+
+@media (min-width: 768px) {
+    .whatsapp {
+        display: none;
+    }
+}
+
+
+
+// Hero
+#hero {
+    min-height: 600px;
+    box-shadow: inset 0 0 0 999999999px rgba(51, 149, 198, 0.7);
+
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    text-align: center;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#hero h1 {
+    font-size: 76px;
+    font-weight: bold;
+}
+
+#subtitulo-hero {
+    font-size: 32px;
+    font-weight: 300;
+}
+
+@media (max-width: 600px) {
+
+    #hero h1 {
+        font-size: 43px;
+    }
+    
+    #subtitulo-hero {
+        font-size: 30px;
+    }
+
+}

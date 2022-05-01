@@ -1,0 +1,25 @@
+<!-- Menú móvil (sidebar) -->
+<amp-sidebar id="sidebar-menu-movil" layout="nodisplay" side="right" class="fondo-color-principal">
+
+    <div style="margin: 2rem 12px;">
+            
+        <a href="https://192.168.1.33:3000/">
+                        
+            <!-- TODO: precargar logo en head-tag-preloads.html') -->
+            <amp-img src="https://192.168.1.33:3000/img/logo/nombre-empresa-logo-blanco.svg"
+                width="164"
+                height="46"
+                layout="fixed"
+                class="d-block mx-auto"
+                alt="NOMBRE_EMPESA: isotipo en color blanco">
+            </amp-img>
+            
+        </a>
+
+    </div>
+        
+    <ul>
+        @@include('../elementos-menu.html')
+    </ul>
+
+</amp-sidebar>

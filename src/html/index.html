@@ -1,0 +1,196 @@
+<!-- Comienzo de las etiquetas <html> y <head> -->
+@@include('partials/html-and-head-tags-start.html')
+
+
+
+
+	<!-- Page Title, Description & URL canónica -->
+    <!-- TODO: cambiar en todas las páginas -->
+	<title>${{ _web.titulo }}$ - ${{ _web.descripcion }}$</title>
+	<meta name="description" content="${{ index.descripcion }}$">
+    <link rel="canonical" href="https://192.168.1.33:3000/">
+    
+    
+    <!-- Compartir en Redes y WhatsApp (Open Graph protocol): Page Title, Description, URL & Imagen (JPG or PNG with a size less than 300KB and minimum dimensions of 1200 x 630 for Facebook (https://developers.facebook.com/docs/sharing/webmasters/images/#precaching)) -->
+    <!-- TODO: cambiar en todas las páginas -->
+    <meta property="og:title" content="${{ _web.titulo }}$ - ${{ _web.descripcion }}$" />
+    <meta property="og:description" content="${{ index.descripcion }}$">
+    <meta property="og:url" content="https://192.168.1.33:3000/" />
+    <meta property="og:image" content="https://192.168.1.33:3000/img/logo/NOMBRE-EMPRESA-compartir.jpg">
+
+
+    <!-- Datos estructurados (schema.org) -->
+    <!-- Referencia: https://developers.google.com/search/docs/data-types/article -->
+    <!-- TODO: poner en todas las páginas en las que sea necesario. -->
+
+    <!-- Empresa -->
+    <script type="application/ld+json">
+        {
+            "@context":"https://schema.org",
+            "@type":"Organization",
+            "name":"NOMBRE_EMPRESA",
+            "@id":"https://192.168.1.33:3000/",
+            "url":"https://192.168.1.33:3000/",
+            "logo":"https://192.168.1.33:3000/img/logo/nombre-empresa-logo.svg",
+            "description":"DESCRIPCIÓN_CORTA_DE_LA_WEB",
+            "address":{
+               "@type":"PostalAddress",
+               "streetAddress":"DIRECCION",
+               "addressLocality":"CIUDAD",
+               "addressRegion":"CIUDAD",
+               "postalCode":"CODIGO_POSTAL",
+               "addressCountry":"CODIGO_PAIS"
+            },
+            "email":"CORREO_ELECTRONICO",
+            "telephone":"TELEFONO",
+            "image":[
+               "https://192.168.1.33:3000/img/logo/NOMBRE-EMPRESA-compartir.jpg"
+            ]
+         }
+    </script>
+
+    <!-- Producto o servicio -->
+    <!-- <script type="application/ld+json">
+        {
+            "@context":"https://schema.org/",
+            "@type":"Product",
+            "name":"NOMBRE_PRODUCTO_O_SERVICIO",
+            "description":"DESCRIPCION_PRODUCTO_O_SERVICIO",
+            "brand":{
+               "@type":"Brand",
+               "name":"NOMBRE_EMPRESA"
+            },
+            "offers":{
+               "@type":"Offer",
+               "url":"URL_PRODUCTO_O_SERVICIO",
+               "priceCurrency":"EUR",
+               "price":"PRECIO_PRODUCTO_O_SERVICIO",
+               "priceValidUntil":"3020-11-20",
+               "itemCondition":"https://schema.org/UsedCondition",
+               "availability":"https://schema.org/InStock",
+               "seller":{
+                  "@type":"Organization",
+                  "name":"NOMBRE_EMPRESA"
+               }
+            }
+         }
+    </script> -->
+
+
+
+
+    <!-- Extensiones AMP - Importar otras Extensiones AMP aquí -->
+    <!-- TODO: quitar las innecesarias. -->
+    <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
+    <script async custom-element="amp-position-observer" src="https://cdn.ampproject.org/v0/amp-position-observer-0.1.js"></script>
+    <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+    <script async custom-element="amp-fx-collection" src="https://cdn.ampproject.org/v0/amp-fx-collection-0.1.js"></script>
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+    <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
+    <script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
+    
+
+
+
+    <!-- Head Tag Styles: Iconos + Favicon + CSS de AMP -->
+    @@include('partials/iconos.html')
+    @@include('partials/favicon.html')
+    @@include('partials/css-de-amp.html')
+
+    <!-- build:remove -->
+    <!-- Estilos generales (Solo para desarrollo, estos enlaces se quitan en las builds) -->
+    <link rel="stylesheet" href="./css/vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/partials/header-tag/header-tag.min.css">
+    <link rel="stylesheet" href="./css/partials/footer-tag/footer-tag.min.css">
+    <link rel="stylesheet" href="./css/partials/fuentes.min.css">
+    <link rel="stylesheet" href="./css/main/main.min.css">
+    <!--<link rel="stylesheet" href="./css/main-less.min.css">--> <!--No uso LESS en este proyecto. -->
+    
+    <!-- Estilos de esta página (Solo para desarrollo, estos enlaces se quitan en las builds) -->
+    <link rel="stylesheet" href="./css/index/index.min.css">
+    <!-- endbuild -->
+
+    <!-- Estilos de esta página -->
+    <!-- Esto se rellenará automáticamente en las builds. -->
+    <style amp-custom></style>
+
+    <!-- Google Tag Manager head script -->
+    @@include('partials/google-tag-manager-head-script.html')
+
+</head>
+
+<body>
+
+    <!-- Google Tag Manager body tag -->
+    @@include('partials/google-tag-manager-body-tag.html')
+
+    <!-- Header tag -->
+    @@include('partials/header-tag.html')
+    @@include('partials/header-cambiar-en-scroll.html')
+
+
+    <!-- Contenido principal -->
+    <main role="main">
+        
+        <div id="hero" class="hero">
+            <div class="container">
+                
+                <h1 amp-fx="fade-in">${{ index.titulo }}$</h1>
+
+                <div id="subtitulo-hero" amp-fx="fade-in">Subtitulo hero</div>
+                
+            </div>
+        </div>
+
+        <div class="seccion">
+            <div class="container">
+                
+                @@include('partials/img/img-con-distintos-tamanos.html',
+                            {
+                                "src":     "https://192.168.1.33:3000/img/inicio/imagen",
+                                "width":   "1280",
+                                "height":  "960",
+                                "layout":  "responsive",
+                                "class":   "mb-5",
+                                "style":   "",
+                                "alt":     "DESCRIPCION_IMAGEN",
+                                "amp-fx":  "fly-in-bottom",
+                                "version": "1"
+                            })
+
+                <amp-video
+                    width="1920"
+                    height="1080"
+                    layout="responsive"
+                    autoplay
+                    loop
+                    disableremoteplayback
+                    noaudio
+                    poster="https://192.168.1.33:3000/video/inicio/video-poster.jpg"
+                    amp-fx="fly-in-bottom">
+                    <!-- <source src="https://192.168.1.33:3000/video/inicio/video.webm" type="video/webm" /> -->
+                    <source src="https://192.168.1.33:3000/video/inicio/video.mp4" type="video/mp4" />
+                    <div fallback>
+                        <p>Tu navegador no es compatible con este vídeo.</p>
+                    </div>
+                </amp-video>
+
+            </div>
+        </div>
+
+        <!-- WhatsApp (FAB) -->
+        @@include('partials/fabs/fab-whatsapp.html')
+
+    </main>
+
+
+    <!-- Footer tag -->
+    @@include('partials/footer-tag.html')
+    
+
+    <!-- Menú móvil (sidebar) -->
+    @@include('partials/sidebars/sidebar-menu-movil.html')
+
+
+</body>
+</html>
