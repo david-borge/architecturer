@@ -6,16 +6,16 @@
 
 	<!-- Page Title, Description & URL canónica -->
     <!-- TODO: cambiar en todas las páginas -->
-	<title>${{ aviso-legal.titulo }}$ - ${{ _web.titulo }}$</title>
-	<meta name="description" content="${{ aviso-legal.descripcion }}$">
-    <link rel="canonical" href="https://192.168.1.41:3000/aviso-legal.html">
+	<title>${{ cookies-policy.titulo }}$ - ${{ _web.titulo }}$</title>
+	<meta name="description" content="${{ cookies-policy.descripcion }}$">
+    <link rel="canonical" href="https://192.168.1.41:3000/cookies-policy.html">
     
     
     <!-- Compartir en Redes y WhatsApp (Open Graph protocol): Page Title, Description, URL & Imagen (JPG or PNG with a size less than 300KB and minimum dimensions of 1200 x 630 for Facebook (https://developers.facebook.com/docs/sharing/webmasters/images/#precaching)) -->
     <!-- TODO: cambiar en todas las páginas -->
-    <meta property="og:title" content="${{ aviso-legal.titulo }}$ - ${{ _web.titulo }}$" />
-    <meta property="og:description" content="${{ aviso-legal.descripcion }}$">
-    <meta property="og:url" content="https://192.168.1.41:3000/aviso-legal.html" />
+    <meta property="og:title" content="${{ _web.titulo }}$" />
+    <meta property="og:description" content="${{ cookies-policy.descripcion }}$">
+    <meta property="og:url" content="https://192.168.1.41:3000/cookies-policy.html" />
     <meta property="og:image" content="http://192.168.0.19:3000/img/logo/architecturer-compartir.jpg">
 
 
@@ -25,15 +25,15 @@
 
 
 
-    
+
     <!-- Import other AMP Extensions here -->
     <!-- TODO: quitar las innecesarias. -->
     <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
     <script async custom-element="amp-fx-collection" src="https://cdn.ampproject.org/v0/amp-fx-collection-0.1.js"></script>
     <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
 
-
     
+
     
     <!-- Head Tag Styles: Iconos + Favicon + CSS de AMP -->
     @@include('partials/iconos.html')
@@ -50,7 +50,7 @@
     <!--<link rel="stylesheet" href="./css/main-less.min.css">--> <!--No uso LESS en este proyecto. -->
     
     <!-- Estilos de esta página (Solo para desarrollo, estos enlaces se quitan en las builds) -->
-    <link rel="stylesheet" href="./css/aviso-legal/aviso-legal.min.css">
+    <link rel="stylesheet" href="./css/cookies-policy/cookies-policy.min.css">
     <!-- endbuild -->
 
     <!-- Estilos de esta página -->
@@ -69,7 +69,6 @@
 
     <!-- Header tag -->
     @@include('partials/header-tag.html')
-    @@include('partials/header-cambiar-en-scroll.html')
 
 
     <!-- Contenido principal -->
@@ -79,14 +78,18 @@
             <div class="row justify-content-center">
                 <div class="col-md-9 col-lg-6">
 
-                    <h1 class="mb-5 text-center fw-bolder" style="margin-top: 80px;" amp-fx="fly-in-bottom">${{ aviso-legal.titulo }}$</h1>
+                    <h1 class="mb-5 text-center" style="margin-top: 80px;" amp-fx="fly-in-bottom">${{ cookies-policy.titulo }}$</h1>
 
-                    <p amp-fx="fly-in-bottom">Texto legal... Texto legal... Texto legal... Texto legal... Texto legal... Texto legal... Texto legal... Texto legal... Texto legal... Texto legal... Texto legal... Texto legal... Texto legal... Texto legal...</p>
+                    <p amp-fx="fly-in-bottom">Legal text legal text legal text legal text legal text legal text legal text legal text legal text legal text legal text legal text legal text legal text.</p>
+                    <p amp-fx="fly-in-bottom">Legal text legal text legal text legal text legal text legal text legal text legal text legal text legal text legal text legal text legal text legal text.</p>
         
         
-                    <h2 class="mt-5 mb-4" amp-fx="fly-in-bottom">Subtítulo</h2>
+                    <h2 class="mt-5 mb-4" amp-fx="fly-in-bottom">Subtitle</h2>
         
-                    <p amp-fx="fly-in-bottom">Texto legal... Texto legal... Texto legal... Texto legal... Texto legal... Texto legal... Texto legal... Texto legal... Texto legal... Texto legal... Texto legal... Texto legal... Texto legal... Texto legal...</p>        
+                    <p amp-fx="fly-in-bottom">Legal text legal text legal text legal text legal text legal text legal text legal text legal text legal text legal text legal text legal text legal text.</p>        
+                    <p amp-fx="fly-in-bottom">Legal text legal text legal text legal text legal text legal text legal text legal text legal text legal text legal text legal text legal text legal text.</p>        
+                    <p amp-fx="fly-in-bottom">Legal text legal text legal text legal text legal text legal text legal text legal text legal text legal text legal text legal text legal text legal text.</p>        
+                    <p amp-fx="fly-in-bottom">Legal text legal text legal text legal text legal text legal text legal text legal text legal text legal text legal text legal text legal text legal text.</p>        
 
                 </div>
             </div>

@@ -1,0 +1,135 @@
+// Importar variables SASS de Bootstrap personalizadas
+@import "../vendor/bootstrap/_variables.scss";
+
+
+
+
+// h1
+h1 {
+    margin-top: 5px;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+
+// Porfolio - General
+#porfolio {
+    width: 100%;
+}
+
+@media (max-width: 484px) {
+
+    #porfolio {
+        padding: 14px;
+    }
+    
+}
+
+.porfolio {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.porfolio > div {
+    flex: 1;
+
+    position: relative;
+    margin: 0 20px 40px;
+    min-width: 300px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media (max-width: 1199px) {
+
+    .porfolio > div {
+        max-width: 420px;
+    }
+
+}
+
+@media (max-width: 991px) {
+
+    .porfolio > div {
+        max-width: 420px;
+    }
+
+}
+
+.porfolio-filtro {
+    margin: 0 10px 30px;
+    height: unset;
+}
+
+.porfolio > div:not(.porfolio-filtro):hover {
+}
+
+/* .porfolio > div > a {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+} */
+
+
+// Portfolio filtro
+@media (min-width: 767px) {
+
+    #porfolio-filtro {
+        justify-content: flex-end; 
+    }
+
+}
+.porfolio-filtro {
+    margin: 0 10px;
+}
+
+.porfolio-filtro h2 {
+    padding-bottom: 4px;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #9B9B9B;
+}
+
+.porfolio-filtro:hover h2 {
+    border-bottom: 1px solid #9B9B9B;
+    color: black;
+}
+
+.porfolio-filtro.activo h2 {
+    border-bottom: 1px solid black;
+}
+
+.porfolio-filtro.activo h2 {
+    color: black;
+}
+
+
+// Portfolio item
+.porfolio-item a {
+    font-size: 18px;
+    color: black;
+    text-decoration: none;
+}
+
+.porfolio-item h3 {
+    margin-top: 20px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: normal;
+}
+
+.porfolio-item .tipologia {
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-weight: normal;
+}

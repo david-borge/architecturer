@@ -1,0 +1,465 @@
+<!-- Comienzo de las etiquetas <html> y <head> -->
+@@include('partials/html-and-head-tags-start.html')
+
+
+
+
+	<!-- Page Title, Description & URL canónica -->
+    <!-- TODO: cambiar en todas las páginas -->
+	<title>${{ portfolio.titulo }}$ - ${{ _web.titulo }}$</title>
+	<meta name="description" content="${{ portfolio.descripcion }}$">
+    <link rel="canonical" href="https://192.168.1.41:3000/">
+    
+    
+    <!-- Compartir en Redes y WhatsApp (Open Graph protocol): Page Title, Description, URL & Imagen (JPG or PNG with a size less than 300KB and minimum dimensions of 1200 x 630 for Facebook (https://developers.facebook.com/docs/sharing/webmasters/images/#precaching)) -->
+    <!-- TODO: cambiar en todas las páginas -->
+    <meta property="og:title" content="${{ portfolio.titulo }}$ - ${{ _web.titulo }}$" />
+    <meta property="og:description" content="${{ portfolio.descripcion }}$">
+    <meta property="og:url" content="https://192.168.1.41:3000/" />
+    <meta property="og:image" content="https://192.168.1.41:3000/img/logo/architecturer-compartir.jpg">
+
+    
+    <!-- Hash del script #script-cambiar-palabras-h1 -->
+    <!-- TODO: hay que actualizarlo cada vez que se cambie el contenido de #script-cambiar-palabras-h1. Sacarlo del error de la consola de desarrollador de Chrome. -->
+    <meta name="amp-script-src" content="sha384-8wcVMIMBjKmwJ9o-cpS5yJG7bD-58oZpeEgoJzsBbLD8QZ08cLhOmtgewPaeCauZ">
+
+
+    <!-- Datos estructurados (schema.org) -->
+    <!-- Referencia: https://developers.google.com/search/docs/data-types/article -->
+    <!-- TODO: poner en todas las páginas en las que sea necesario. -->
+
+    <!-- Empresa -->
+    <script type="application/ld+json">
+        {
+            "@context":"https://schema.org",
+            "@type":"Organization",
+            "name":"Architecturer",
+            "@id":"https://192.168.1.41:3000/",
+            "url":"https://192.168.1.41:3000/",
+            "logo":"https://192.168.1.41:3000/img/logo/architecturer-logo.svg",
+            "description":"DESCRIPCIÓN_CORTA_DE_LA_WEB",
+            "address":{
+               "@type":"PostalAddress",
+               "streetAddress":"DIRECCION",
+               "addressLocality":"CIUDAD",
+               "addressRegion":"CIUDAD",
+               "postalCode":"CODIGO_POSTAL",
+               "addressCountry":"CODIGO_PAIS"
+            },
+            "email":"CORREO_ELECTRONICO",
+            "telephone":"TELEFONO",
+            "image":[
+               "https://192.168.1.41:3000/img/logo/architecturer-compartir.jpg"
+            ]
+         }
+    </script>
+
+    <!-- Producto o servicio -->
+    <!-- <script type="application/ld+json">
+        {
+            "@context":"https://schema.org/",
+            "@type":"Product",
+            "name":"NOMBRE_PRODUCTO_O_SERVICIO",
+            "description":"DESCRIPCION_PRODUCTO_O_SERVICIO",
+            "brand":{
+               "@type":"Brand",
+               "name":"Architecturer"
+            },
+            "offers":{
+               "@type":"Offer",
+               "url":"URL_PRODUCTO_O_SERVICIO",
+               "priceCurrency":"EUR",
+               "price":"PRECIO_PRODUCTO_O_SERVICIO",
+               "priceValidUntil":"3020-11-20",
+               "itemCondition":"https://schema.org/UsedCondition",
+               "availability":"https://schema.org/InStock",
+               "seller":{
+                  "@type":"Organization",
+                  "name":"Architecturer"
+               }
+            }
+         }
+    </script> -->
+
+
+
+
+    <!-- Extensiones AMP - Importar otras Extensiones AMP aquí -->
+    <!-- TODO: quitar las innecesarias. -->
+    <script async custom-element="amp-position-observer" src="https://cdn.ampproject.org/v0/amp-position-observer-0.1.js"></script>
+    <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+    <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
+    <script async custom-element="amp-fx-collection" src="https://cdn.ampproject.org/v0/amp-fx-collection-0.1.js"></script>
+
+    
+
+
+
+    <!-- Head Tag Styles: Iconos + Favicon + CSS de AMP -->
+    @@include('partials/iconos.html')
+    @@include('partials/favicon.html')
+    @@include('partials/css-de-amp.html')
+
+    <!-- build:remove -->
+    <!-- Estilos generales (Solo para desarrollo, estos enlaces se quitan en las builds) -->
+    <link rel="stylesheet" href="./css/vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/partials/header-tag/header-tag.min.css">
+    <link rel="stylesheet" href="./css/partials/footer-tag/footer-tag.min.css">
+    <link rel="stylesheet" href="./css/partials/fuentes.min.css">
+    <link rel="stylesheet" href="./css/main/main.min.css">
+    <!--<link rel="stylesheet" href="./css/main-less.min.css">--> <!--No uso LESS en este proyecto. -->
+    
+    <!-- Estilos de esta página (Solo para desarrollo, estos enlaces se quitan en las builds) -->
+    <link rel="stylesheet" href="./css/portfolio/portfolio.min.css">
+    <!-- endbuild -->
+
+    <!-- Estilos de esta página -->
+    <!-- Esto se rellenará automáticamente en las builds. -->
+    <style amp-custom></style>
+
+    <!-- Google Tag Manager head script -->
+    @@include('partials/google-tag-manager-head-script.html')
+
+</head>
+
+<body>
+
+    <!-- Google Tag Manager body tag -->
+    @@include('partials/google-tag-manager-body-tag.html')
+
+    <!-- Header tag -->
+    @@include('partials/header-tag.html')
+    @@include('partials/header-cambiar-en-scroll.html')
+
+
+    <!-- Contenido principal -->
+    <main role="main">
+        
+        <div class="seccion">
+            <div class="container">
+                
+                <div style="margin: 30px 10px 0 20px;" amp-fx="fly-in-bottom">
+                    <div class="row">
+                        <div class="col-md-3" style="margin-bottom: 25px;">
+
+                            <h1>Portfolio</h1>
+
+                        </div>
+                        <div class="col-md-9" style="margin-bottom: 25px; padding: 0;">
+                            
+                            <!-- Portfolio filtro -->
+                            <div id="porfolio-filtro" style='display: flex; flex-wrap: wrap;'>
+                        
+                                <div id="porfolio-filtro-todos" class="porfolio-filtro activo"
+                                    on="tap:porfolio-filtro-todos.toggleClass(class='activo', force=true), porfolio-filtro-residential.toggleClass(class='activo', force=false), porfolio-filtro-hospitality.toggleClass(class='activo', force=false), porfolio-filtro-education.toggleClass(class='activo', force=false), porfolio-filtro-commercial.toggleClass(class='activo', force=false), porfolio-modern-house.show, porfolio-cultural-center.show, porfolio-minimalist-house.show, porfolio-luxury-penthouse.show, porfolio-maya-hills.show, porfolio-rustic-steel-house.show, porfolio-the-hall-home.show, porfolio-silk-espresso.show, porfolio-convension-center.show;" role="button" tabindex="-1">
+                                    <div class="porfolio-filtro-contenido">
+                                        <h2>Ver todo</h2>
+                                    </div>
+                                </div>
+                        
+                                <div id="porfolio-filtro-residential" class="porfolio-filtro"
+                                    on="tap:porfolio-filtro-todos.toggleClass(class='activo', force=false), porfolio-filtro-residential.toggleClass(class='activo', force=true), porfolio-filtro-hospitality.toggleClass(class='activo', force=false), porfolio-filtro-education.toggleClass(class='activo', force=false), porfolio-filtro-commercial.toggleClass(class='activo', force=false), porfolio-modern-house.show, porfolio-cultural-center.hide, porfolio-minimalist-house.hide, porfolio-luxury-penthouse.show, porfolio-maya-hills.hide, porfolio-rustic-steel-house.hide, porfolio-the-hall-home.show, porfolio-silk-espresso.hide, porfolio-convension-center.hide;" role="button" tabindex="-1">
+                                    <div class="porfolio-filtro-contenido">
+                                        <h2>Residential</h2>
+                                    </div>
+                                </div>
+                        
+                                <div id="porfolio-filtro-hospitality" class="porfolio-filtro"
+                                    on="tap:porfolio-filtro-todos.toggleClass(class='activo', force=false),porfolio-filtro-residential.toggleClass(class='activo', force=false),porfolio-filtro-hospitality.toggleClass(class='activo', force=true),porfolio-filtro-education.toggleClass(class='activo', force=false),porfolio-filtro-commercial.toggleClass(class='activo', force=false), porfolio-modern-house.show, porfolio-cultural-center.show, porfolio-minimalist-house.hide, porfolio-luxury-penthouse.show, porfolio-maya-hills.hide, porfolio-rustic-steel-house.show, porfolio-the-hall-home.show, porfolio-silk-espresso.hide, porfolio-convension-center.show;" role="button" tabindex="-1">
+                                    <div class="porfolio-filtro-contenido">
+                                        <h2>Hospitality</h2>
+                                    </div>
+                                </div>
+                        
+                                <div id="porfolio-filtro-education" class="porfolio-filtro"
+                                    on="tap:porfolio-filtro-todos.toggleClass(class='activo', force=false),porfolio-filtro-residential.toggleClass(class='activo', force=false),porfolio-filtro-hospitality.toggleClass(class='activo', force=false),porfolio-filtro-education.toggleClass(class='activo', force=true),porfolio-filtro-commercial.toggleClass(class='activo', force=false), porfolio-modern-house.hide, porfolio-cultural-center.show, porfolio-minimalist-house.hide, porfolio-luxury-penthouse.hide, porfolio-maya-hills.hide, porfolio-rustic-steel-house.show, porfolio-the-hall-home.hide, porfolio-silk-espresso.hide, porfolio-convension-center.show;" role="button" tabindex="-1">
+                                    <div class="porfolio-filtro-contenido">
+                                        <h2>Education</h2>
+                                    </div>
+                                </div>
+                        
+                                <div id="porfolio-filtro-commercial" class="porfolio-filtro"
+                                    on="tap:porfolio-filtro-todos.toggleClass(class='activo', force=false),porfolio-filtro-residential.toggleClass(class='activo', force=false),porfolio-filtro-hospitality.toggleClass(class='activo', force=false),porfolio-filtro-education.toggleClass(class='activo', force=false),porfolio-filtro-commercial.toggleClass(class='activo', force=true), porfolio-modern-house.hide, porfolio-cultural-center.hide, porfolio-minimalist-house.show, porfolio-luxury-penthouse.hide, porfolio-maya-hills.show, porfolio-rustic-steel-house.hide, porfolio-the-hall-home.hide, porfolio-silk-espresso.show, porfolio-convension-center.hide;" role="button" tabindex="-1">
+                                    <div class="porfolio-filtro-contenido">
+                                        <h2>Commercial</h2>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <!-- Fin de Portfolio filtro -->
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            
+                <!-- Lista de Webs (.porfolio-item) -->
+                <div style="display: flex; justify-content: center;">
+                    <div id="porfolio" class="porfolio" style='margin-bottom: 20px;' amp-fx="fly-in-bottom">
+                        
+                        <div id="porfolio-modern-house" class="porfolio-item">
+                            <a href="https://192.168.1.41:3000/portfolio-single.html">
+                                
+                                <amp-img
+                                    src="https://192.168.1.41:3000/img/porfolio/modern-house/modern-house-miniatura.webp"
+                                    width="660"
+                                    height="913"
+                                    layout="responsive"
+                                    class="d-block mx-auto"
+                                    alt="Modern House">
+
+                                        <amp-img fallback
+                                            src="https://192.168.1.41:3000/img/porfolio/modern-house/modern-house-miniatura.jpg"
+                                            width="660"
+                                            height="913"
+                                            layout="responsive"
+                                            class="d-block mx-auto"
+                                            alt="Modern House"></amp-img>
+
+                                </amp-img>
+
+                                <h3>Modern House</h3>
+                                <div class="tipologia">Residential</div>
+
+                            </a>
+                        </div>
+                        
+                        <div id="porfolio-cultural-center" class="porfolio-item">
+                            <a href="https://192.168.1.41:3000/portfolio-single.html">
+                                
+                                <amp-img
+                                    src="https://192.168.1.41:3000/img/porfolio/cultural-center/cultural-center-miniatura.webp"
+                                    width="660"
+                                    height="913"
+                                    layout="responsive"
+                                    class="d-block mx-auto"
+                                    alt="Cultural Center">
+
+                                        <amp-img fallback
+                                            src="https://192.168.1.41:3000/img/porfolio/cultural-center/cultural-center-miniatura.jpg"
+                                            width="660"
+                                            height="913"
+                                            layout="responsive"
+                                            class="d-block mx-auto"
+                                            alt="Cultural Center"></amp-img>
+
+                                </amp-img>
+
+                                <h3>Cultural Center</h3>
+                                <div class="tipologia">Residential</div>
+
+                            </a>
+                        </div>
+            
+                        <div id="porfolio-minimalist-house" class="porfolio-item">
+                            <a href="https://192.168.1.41:3000/portfolio-single.html">
+                                
+                                <amp-img
+                                    src="https://192.168.1.41:3000/img/porfolio/minimalist-house/minimalist-house-miniatura.webp"
+                                    width="660"
+                                    height="913"
+                                    layout="responsive"
+                                    class="d-block mx-auto"
+                                    alt="Minimalist House">
+
+                                        <amp-img fallback
+                                            src="https://192.168.1.41:3000/img/porfolio/minimalist-house/minimalist-house-miniatura.jpg"
+                                            width="660"
+                                            height="913"
+                                            layout="responsive"
+                                            class="d-block mx-auto"
+                                            alt="Minimalist House"></amp-img>
+
+                                </amp-img>
+
+                                <h3>Minimalist House</h3>
+                                <div class="tipologia">Hotel & Resort</div>
+
+                            </a>
+                        </div>
+                        
+                        <div id="porfolio-luxury-penthouse" class="porfolio-item">
+                            <a href="https://192.168.1.41:3000/portfolio-single.html">
+                                
+                                <amp-img
+                                    src="https://192.168.1.41:3000/img/porfolio/luxury-penthouse/luxury-penthouse-miniatura.webp"
+                                    width="660"
+                                    height="913"
+                                    layout="responsive"
+                                    class="d-block mx-auto"
+                                    alt="Luxury Penthouse">
+
+                                        <amp-img fallback
+                                            src="https://192.168.1.41:3000/img/porfolio/luxury-penthouse/luxury-penthouse-miniatura.jpg"
+                                            width="660"
+                                            height="913"
+                                            layout="responsive"
+                                            class="d-block mx-auto"
+                                            alt="Luxury Penthouse"></amp-img>
+
+                                </amp-img>
+
+                                <h3>Luxury Penthouse</h3>
+                                <div class="tipologia">Residential</div>
+
+                            </a>
+                        </div>
+                        
+                        <div id="porfolio-maya-hills" class="porfolio-item">
+                            <a href="https://192.168.1.41:3000/portfolio-single.html">
+                                
+                                <amp-img
+                                    src="https://192.168.1.41:3000/img/porfolio/maya-hills/maya-hills-miniatura.webp"
+                                    width="660"
+                                    height="913"
+                                    layout="responsive"
+                                    class="d-block mx-auto"
+                                    alt="Maya Hills">
+
+                                        <amp-img fallback
+                                            src="https://192.168.1.41:3000/img/porfolio/maya-hills/maya-hills-miniatura.jpg"
+                                            width="660"
+                                            height="913"
+                                            layout="responsive"
+                                            class="d-block mx-auto"
+                                            alt="Maya Hills"></amp-img>
+
+                                </amp-img>
+
+                                <h3>Maya Hills</h3>
+                                <div class="tipologia">Hotel & Resort</div>
+
+                            </a>
+                        </div>
+                        
+                        <div id="porfolio-rustic-steel-house" class="porfolio-item">
+                            <a href="https://192.168.1.41:3000/portfolio-single.html">
+                                
+                                <amp-img
+                                    src="https://192.168.1.41:3000/img/porfolio/rustic-steel-house/rustic-steel-house-miniatura.webp"
+                                    width="660"
+                                    height="913"
+                                    layout="responsive"
+                                    class="d-block mx-auto"
+                                    alt="Rustic Steel House">
+
+                                        <amp-img fallback
+                                            src="https://192.168.1.41:3000/img/porfolio/rustic-steel-house/rustic-steel-house-miniatura.jpg"
+                                            width="660"
+                                            height="913"
+                                            layout="responsive"
+                                            class="d-block mx-auto"
+                                            alt="Rustic Steel House"></amp-img>
+
+                                </amp-img>
+
+                                <h3>Rustic Steel House</h3>
+                                <div class="tipologia">Residential</div>
+
+                            </a>
+                        </div>
+                        
+                        <div id="porfolio-the-hall-home" class="porfolio-item">
+                            <a href="https://192.168.1.41:3000/portfolio-single.html">
+                                
+                                <amp-img
+                                    src="https://192.168.1.41:3000/img/porfolio/the-hall-home/the-hall-home-miniatura.webp"
+                                    width="660"
+                                    height="913"
+                                    layout="responsive"
+                                    class="d-block mx-auto"
+                                    alt="The Hall Home">
+
+                                        <amp-img fallback
+                                            src="https://192.168.1.41:3000/img/porfolio/the-hall-home/the-hall-home-miniatura.jpg"
+                                            width="660"
+                                            height="913"
+                                            layout="responsive"
+                                            class="d-block mx-auto"
+                                            alt="The Hall Home"></amp-img>
+
+                                </amp-img>
+
+                                <h3>The Hall Home</h3>
+                                <div class="tipologia">Residential</div>
+
+                            </a>
+                        </div>
+                        
+                        <div id="porfolio-silk-espresso" class="porfolio-item">
+                            <a href="https://192.168.1.41:3000/portfolio-single.html">
+                                
+                                <amp-img
+                                    src="https://192.168.1.41:3000/img/porfolio/silk-espresso/silk-espresso-miniatura.webp"
+                                    width="660"
+                                    height="913"
+                                    layout="responsive"
+                                    class="d-block mx-auto"
+                                    alt="Silk Espresso">
+
+                                        <amp-img fallback
+                                            src="https://192.168.1.41:3000/img/porfolio/silk-espresso/silk-espresso-miniatura.jpg"
+                                            width="660"
+                                            height="913"
+                                            layout="responsive"
+                                            class="d-block mx-auto"
+                                            alt="Silk Espresso"></amp-img>
+
+                                </amp-img>
+
+                                <h3>Silk Espresso</h3>
+                                <div class="tipologia">Hotel & Resort</div>
+
+                            </a>
+                        </div>
+                        
+                        <div id="porfolio-convension-center" class="porfolio-item">
+                            <a href="https://192.168.1.41:3000/portfolio-single.html">
+                                
+                                <amp-img
+                                    src="https://192.168.1.41:3000/img/porfolio/convension-center/convension-center-miniatura.webp"
+                                    width="660"
+                                    height="913"
+                                    layout="responsive"
+                                    class="d-block mx-auto"
+                                    alt="Convension Center">
+
+                                        <amp-img fallback
+                                            src="https://192.168.1.41:3000/img/porfolio/convension-center/convension-center-miniatura.jpg"
+                                            width="660"
+                                            height="913"
+                                            layout="responsive"
+                                            class="d-block mx-auto"
+                                            alt="Convension Center"></amp-img>
+
+                                </amp-img>
+
+                                <h3>Convension Center</h3>
+                                <div class="tipologia">Residential</div>
+
+                            </a>
+                        </div>
+                        
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+
+        <!-- WhatsApp (FAB) -->
+        <!-- @@include('partials/fabs/fab-whatsapp.html') -->
+
+    </main>
+
+
+    <!-- Footer tag -->
+    <!-- @@include('partials/footer-tag.html') -->
+    
+
+    <!-- Menú móvil (sidebar) -->
+    @@include('partials/sidebars/sidebar-menu-movil.html')
+
+
+</body>
+</html>
