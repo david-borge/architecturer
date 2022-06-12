@@ -8,15 +8,15 @@
     <!-- TODO: cambiar en todas las páginas -->
 	<title>${{ contacto.titulo }}$ - ${{ _web.titulo }}$</title>
 	<meta name="description" content="${{ contacto.descripcion }}$">
-    <link rel="canonical" href="https://192.168.1.33:3000/contacto.html">
+    <link rel="canonical" href="https://192.168.1.41:3000/contacto.html">
     
     
     <!-- Compartir en Redes y WhatsApp (Open Graph protocol): Page Title, Description, URL & Imagen (JPG or PNG with a size less than 300KB and minimum dimensions of 1200 x 630 for Facebook (https://developers.facebook.com/docs/sharing/webmasters/images/#precaching)) -->
     <!-- TODO: cambiar en todas las páginas -->
     <meta property="og:title" content="${{ _web.titulo }}$" />
     <meta property="og:description" content="${{ contacto.descripcion }}$">
-    <meta property="og:url" content="https://192.168.1.33:3000/contacto.html" />
-    <meta property="og:image" content="https://192.168.1.33:3000/img/logo/NOMBRE-EMPRESA-compartir.jpg">
+    <meta property="og:url" content="https://192.168.1.41:3000/contacto.html" />
+    <meta property="og:image" content="https://192.168.1.41:3000/img/logo/architecturer-compartir.jpg">
 
 
     <!-- Datos estructurados (schema.org) -->
@@ -95,7 +95,7 @@
             <!-- OTROS TIPOS DE CAMPOS: https://amp.dev/documentation/examples/components/amp-form/?format=websites -->
             <!-- Nota: poner el atributo action implica usar HTTP para obtener la respuesta, lo que recarga la página al obtenerla. Mientras que usar el atributo action-xhr, usa XMLHTTPREQUEST, por lo que no se recargar la página al obtener la resupuesta. -->
             <!-- TODO: FIXME: añadir eventos de form (x3) a GTM. Ver: https://amp.dev/documentation/components/amp-form/#analytics -->
-            <form id="formulario-contacto" action-xhr="https://192.168.1.33:3000/include/enviar-formulario-contacto.php" method="post" target="_top" autocomplete="off">
+            <form id="formulario-contacto" action-xhr="https://192.168.1.41:3000/include/enviar-formulario-contacto.php" method="post" target="_top" autocomplete="off">
 
                 <!-- reCAPTCHA -->
                 <!-- Nota: ver la cuenta de Gmail que tiene este reCAPTCHA en el PASO 5.1 de enviar-formulario-contacto.php -->
@@ -219,7 +219,7 @@
         </div>
         
         <!-- WhatsApp (FAB) -->
-        @@include('partials/fabs/fab-whatsapp.html')
+        <!-- @@include('partials/fabs/fab-whatsapp.html') -->
 
     </main>
 

@@ -17,8 +17,12 @@ header .menu-ordenador > ul {
 }
 
 header li {
-    margin-left: 20px;
+    margin-left: 40px;
     height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .menu-ordenador > ul > li > a {
@@ -41,6 +45,29 @@ header ul > li > a {
 
 #header-transparente .menu-ordenador > ul > li > a {
     // color: white;  // Cuando haya hero bajo el header
+
+    position: relative;
+
+    height: 30px;
+}
+
+#header-transparente .menu-ordenador > ul > li > a::before {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background-color: #FFFFFF;
+    transform-origin: center top;
+    transform: scale(0,1);
+    transition: color .1s,transform .2s ease-out;
+}
+
+#header-transparente .menu-ordenador > ul > li > a:hover:before {
+    transform-origin: center top;
+    transform: scale(1,1);
 }
 
 #header-con-fondo,
@@ -56,7 +83,10 @@ header ul > li > a {
 }
 
 #header-transparente .menu-ordenador > ul > li > a:hover {
-    text-decoration: underline;
+    color: white;
+    
+    transform-origin: center top;
+    transform: scale(1,1);
 }
 
 #header-con-fondo a:hover {
@@ -148,10 +178,21 @@ header ul ul a:hover {
 
 .btn-menu-hamburguesa svg {
     width: 19px;
+    fill: white;
+}
+
+#header-con-fondo .btn-menu-hamburguesa svg {
+    fill: black;
 }
 
 
 // Menú móvil
+#sidebar-menu-movil {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 #sidebar-menu-movil ul {
     padding: 0;
     list-style-type: none;
@@ -173,9 +214,12 @@ header ul ul a:hover {
 #sidebar-menu-movil ul a {
     display: block;
     padding: 10px 0;
-    color: $body-color;
-    text-transform: uppercase;
+    color: black;
     text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: none;
+    letter-spacing: 1px;
 }
 
 @media (min-width: 1201px) {

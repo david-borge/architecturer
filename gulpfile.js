@@ -159,10 +159,10 @@ const { dest, parallel, series } = require('gulp');
 
 
 // Configuración de la web: URL de desarrollo y URL de producción
-const url_desarrollo = "https://192.168.1.33:3000";  // TODO: si cambia la URL de desarrollo, también hay que cambiarla en todos los archivos de la carpeta src y también en la tarea watch().
+const url_desarrollo = "https://192.168.1.41:3000";  // TODO: si cambia la URL de desarrollo, también hay que cambiarla en todos los archivos de la carpeta src y también en la tarea watch().
 
-// const url_produccion = "https://davidborge.com/pruebas/gulp-amp-template";
- const url_produccion = "https://localhost/gulp-amp-template/dist/es-es";
+const url_produccion = "https://davidborge.com/architecturer";
+// const url_produccion = "https://localhost/architecturer/dist/en";
 
 
 /***** Fin de: Configuración de la web *****/
@@ -188,7 +188,13 @@ var filesPathSrc = {
 
 // Configuración de Gulp: i18n (multi-idioma)
 // Documentación: https://www.npmjs.com/package/gulp-html-i18n
-var localization = "es-es";  // MUY IMPORTANTE: idioma acutal (el que se mostrará el watch y el build)
+
+// MUY IMPORTANTE: idioma acutal (el que se mostrará el watch y el build)
+// TODO: al cambiar el idioma, cambiarlo también en:
+//        - Este archivo: variable url_produccion
+//        - Archivo: src\lang\en\_lang.json
+var localization = "en";
+
 var i18nOptions = {
     langDir: filesPathSrc.lang,
     fallback: 'es-es',
@@ -963,6 +969,7 @@ function reemplazar_url_desarrollo_por_url_produccion(terminar_tarea) {
                 filesPathDest.html + '/**/*.php'
             ] )
         .pipe( inject.replace( url_desarrollo,  url_produccion) )
+        .pipe( inject.replace( "data-ampdevmode",  "") )
         .pipe( gulp.dest(filesPathDest.html) );
 
     // Terminar esta tarea
@@ -970,6 +977,31 @@ function reemplazar_url_desarrollo_por_url_produccion(terminar_tarea) {
 
 }
 exports.reemplazar_url_desarrollo_por_url_produccion = reemplazar_url_desarrollo_por_url_produccion;
+
+
+
+// Tarea Gulp: Reemplazar otros textos
+// Instalación: npm install --save-dev gulp-inject-string
+// Documentación: https://www.npmjs.com/package/gulp-inject-string
+function reemplazar_otros_textos(terminar_tarea) {
+    
+    // En la terminal, se indica el inicio de esta tarea con: Starting 'reemplazar_otros_textos'...
+
+    // Código que se ejecutará al ejecutar esta tarea de Gulp
+    // console.log("Hola desde la tarea de Gulp reemplazar_otros_textos!");  // Imprime el mensaje en la terminal
+    return gulp
+        .src( [
+                filesPathDest.html + '/**/*.html',
+                filesPathDest.html + '/**/*.php'
+            ] )
+        .pipe( inject.replace( " data-ampdevmode=\"true\"",  "") )  // Quitar el atributo data-ampdevmode="true" de las etiquetas <amp-script>
+        .pipe( gulp.dest(filesPathDest.html) );
+
+    // Terminar esta tarea
+    terminar_tarea(); // Corresponde con el mensaje de la terminal: Finished 'reemplazar_otros_textos' after xxxx ms
+
+}
+exports.reemplazar_otros_textos = reemplazar_otros_textos;
 
 
 
@@ -1040,10 +1072,11 @@ function watch(terminar_tarea) {
                     - URL externa: mkcert 192.168.1.34
                     - Con virtual host: mkcert NOMBRE_PROYECTO.EXTENSION_LOCALHOST
             5. Enlazar los dos archivos que se generan más abajo.
+            6. Cambiar en la variable url_desarrollo en este archivo.
         */
         https: {
-            key: "192.168.1.33-key.pem",
-            cert: "192.168.1.33.pem"
+            key: "192.168.1.41-key.pem",
+            cert: "192.168.1.41.pem"
             /* key: "localhost-key.pem",
             cert: "localhost.pem" */
         }
@@ -1230,6 +1263,7 @@ exports.build = series([
                             minificar_archivos_json,
                             borrar_carpetas_innecesarias_de_dist,
                             reemplazar_url_desarrollo_por_url_produccion,
+                            reemplazar_otros_textos,
                             // FIXME: validar_amp
                         ]);
 

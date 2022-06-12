@@ -5,10 +5,10 @@
 
 
 // Fuente
-$font-family-base: 'Roboto', sans-serif;
+$font-family-base: 'Inter', sans-serif;
 
 :root {
-    --bs-body-font-family: 'Roboto', sans-serif;
+    --bs-body-font-family: 'Inter', sans-serif;
 }
 
 
@@ -26,3 +26,10 @@ $color-principal: #1a73e8;
 
 // Colores - Color de acento
 $color-acento: orange;
+
+
+// Espaciado - Espaciado lateral
+.container {
+    padding-right: 20px;
+    padding-left: 20px;
+}

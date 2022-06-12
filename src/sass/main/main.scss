@@ -67,8 +67,8 @@ main {
 
 // Sección
 .seccion {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
 
 
@@ -150,8 +150,8 @@ main {
 
 // Hero
 #hero {
-    min-height: 600px;
-    box-shadow: inset 0 0 0 999999999px rgba(51, 149, 198, 0.7);
+    min-height: 100vh;
+    // box-shadow: inset 0 0 0 999999999px rgba(51, 149, 198, 0.7);
 
     background-repeat: no-repeat;
     background-size: cover;
@@ -165,8 +165,7 @@ main {
 }
 
 #hero h1 {
-    font-size: 76px;
-    font-weight: bold;
+    font-size: 60px;
 }
 
 #subtitulo-hero {
