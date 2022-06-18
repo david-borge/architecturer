@@ -1243,7 +1243,7 @@ exports.buildDev = series([
                             convertir_sass_en_css_con_plantillas_y_sourcemaps_y_anadir_sufijo_min_y_manejar_errores,
                             // convertir_less_en_css_con_sourcemaps_y_anadir_sufijo_min_y_manejar_errores,  // No uso LESS en este proyecto.
                             compilar_js_y_concatenar_y_minificar_y_anadir_sufijo_min,
-                            generar_y_optimizar_imagenes_reponsive_con_cache,  // NOTA: comentar para builds rápidas
+                            // generar_y_optimizar_imagenes_reponsive_con_cache,  // NOTA: comentar para builds rápidas
                             copiar_otros_archivos_a_dist
                         ]);
 
