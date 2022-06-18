@@ -1,0 +1,119 @@
+// Importar variables SASS de Bootstrap personalizadas
+@import "../vendor/bootstrap/_variables.scss";
+
+
+
+
+// Main
+main {
+    margin-top: 71px;
+}
+
+
+// Sección con fondo negro
+#seccion-fondo-negro {
+    padding: 56px 0;
+    background-color: black;
+}
+
+
+// Sección con fondo negro - Títulos
+h1 {
+    font-size: 50px;
+    font-weight: 500;
+    color: white;
+}
+
+h2 {
+    font-size: 32px;
+    font-weight: 500;
+}
+
+// Sección con fondo negro - Enlaces
+#seccion-fondo-negro a {
+    display: block;
+    margin-bottom: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+#seccion-fondo-negro a:hover {
+    text-decoration: underline;
+}
+
+
+// Caja Formulario de contacto
+#caja-formulario-contacto {
+    padding: 60px; 
+}
+
+@media (max-width: 500px) {
+
+    #caja-formulario-contacto {
+        padding: 40px 30px;
+    }
+
+}
+
+
+// Formulario de contacto
+.form-label {
+    font-family: 'Abel', sans-serif;
+    color: #222222;
+    text-transform: uppercase;
+}
+
+.form-control {
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    border-color: #e7e7e7;
+    border-radius: 0;
+    color: black;
+}
+
+.form-control:focus {
+    border-color: #222;
+    box-shadow: none;
+}
+
+.form-check-input[type=checkbox] {
+    margin-right: 8px;
+    border-radius: 0;
+}
+
+.form-check-input[type=checkbox]:focus {
+    box-shadow: none;
+    border-color: #00000040;
+}
+
+.form-check-input[type=checkbox]:checked {
+    background-color: #222;
+    border-color: #222;
+}
+
+#comments {
+    resize: vertical;
+    height: 100px;
+    min-height: 100px;
+    max-height: 300px;
+}
+
+button[type="submit"] {
+    border-color: black;
+    border-radius: 0;
+    background-color: black;
+}
+
+button[type="submit"]:hover {
+    border-color: black;
+    background-color: white;
+    color: black;
+}
+
+
+// Recaptcha
+// CUIDADO: como .grecaptcha-badge no existe en el HTML a la hora de hacer la build, purgecss borra este CSS. Para que esto no pase, hay que poner el HTML auxiliar en contact.html, y rodearlo del comentario remove para que htmlmin lo borre al hacer la build.
+.grecaptcha-badge {
+    display: none;
+}

@@ -1,10 +1,40 @@
 <footer>
     <div class="container">
 
-        <p>${{ _footer.titulo }}$</p>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+
+                <h2>Office</h2>
+
+                <a href="https://www.google.es/maps/place/Foster+%2B+Partners/@51.4803263,-0.1706651,17z/data=!3m1!4b1!4m5!3m4!1s0x48760573b5e05ecb:0xf8e9933169593633!8m2!3d51.4803263!4d-0.1684764?shorturl=1" target="_blank" rel="noopener">Riverside, 22 Hester Rd, <br/>London SW11 4AN, <br/>United Kingdom</a>
+
+            </div>
+            <div class="col-md-4 mb-4">
+
+                <h2>Contact</h2>
+
+                <a href="mailto:info@architecturer.com">E. info@architecturer.com</a>
+
+                <a href="tel:123 456 789">T. 123 456 789</a>
+                
+                <a href="tel:987 654 321">F. 987 654 321</a>
+
+            </div>
+            <div class="col-md-4 mb-4">
+
+                <h2>Legal</h2>
+
+                <a href="https://192.168.1.42:3000/legal-notice.html" target="_blank" rel="noopener">${{ legal-notice.titulo }}$</a>
+
+                <a href="https://192.168.1.42:3000/privacy-policy.html" target="_blank" rel="noopener">${{ privacy-policy.titulo }}$</a>
+
+                <a href="https://192.168.1.42:3000/cookies-policy.html" target="_blank" rel="noopener">${{ cookies-policy.titulo }}$</a>
+
+            </div>
+        </div>
 
         <!-- NOTA: para el desarrollo, añadir data-ampdevmode="true" a la etiqueta <amp-script> -->
-        <p><amp-script script="script-copyright-con-ano-actual" layout="fixed-height" height="25" style="display: flex; flex-direction: column; justify-content: flex-end;"><span id="copyright-con-ano-actual">© NOMBRE EMPRESA <span class="text-nowrap">2000 - 2022</span></span></amp-script></p>
+        <div id="copyright"><amp-script script="script-copyright-con-ano-actual" layout="fixed-height" height="25" style="display: flex; flex-direction: column; justify-content: flex-end;"><span id="copyright-con-ano-actual">© Architecturer <span class="text-nowrap">2000 - 2022</span></span></amp-script></div>
         
     </div>
 </footer>

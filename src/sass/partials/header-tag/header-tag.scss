@@ -29,8 +29,12 @@ header li {
     text-align: center;
 }
 
-header ul > li > a {
+header ul > li > a,
+header ul > li > a:hover {
     color: $body-color;
+}
+
+header ul > li > a {
     text-transform: uppercase;
     text-decoration: none;
 
@@ -43,7 +47,7 @@ header ul > li > a {
     height: 82px;
 }
 
-#header-transparente .menu-ordenador > ul > li > a {
+header .menu-ordenador > ul > li > a {
     // color: white;  // Cuando haya hero bajo el header
 
     position: relative;
@@ -51,21 +55,28 @@ header ul > li > a {
     height: 30px;
 }
 
-#header-transparente .menu-ordenador > ul > li > a::before {
+header .menu-ordenador > ul > li > a::before {
     content: '';
     display: block;
     position: absolute;
     bottom: 2px;
     left: 0;
-    height: 1px;
+    height: 0.5px;
     width: 100%;
-    background-color: #FFFFFF;
     transform-origin: center top;
     transform: scale(0,1);
     transition: color .1s,transform .2s ease-out;
 }
 
-#header-transparente .menu-ordenador > ul > li > a:hover:before {
+#header-transparente .menu-ordenador > ul > li > a::before {
+    background-color: #FFFFFF;
+}
+
+#header-con-fondo .menu-ordenador > ul > li > a::before {
+    background-color: $body-color;
+}
+
+header .menu-ordenador > ul > li > a:hover::before {
     transform-origin: center top;
     transform: scale(1,1);
 }
@@ -89,9 +100,9 @@ header ul > li > a {
     transform: scale(1,1);
 }
 
-#header-con-fondo a:hover {
+/* #header-con-fondo a:hover {
     color: $color-principal;
-}
+} */
 
 #header-con-fondo {
     margin-top: -1px;

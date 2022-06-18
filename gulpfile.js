@@ -159,7 +159,7 @@ const { dest, parallel, series } = require('gulp');
 
 
 // Configuración de la web: URL de desarrollo y URL de producción
-const url_desarrollo = "https://192.168.1.41:3000";  // TODO: si cambia la URL de desarrollo, también hay que cambiarla en todos los archivos de la carpeta src y también en la tarea watch().
+const url_desarrollo = "https://192.168.1.42:3000";  // TODO: si cambia la URL de desarrollo, también hay que cambiarla en todos los archivos de la carpeta src y también en la tarea watch().
 
 const url_produccion = "https://davidborge.com/architecturer";
 // const url_produccion = "https://localhost/architecturer/dist/en";
@@ -267,7 +267,7 @@ var styleInjectOptions = {
 
 
 // (No usado) Configuración de Gulp: notificaciones de tareas completadas correctamente
-/* notifier.defaults({
+notifier.defaults({
     messages: {
         html:  "HTML se ha compilado correctamente!",
         sass: "CSS de SASS se ha compilado correctamente!",
@@ -277,7 +277,7 @@ var styleInjectOptions = {
     prefix: "=====",  // Añadir un prefijo a las notificaciones de la terminal
     suffix: "=====",  // Añadir un sufijo a las notificaciones de la terminal
     exclusions: ".map"  // Excluir las notificaciones sobre los archivos .map
-}); */
+});
 
 
 /***** Fin de: Configuración de Gulp *****/
@@ -404,8 +404,8 @@ function convertir_sass_en_css_con_plantillas_y_sourcemaps_y_anadir_sufijo_min_y
         } ))
         .pipe( sourcemaps.write(".") )  // Escribir los archivos de sourcemaps. Debe hacerse antes de gulp.dest(). El punto especifica la ubicación (¿?).
         .pipe( gulp.dest(filesPathDest.css) )
-        .pipe( browserSync.stream() );  // MUY IMPORTANTE: poniendo esto, cuando esté ejecutando la tarea de desarrollo, el CSS se actualiza automáticamente SIN necesidad de recargar la página. Documentación: https://browsersync.io/docs/gulp
-        // (No usado) .pipe( notifier.success( "sass" ) );  // Notificar cuando el CSS de SASS se ha compilado correctamente. Variable definida en notifier.defaults más arriba.
+        .pipe( browserSync.stream() )  // MUY IMPORTANTE: poniendo esto, cuando esté ejecutando la tarea de desarrollo, el CSS se actualiza automáticamente SIN necesidad de recargar la página. Documentación: https://browsersync.io/docs/gulp
+        .pipe( notifier.success( "sass" ) );  // Notificar cuando el CSS de SASS se ha compilado correctamente. Variable definida en notifier.defaults más arriba.
 
     // Terminar esta tarea
     terminar_tarea(); // Corresponde con el mensaje de la terminal: Finished 'watch' after xxxx ms
@@ -1075,8 +1075,8 @@ function watch(terminar_tarea) {
             6. Cambiar en la variable url_desarrollo en este archivo.
         */
         https: {
-            key: "192.168.1.41-key.pem",
-            cert: "192.168.1.41.pem"
+            key: "192.168.1.42-key.pem",
+            cert: "192.168.1.42.pem"
             /* key: "localhost-key.pem",
             cert: "localhost.pem" */
         }
