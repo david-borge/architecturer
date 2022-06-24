@@ -1,0 +1,383 @@
+<!-- Comienzo de las etiquetas <html> y <head> -->
+@@include('partials/html-and-head-tags-start.html')
+
+
+
+
+	<!-- Page Title, Description & URL canónica -->
+    <!-- TODO: cambiar en todas las páginas -->
+	<title>${{ single-portfolio-1.titulo }}$ - ${{ _web.titulo }}$</title>
+	<meta name="description" content="${{ single-portfolio-1.descripcion }}$">
+    <link rel="canonical" href="https://192.168.1.42:3000/">
+    
+    
+    <!-- Compartir en Redes y WhatsApp (Open Graph protocol): Page Title, Description, URL & Imagen (JPG or PNG with a size less than 300KB and minimum dimensions of 1200 x 630 for Facebook (https://developers.facebook.com/docs/sharing/webmasters/images/#precaching)) -->
+    <!-- TODO: cambiar en todas las páginas -->
+    <meta property="og:title" content="${{ single-portfolio-1.titulo }}$ - ${{ _web.titulo }}$" />
+    <meta property="og:description" content="${{ single-portfolio-1.descripcion }}$">
+    <meta property="og:url" content="https://192.168.1.42:3000/" />
+    <meta property="og:image" content="https://192.168.1.42:3000/img/logo/architecturer-compartir.jpg">
+
+    
+    <!-- Hash del script #script-cambiar-palabras-h1 -->
+    <!-- TODO: hay que actualizarlo cada vez que se cambie el contenido de #script-cambiar-palabras-h1. Sacarlo del error de la consola de desarrollador de Chrome. -->
+    <meta name="amp-script-src" content="sha384-pZM9L0e2Eud605He1Zkf6aatDWRI167lIVWvtDnufzrX7sk7ZFb44tnYh1lknnPW">
+
+
+    <!-- Datos estructurados (schema.org) -->
+    <!-- Referencia: https://developers.google.com/search/docs/data-types/article -->
+    <!-- TODO: poner en todas las páginas en las que sea necesario. -->
+
+    <!-- Empresa -->
+    <script type="application/ld+json">
+        {
+            "@context":"https://schema.org",
+            "@type":"Organization",
+            "name":"Architecturer",
+            "@id":"https://192.168.1.42:3000/",
+            "url":"https://192.168.1.42:3000/",
+            "logo":"https://192.168.1.42:3000/img/logo/architecturer-logo.svg",
+            "description":"DESCRIPCIÓN_CORTA_DE_LA_WEB",
+            "address":{
+               "@type":"PostalAddress",
+               "streetAddress":"DIRECCION",
+               "addressLocality":"CIUDAD",
+               "addressRegion":"CIUDAD",
+               "postalCode":"CODIGO_POSTAL",
+               "addressCountry":"CODIGO_PAIS"
+            },
+            "email":"CORREO_ELECTRONICO",
+            "telephone":"TELEFONO",
+            "image":[
+               "https://192.168.1.42:3000/img/logo/architecturer-compartir.jpg"
+            ]
+         }
+    </script>
+
+    <!-- Producto o servicio -->
+    <!-- <script type="application/ld+json">
+        {
+            "@context":"https://schema.org/",
+            "@type":"Product",
+            "name":"NOMBRE_PRODUCTO_O_SERVICIO",
+            "description":"DESCRIPCION_PRODUCTO_O_SERVICIO",
+            "brand":{
+               "@type":"Brand",
+               "name":"Architecturer"
+            },
+            "offers":{
+               "@type":"Offer",
+               "url":"URL_PRODUCTO_O_SERVICIO",
+               "priceCurrency":"EUR",
+               "price":"PRECIO_PRODUCTO_O_SERVICIO",
+               "priceValidUntil":"3020-11-20",
+               "itemCondition":"https://schema.org/UsedCondition",
+               "availability":"https://schema.org/InStock",
+               "seller":{
+                  "@type":"Organization",
+                  "name":"Architecturer"
+               }
+            }
+         }
+    </script> -->
+
+
+
+
+    <!-- Extensiones AMP - Importar otras Extensiones AMP aquí -->
+    <!-- TODO: quitar las innecesarias. -->
+    <script async custom-element="amp-position-observer" src="https://cdn.ampproject.org/v0/amp-position-observer-0.1.js"></script>
+    <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+    <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
+    <script async custom-element="amp-base-carousel" src="https://cdn.ampproject.org/v0/amp-base-carousel-0.1.js"></script>
+    
+
+
+
+    <!-- Head Tag Styles: Iconos + Favicon + CSS de AMP -->
+    @@include('partials/iconos.html')
+    @@include('partials/favicon.html')
+    @@include('partials/css-de-amp.html')
+
+    <!-- build:remove -->
+    <!-- Estilos generales (Solo para desarrollo, estos enlaces se quitan en las builds) -->
+    <link rel="stylesheet" href="./css/vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/partials/header-tag/header-tag.min.css">
+    <link rel="stylesheet" href="./css/partials/footer-tag/footer-tag.min.css">
+    <link rel="stylesheet" href="./css/partials/fuentes.min.css">
+    <link rel="stylesheet" href="./css/main/main.min.css">
+    <!--<link rel="stylesheet" href="./css/main-less.min.css">--> <!--No uso LESS en este proyecto. -->
+    
+    <!-- Estilos de esta página (Solo para desarrollo, estos enlaces se quitan en las builds) -->
+    <link rel="stylesheet" href="./css/single-portfolio-1/single-portfolio-1.min.css">
+    <!-- endbuild -->
+
+    <!-- Estilos de esta página -->
+    <!-- Esto se rellenará automáticamente en las builds. -->
+    <style amp-custom></style>
+
+    <!-- Google Tag Manager head script -->
+    @@include('partials/google-tag-manager-head-script.html')
+
+</head>
+
+<body>
+
+    <!-- Google Tag Manager body tag -->
+    @@include('partials/google-tag-manager-body-tag.html')
+
+    <!-- Header tag -->
+    @@include('partials/header-tag.html')
+    @@include('partials/header-cambiar-en-scroll.html')
+
+
+    <!-- Contenido principal -->
+    <main role="main">
+        
+        <div class="seccion">
+            <div class="container">
+
+                <div class="mb-4">Residential</div>
+
+                <!-- NOTA: para el desarrollo, añadir data-ampdevmode a la etiqueta <amp-script>. La quito con Gulp automáticamente en las builds. -->
+                <h1>An integrated way of architecture</h1>
+
+            </div>
+        </div>
+
+        <div class="seccion pt-0">
+            <div class="container">
+
+                <amp-img src="https://192.168.1.42:3000/img/portfolio/single-portfolio-1/single-portfolio-1-principal.webp"
+                    width="1280"
+                    height="853"
+                    layout="responsive"
+                    alt="An integrated way of architecture - Main image">
+
+                        <amp-img fallback
+                            src="https://192.168.1.42:3000/img/portfolio/single-portfolio-1/single-portfolio-1-principal.jpg"
+                            width="1280"
+                            height="853"
+                            layout="responsive"
+                            alt="An integrated way of architecture - Main image"></amp-img>
+
+                </amp-img>
+
+            </div>
+        </div>
+
+        <div class="seccion pt-0">
+            <div class="container">
+                <div class="row gx-5">
+                    <div class="col-md-4">
+                        <div class="barra-lateral" style="max-width: 315px;">
+
+                            <h2 class="barra-lateral-titulo">Client</h2>
+                            <div class="barra-lateral-contenido">Complex Arch</div>
+                            
+                            <h2 class="barra-lateral-titulo">Focus</h2>
+                            <div class="barra-lateral-contenido">Concept, Creative Direction, Sketching, Design, Technical Strategy, Site Development, Backend Support</div>
+                            
+                            <h2 class="barra-lateral-titulo">Categories</h2>
+                            <div class="barra-lateral-contenido">Residential, Landscape</div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div style="max-width: 555px;">
+                            
+                            <h2 style="font-size: 22px;">Designing with balance and care</h2>
+
+                            <p>Exercitation photo booth stumptown tote bag Banksy, elit small batch freegan sed. Craft beer elit seitan exercitation, photo booth et 8-bit kale chips proident chillwave deep v laborum. Aliquip veniam delectus, Marfa eiusmod Pinterest in do umami readymade swag. Selfies iPhone Kickstarter, drinking vinegar.</p>
+                            <p>PBR 3 wolf moon beard Helvetica. Salvia esse nihil, flexitarian Truffaut synth art party deep v chillwave. Seitan High Life reprehenderit consectetur cupidatat kogi. Et leggings fanny pack.</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="seccion pt-0">
+            <div class="container" style="background-color: #DBDEDB;">
+                <div class="row gx-5" style="padding: 80px 60px 40px 60px;">
+                    <div class="col-md-4" style="margin-bottom: 40px;">
+
+                        <amp-img src="https://192.168.1.42:3000/img/portfolio/single-portfolio-1/attractive-young-smiling-african-woman-sitting-on-STVVV47.webp"
+                            width="360"
+                            height="540"
+                            layout="responsive"
+                            alt="Attractive young smiling african woman sitting on couch">
+
+                                <amp-img fallback
+                                    src="https://192.168.1.42:3000/img/portfolio/single-portfolio-1/attractive-young-smiling-african-woman-sitting-on-STVVV47.jpg"
+                                    width="360"
+                                    height="540"
+                                    layout="responsive"
+                                    alt="Attractive young smiling african woman sitting on couch"></amp-img>
+
+                        </amp-img>
+
+                    </div>
+                    <div class="col-md-4" style="margin-bottom: 40px;">
+
+                        <amp-img src="https://192.168.1.42:3000/img/portfolio/single-portfolio-1/kari-shea-580156-unsplash.webp"
+                            width="360"
+                            height="540"
+                            layout="responsive"
+                            alt="Attractive young smiling african woman sitting on couch">
+
+                                <amp-img fallback
+                                    src="https://192.168.1.42:3000/img/portfolio/single-portfolio-1/kari-shea-580156-unsplash.jpg"
+                                    width="360"
+                                    height="540"
+                                    layout="responsive"
+                                    alt="Attractive young smiling african woman sitting on couch"></amp-img>
+
+                        </amp-img>
+
+                    </div>
+                    <div class="col-md-4" style="margin-bottom: 40px;">
+
+                        <amp-img src="https://192.168.1.42:3000/img/portfolio/single-portfolio-1/hue-graphy-532156-unsplash.webp"
+                            width="360"
+                            height="540"
+                            layout="responsive"
+                            alt="Attractive young smiling african woman sitting on couch">
+
+                                <amp-img fallback
+                                    src="https://192.168.1.42:3000/img/portfolio/single-portfolio-1/hue-graphy-532156-unsplash.jpg"
+                                    width="360"
+                                    height="540"
+                                    layout="responsive"
+                                    alt="Attractive young smiling african woman sitting on couch"></amp-img>
+
+                        </amp-img>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="seccion">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-7">
+
+                        <p class="fw-light" style="margin-bottom: 80px; line-height: 31px;">As development continues, engineers may visit building destinations to guarantee that temporary workers pursue the plan, keep to the timetable, utilize the predefined materials, and meet work-quality models. Cras chinwag brown bread Eaton cracking goal so I said a load of old tosh baking cakes, geeza arse it's your round grub sloshed burke.</p>
+                        
+                        <p class="text-center fw-light" style="margin-bottom: 40px; font-size: 24px; line-height: 43px;">"The unique architect with ideas from outside the world. Where design and science meet. With people's comfort in mind. Designing with balance and care"</p>
+                        <p class="text-center">John Doeer - Unix Inc.</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="seccion pt-0">
+            <div class="container" style="background-color: #DBDEDB;">
+                <div class="row caja-dos-imagenes-verticales">
+                    <div class="col-12">
+
+                        <amp-img src="https://192.168.1.42:3000/img/portfolio/single-portfolio-1/house-paarman-1.webp"
+                            width="1160"
+                            height="695"
+                            layout="responsive"
+                            alt="House paarman"
+                            style="margin-bottom: 40px;">
+
+                                <amp-img fallback
+                                    src="https://192.168.1.42:3000/img/portfolio/single-portfolio-1/house-paarman-1.jpg"
+                                    width="1160"
+                                    height="695"
+                                    layout="responsive"
+                                    alt="House paarman"
+                                    style="margin-bottom: 40px;"></amp-img>
+
+                        </amp-img>
+
+                        <amp-img src="https://192.168.1.42:3000/img/portfolio/single-portfolio-1/podad_CarrboroHouse_1838_4.webp"
+                            width="1160"
+                            height="537"
+                            layout="responsive"
+                            alt="Podad Carrboro House">
+
+                                <amp-img fallback
+                                    src="https://192.168.1.42:3000/img/portfolio/single-portfolio-1/podad_CarrboroHouse_1838_4.jpg"
+                                    width="1160"
+                                    height="537"
+                                    layout="responsive"
+                                    alt="Podad Carrboro House"></amp-img>
+
+                        </amp-img>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="seccion pt-0">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-7">
+
+                        <p class="fw-light" style="line-height: 31px;">As development continues, engineers may visit building destinations to guarantee that temporary workers pursue the plan, keep to the timetable, utilize the predefined materials, and meet work-quality models. Cras chinwag brown bread Eaton cracking goal so I said a load of old tosh baking cakes, geeza arse it's your round grub sloshed burke.</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="seccion pt-0">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-7">
+
+                        <div class="row gx-5">
+                            <div class="col-md-6">
+
+                                <h2 class="barra-lateral-titulo text-md-end">Design Leads</h2>
+                                <div class="barra-lateral-contenido text-md-end">Jordan Mcnamara, Thomas Addition</div>
+                                
+                                <h2 class="barra-lateral-titulo text-md-end">Project Management</h2>
+                                <div class="barra-lateral-contenido text-md-end">Susan Smith</div>
+                                
+                                <h2 class="barra-lateral-titulo text-md-end">Development</h2>
+                                <div class="barra-lateral-contenido text-md-end">Paul Newman, Dida Hadii</div>
+        
+                            </div>
+                            <div class="col-md-6">
+                                
+                                <h2 class="barra-lateral-titulo">Technical Leads</h2>
+                                <div class="barra-lateral-contenido">Thomas Addition, Rocho Monreal</div>
+                                
+                                <h2 class="barra-lateral-titulo">Design</h2>
+                                <div class="barra-lateral-contenido">Rebecca Johnson</div>
+                                
+                                <h2 class="barra-lateral-titulo">Budget Planning</h2>
+                                <div class="barra-lateral-contenido">Dida Hadii</div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- WhatsApp (FAB) -->
+        <!-- @@include('partials/fabs/fab-whatsapp.html') -->
+
+    </main>
+
+
+    <!-- Footer tag -->
+    @@include('partials/footer-tag.html')
+    
+
+    <!-- Menú móvil (sidebar) -->
+    @@include('partials/sidebars/sidebar-menu-movil.html')
+
+
+</body>
+</html>
