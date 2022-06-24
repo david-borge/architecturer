@@ -58,6 +58,14 @@ h1 {
 
 }
 
+@media (max-width: 512px) {
+
+    .porfolio > div {
+        margin: 0 0 40px;
+    }
+
+}
+
 .porfolio-filtro {
     margin: 0 10px 30px;
     height: unset;
@@ -89,14 +97,14 @@ h1 {
 
 }
 .porfolio-filtro {
-    margin: 0 10px;
+    margin: 0 10px 25px;
 }
 
 .porfolio-filtro h2 {
     padding-bottom: 4px;
     font-size: 14px;
     text-transform: uppercase;
-    color: #9B9B9B;
+    color: #757575;
 }
 
 .porfolio-filtro:hover h2 {

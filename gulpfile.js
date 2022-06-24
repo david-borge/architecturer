@@ -568,8 +568,8 @@ function generar_y_optimizar_imagenes_reponsive_con_cache(terminar_tarea) {
                     "!./src/img/logo/**/*"
                 ] )
             .pipe( srcset([{
-                    match:  '(min-width: 576px)',  // El tamaño mínimo o máximo de las imágenes de las cuales hay que generar imágenes responsive.
-                    width:  [1, 1400, 1200, 992, 768, 576],  // El 1 indica que también hay que tener la imagen original
+                    match:  '(min-width: 200px)',  // El tamaño mínimo o máximo de las imágenes de las cuales hay que generar imágenes responsive.
+                    width:  [1, 1400, 1200, 992, 768, 576, 300],  // El 1 indica que también hay que tener la imagen original
                     format: ['jpg', 'webp']  // Formatos de imágenes que hay que generar
                 }]) )
             .pipe( cache( image() ) )  // A imagemin() se le puede pasar un parámetro de configuración con distintas opciones para distintos tipos de archivo.
