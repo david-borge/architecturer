@@ -1,0 +1,33 @@
+// Importar variables SASS de Bootstrap personalizadas
+@import "../vendor/bootstrap/_variables.scss";
+
+
+
+
+// Main
+main {
+    margin-top: 76px;
+}
+
+
+// h1
+h1 {
+    margin-top: 5px;
+    font-size: 100px;
+}
+
+@media (max-width: 1024px) {
+
+    h1 {
+        font-size: 60px;
+    }
+
+}
+
+@media (max-width: 767px) {
+
+    h1 {
+        font-size: 40px;
+    }
+
+}

@@ -184,3 +184,22 @@ main {
     }
 
 }
+
+
+// Sección de galería
+.seccion-galeria .contenedor-imagen {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.seccion-galeria amp-img {
+    margin: 0 40px 0 0;
+}
+
+
+// Imágenes con lightbox
+amp-img[lightbox]:hover {
+    cursor: zoom-in;
+}

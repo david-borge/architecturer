@@ -1,0 +1,470 @@
+<!-- Comienzo de las etiquetas <html> y <head> -->
+@@include('partials/html-and-head-tags-start.html')
+
+
+
+
+	<!-- Page Title, Description & URL canónica -->
+    <!-- TODO: cambiar en todas las páginas -->
+	<title>${{ single-portfolio-2.titulo }}$ - ${{ _web.titulo }}$</title>
+	<meta name="description" content="${{ single-portfolio-2.descripcion }}$">
+    <link rel="canonical" href="https://192.168.1.42:3000/">
+    
+    
+    <!-- Compartir en Redes y WhatsApp (Open Graph protocol): Page Title, Description, URL & Imagen (JPG or PNG with a size less than 300KB and minimum dimensions of 1200 x 630 for Facebook (https://developers.facebook.com/docs/sharing/webmasters/images/#precaching)) -->
+    <!-- TODO: cambiar en todas las páginas -->
+    <meta property="og:title" content="${{ single-portfolio-2.titulo }}$ - ${{ _web.titulo }}$" />
+    <meta property="og:description" content="${{ single-portfolio-2.descripcion }}$">
+    <meta property="og:url" content="https://192.168.1.42:3000/" />
+    <meta property="og:image" content="https://192.168.1.42:3000/img/logo/architecturer-compartir.jpg">
+
+    
+    <!-- Hash del script #script-cambiar-palabras-h1 -->
+    <!-- TODO: hay que actualizarlo cada vez que se cambie el contenido de #script-cambiar-palabras-h1. Sacarlo del error de la consola de desarrollador de Chrome. -->
+    <meta name="amp-script-src" content="sha384-pZM9L0e2Eud605He1Zkf6aatDWRI167lIVWvtDnufzrX7sk7ZFb44tnYh1lknnPW">
+
+
+    <!-- Datos estructurados (schema.org) -->
+    <!-- Referencia: https://developers.google.com/search/docs/data-types/article -->
+    <!-- TODO: poner en todas las páginas en las que sea necesario. -->
+
+    <!-- Empresa -->
+    <script type="application/ld+json">
+        {
+            "@context":"https://schema.org",
+            "@type":"Organization",
+            "name":"Architecturer",
+            "@id":"https://192.168.1.42:3000/",
+            "url":"https://192.168.1.42:3000/",
+            "logo":"https://192.168.1.42:3000/img/logo/architecturer-logo.svg",
+            "description":"DESCRIPCIÓN_CORTA_DE_LA_WEB",
+            "address":{
+               "@type":"PostalAddress",
+               "streetAddress":"DIRECCION",
+               "addressLocality":"CIUDAD",
+               "addressRegion":"CIUDAD",
+               "postalCode":"CODIGO_POSTAL",
+               "addressCountry":"CODIGO_PAIS"
+            },
+            "email":"CORREO_ELECTRONICO",
+            "telephone":"TELEFONO",
+            "image":[
+               "https://192.168.1.42:3000/img/logo/architecturer-compartir.jpg"
+            ]
+         }
+    </script>
+
+    <!-- Producto o servicio -->
+    <!-- <script type="application/ld+json">
+        {
+            "@context":"https://schema.org/",
+            "@type":"Product",
+            "name":"NOMBRE_PRODUCTO_O_SERVICIO",
+            "description":"DESCRIPCION_PRODUCTO_O_SERVICIO",
+            "brand":{
+               "@type":"Brand",
+               "name":"Architecturer"
+            },
+            "offers":{
+               "@type":"Offer",
+               "url":"URL_PRODUCTO_O_SERVICIO",
+               "priceCurrency":"EUR",
+               "price":"PRECIO_PRODUCTO_O_SERVICIO",
+               "priceValidUntil":"3020-11-20",
+               "itemCondition":"https://schema.org/UsedCondition",
+               "availability":"https://schema.org/InStock",
+               "seller":{
+                  "@type":"Organization",
+                  "name":"Architecturer"
+               }
+            }
+         }
+    </script> -->
+
+
+
+
+    <!-- Extensiones AMP - Importar otras Extensiones AMP aquí -->
+    <!-- TODO: quitar las innecesarias. -->
+    <script async custom-element="amp-position-observer" src="https://cdn.ampproject.org/v0/amp-position-observer-0.1.js"></script>
+    <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+    <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
+    <script async custom-element="amp-lightbox-gallery" src="https://cdn.ampproject.org/v0/amp-lightbox-gallery-0.1.js"></script>
+    <script async custom-element="amp-base-carousel" src="https://cdn.ampproject.org/v0/amp-base-carousel-0.1.js"></script>
+    
+
+
+
+    <!-- Head Tag Styles: Iconos + Favicon + CSS de AMP -->
+    @@include('partials/iconos.html')
+    @@include('partials/favicon.html')
+    @@include('partials/css-de-amp.html')
+
+    <!-- build:remove -->
+    <!-- Estilos generales (Solo para desarrollo, estos enlaces se quitan en las builds) -->
+    <link rel="stylesheet" href="./css/vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/partials/header-tag/header-tag.min.css">
+    <link rel="stylesheet" href="./css/partials/footer-tag/footer-tag.min.css">
+    <link rel="stylesheet" href="./css/partials/fuentes.min.css">
+    <link rel="stylesheet" href="./css/main/main.min.css">
+    <!--<link rel="stylesheet" href="./css/main-less.min.css">--> <!--No uso LESS en este proyecto. -->
+    
+    <!-- Estilos de esta página (Solo para desarrollo, estos enlaces se quitan en las builds) -->
+    <link rel="stylesheet" href="./css/single-portfolio-2/single-portfolio-2.min.css">
+    <link rel="stylesheet" href="./css/partials/fuente-cormorant-garamond.min.css">
+    <!-- endbuild -->
+
+    <!-- Estilos de esta página -->
+    <!-- Esto se rellenará automáticamente en las builds. -->
+    <style amp-custom></style>
+
+    <!-- Google Tag Manager head script -->
+    @@include('partials/google-tag-manager-head-script.html')
+
+</head>
+
+<body>
+
+    <!-- Google Tag Manager body tag -->
+    @@include('partials/google-tag-manager-body-tag.html')
+
+    <!-- Header tag -->
+    @@include('partials/header-tag.html')
+    @@include('partials/header-cambiar-en-scroll.html')
+
+
+    <!-- Contenido principal -->
+    <main role="main">
+        
+        <div class="seccion" style="padding-bottom: 50px;">
+            <div class="container">
+                <div class="d-flex flex-column align-items-center">
+
+                    <div class="mb-2" style="font-size: 18px; color: #9B9B9B;">Residential</div>
+
+                    <h1 style="margin-bottom: 25px; font-family: 'Cormorant Garamond', serif; font-weight: 600; letter-spacing: -1px;">The Creative Eye</h1>
+
+                    <div style="max-width: 666px">
+                        <p class="text-center fw-light" style="font-size: 18px; line-height: 30px;">As development continues, engineers may visit building destinations to guarantee that temporary workers pursue the plan.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="seccion pt-0 pb-0" style="background-color: black;">
+
+            <div class="container" style="padding-top: 60px; padding-bottom: 100px;">
+
+                <div class="row gx-5 galeria-portfolio" style="margin-bottom: 60px;">
+                    <div class="col-md-4" style="margin-bottom: 40px;">
+                        
+                        <amp-img src="https://192.168.1.42:3000/img/portfolio/single-portfolio-2/Black-Exterior-Ideas-for-a-Hauntingly-Beautiful-Home-1.webp"
+                            width="610"
+                            height="610"
+                            layout="responsive"
+                            alt="Shaping your dreams"
+                            lightbox>
+
+                                <amp-img fallback
+                                    src="https://192.168.1.42:3000/img/portfolio/single-portfolio-2/Black-Exterior-Ideas-for-a-Hauntingly-Beautiful-Home-1.jpg"
+                                    width="610"
+                                    height="610"
+                                    layout="responsive"
+                                    alt="Shaping your dreams"></amp-img>
+
+                        </amp-img>
+
+                    </div>
+                    <div class="col-md-4" style="margin-bottom: 40px;">
+                        
+                        <amp-img src="https://192.168.1.42:3000/img/portfolio/single-portfolio-2/suteki-home-kengo-kuma-portland_dezeen_2364_sq-1.webp"
+                            width="610"
+                            height="610"
+                            layout="responsive"
+                            alt="Shaping your dreams"
+                            lightbox>
+
+                                <amp-img fallback
+                                    src="https://192.168.1.42:3000/img/portfolio/single-portfolio-2/suteki-home-kengo-kuma-portland_dezeen_2364_sq-1.jpg"
+                                    width="610"
+                                    height="610"
+                                    layout="responsive"
+                                    alt="Shaping your dreams"></amp-img>
+
+                        </amp-img>
+
+                    </div>
+                    <div class="col-md-4" style="margin-bottom: 40px;">
+                        
+                        <amp-img src="https://192.168.1.42:3000/img/portfolio/single-portfolio-2/53910-sofa-and-armchairs-in-modern-house-MH4YE6Q.webp"
+                            width="610"
+                            height="610"
+                            layout="responsive"
+                            alt="Shaping your dreams"
+                            lightbox>
+
+                                <amp-img fallback
+                                    src="https://192.168.1.42:3000/img/portfolio/single-portfolio-2/53910-sofa-and-armchairs-in-modern-house-MH4YE6Q.jpg"
+                                    width="610"
+                                    height="610"
+                                    layout="responsive"
+                                    alt="Shaping your dreams"></amp-img>
+
+                        </amp-img>
+
+                    </div>
+                    <div class="col-md-4" style="margin-bottom: 40px;">
+                        
+                        <amp-img src="https://192.168.1.42:3000/img/portfolio/single-portfolio-2/herzog-bar-build-inc-architects-dezeen-pinterest-bars-ss.webp"
+                            width="610"
+                            height="610"
+                            layout="responsive"
+                            alt="Shaping your dreams"
+                            lightbox>
+
+                                <amp-img fallback
+                                    src="https://192.168.1.42:3000/img/portfolio/single-portfolio-2/herzog-bar-build-inc-architects-dezeen-pinterest-bars-ss.jpg"
+                                    width="610"
+                                    height="610"
+                                    layout="responsive"
+                                    alt="Shaping your dreams"></amp-img>
+
+                        </amp-img>
+
+                    </div>
+                    <div class="col-md-4" style="margin-bottom: 40px;">
+                        
+                        <amp-img src="https://192.168.1.42:3000/img/portfolio/single-portfolio-2/high-desert-modern-deforest-architects-architecture-house-oregon-usa_dezeen_2364_sq.webp"
+                            width="610"
+                            height="610"
+                            layout="responsive"
+                            alt="Shaping your dreams"
+                            lightbox>
+
+                                <amp-img fallback
+                                    src="https://192.168.1.42:3000/img/portfolio/single-portfolio-2/high-desert-modern-deforest-architects-architecture-house-oregon-usa_dezeen_2364_sq.jpg"
+                                    width="610"
+                                    height="610"
+                                    layout="responsive"
+                                    alt="Shaping your dreams"></amp-img>
+
+                        </amp-img>
+
+                    </div>
+                    <div class="col-md-4" style="margin-bottom: 40px;">
+                        
+                        <amp-img src="https://192.168.1.42:3000/img/portfolio/single-portfolio-2/HillRoadBlack_MCacioppo016.webp"
+                            width="610"
+                            height="610"
+                            layout="responsive"
+                            alt="Shaping your dreams"
+                            lightbox>
+
+                                <amp-img fallback
+                                    src="https://192.168.1.42:3000/img/portfolio/single-portfolio-2/HillRoadBlack_MCacioppo016.jpg"
+                                    width="610"
+                                    height="610"
+                                    layout="responsive"
+                                    alt="Shaping your dreams"></amp-img>
+
+                        </amp-img>
+
+                    </div>
+                </div>
+
+                <div style="max-width: 515px;">
+
+                    <h2 style="margin-bottom: 20px; font-size: 22px; font-weight: 500; color: white;">Context</h2>
+
+                    <p class="fw-light" style="color: white; line-height: 30px;">As development continues, engineers may visit building destinations to guarantee that temporary workers pursue the plan, keep to the timetable, utilize the predefined materials, and meet work-quality models. Cras chinwag brown bread Eaton cracking goal so I said a load of old tosh baking cakes, geeza arse it's your round grub sloshed burke.</p>
+
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+
+                    <amp-img src="https://192.168.1.42:3000/img/portfolio/single-portfolio-2/Vaughn-McQuarrie-Gable-Roof.webp"
+                        width="1000"
+                        height="745"
+                        layout="responsive"
+                        alt="Vaughn McQuarrie Gable Roof">
+
+                            <amp-img fallback
+                                src="https://192.168.1.42:3000/img/portfolio/single-portfolio-2/Vaughn-McQuarrie-Gable-Roof.jpg"
+                                width="1000"
+                                height="745"
+                                layout="responsive"
+                                alt="Vaughn McQuarrie Gable Roof"></amp-img>
+
+                    </amp-img>
+
+                </div>
+                <div class="col-md-6">
+
+                    <amp-img src="https://192.168.1.42:3000/img/portfolio/single-portfolio-2/10-Black-Interior-Design-Inspiration_Vipp-Shelter_yankodesign1.webp"
+                        width="1000"
+                        height="745"
+                        layout="responsive"
+                        alt="Black Interior Design Inspiration Vipp Shelter">
+
+                            <amp-img fallback
+                                src="https://192.168.1.42:3000/img/portfolio/single-portfolio-2/10-Black-Interior-Design-Inspiration_Vipp-Shelter_yankodesign1.jpg"
+                                width="1000"
+                                height="745"
+                                layout="responsive"
+                                alt="Black Interior Design Inspiration Vipp Shelter"></amp-img>
+
+                    </amp-img>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="seccion pb-0">
+            <div class="row">
+                <div class="col-12">
+
+                    <div class="d-block mx-auto" style="max-width: 595px;">
+
+                        <h2 style="margin-bottom: 20px; font-size: 22px; font-weight: 500;">Missions</h2>
+
+                        <p class="mb-0 fw-light" style="line-height: 30px;">As development continues, engineers may visit building destinations to guarantee that temporary workers pursue the plan, keep to the timetable, utilize the predefined materials, and meet work-quality models. Cras chinwag brown bread Eaton cracking goal so I said a load of old tosh baking cakes, geeza arse it's your round grub sloshed burke.</p>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        
+        <div class="seccion" style="padding-top: 20px;">
+            
+            <div class="seccion-galeria">
+
+                <amp-base-carousel
+                    layout="fixed-height"
+                    height="587"
+                    snap-align="start"
+                    controls="auto"
+                    visible-count="(min-width: 975px) 2.5, (min-width: 751px) 2.2, 1.1"
+                    advance-count="1"
+                    auto-advance="true"
+                    auto-advance-count="1"
+                    auto-advance-interval="2500"
+                >
+                    
+                    <div>
+                        <div class="contenedor-imagen">
+                            <amp-img src="https://192.168.1.42:3000/img/portfolio/single-portfolio-2/umber-apollo-architects-tokyo-house-japan-architecture-black-steel_dezeen_2364_col_4.webp"
+                                width="783"
+                                height="568"
+                                layout="responsive"
+                                alt="About Us 01">
+    
+                                    <amp-img fallback
+                                        src="https://192.168.1.42:3000/img/portfolio/single-portfolio-2/umber-apollo-architects-tokyo-house-japan-architecture-black-steel_dezeen_2364_col_4.jpg"
+                                        width="783"
+                                        height="568"
+                                        layout="responsive"
+                                        alt="About Us 01"></amp-img>
+    
+                            </amp-img>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="contenedor-imagen">
+                            <amp-img src="https://192.168.1.42:3000/img/portfolio/single-portfolio-2/modern-new-luxury-bathroom-interior-design-3F5D5SH.webp"
+                                width="783"
+                                height="568"
+                                layout="responsive"
+                                alt="About Us 02">
+    
+                                    <amp-img fallback
+                                        src="https://192.168.1.42:3000/img/portfolio/single-portfolio-2/modern-new-luxury-bathroom-interior-design-3F5D5SH.jpg"
+                                        width="783"
+                                        height="568"
+                                        layout="responsive"
+                                        alt="About Us 02"></amp-img>
+                                    
+                            </amp-img>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="contenedor-imagen">
+                            <amp-img src="https://192.168.1.42:3000/img/portfolio/single-portfolio-2/What-makes-a-modern-house-10.webp"
+                                width="783"
+                                height="568"
+                                layout="responsive"
+                                alt="About Us 03">
+    
+                                    <amp-img fallback
+                                        src="https://192.168.1.42:3000/img/portfolio/single-portfolio-2/What-makes-a-modern-house-10.jpg"
+                                        width="783"
+                                        height="568"
+                                        layout="responsive"
+                                        alt="About Us 03"></amp-img>
+                                    
+                            </amp-img>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="contenedor-imagen">
+                            <amp-img src="https://192.168.1.42:3000/img/portfolio/single-portfolio-2/modern-house-exterior-GF59AUJ.webp"
+                                width="783"
+                                height="568"
+                                layout="responsive"
+                                alt="About Us 04">
+    
+                                    <amp-img fallback
+                                        src="https://192.168.1.42:3000/img/portfolio/single-portfolio-2/modern-house-exterior-GF59AUJ.jpg"
+                                        width="783"
+                                        height="568"
+                                        layout="responsive"
+                                        alt="About Us 04"></amp-img>
+    
+                            </amp-img>
+                        </div>
+                    </div>
+                
+                </amp-base-carousel>
+                
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+
+                    <div class="d-block mx-auto" style="max-width: 714px;">
+
+                        <p class="text-center fw-light fst-italic" style="margin-bottom: 40px; font-family: 'Cormorant Garamond', serif; font-size: 28px; line-height: 47px; color: black;">"The unique architect with ideas from outside the world. Where design and science meet. With people's comfort in mind. Designing with balance and care"</p>
+                        <p class="text-center">John Doeer - Unix Inc.</p>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        
+        <!-- WhatsApp (FAB) -->
+        <!-- @@include('partials/fabs/fab-whatsapp.html') -->
+
+    </main>
+
+
+    <!-- Footer tag -->
+    @@include('partials/footer-tag.html')
+    
+
+    <!-- Menú móvil (sidebar) -->
+    @@include('partials/sidebars/sidebar-menu-movil.html')
+
+
+</body>
+</html>
