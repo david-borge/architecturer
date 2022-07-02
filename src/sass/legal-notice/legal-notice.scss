@@ -3,6 +3,24 @@
 
 
 
+// Header tag para páginas con fondo blanco
+header {
+    background-color: white;
+}
+
+#header-transparente .menu-ordenador > ul > li > a:hover {
+    color: #202124;
+}
+
+#header-transparente .menu-ordenador > ul > li > a::before {
+    background-color: #202124;
+}
+
+#header-transparente .btn-menu-hamburguesa svg {
+    fill: black;
+}
+
+
 // Cabecera
 #header-transparente {
     visibility: hidden;

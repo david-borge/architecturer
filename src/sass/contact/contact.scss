@@ -4,15 +4,21 @@
 
 
 
-// Main
-main {
-    margin-top: 71px;
+// Header
+#header-transparente ul > li > a {
+    color: white;
 }
 
 
+// Main
+/* main {
+    margin-top: 71px;
+}
+ */
+
 // Sección con fondo negro
 #seccion-fondo-negro {
-    padding: 56px 0;
+    padding: 120px 0 56px;
     background-color: black;
 }
 
@@ -97,6 +103,10 @@ h2 {
     height: 100px;
     min-height: 100px;
     max-height: 300px;
+}
+
+#acepto-la-politica-de-proteccion-de-datos-form-group *:hover {
+    cursor: pointer;
 }
 
 button[type="submit"] {

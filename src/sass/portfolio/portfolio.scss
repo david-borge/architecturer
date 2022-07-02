@@ -4,6 +4,26 @@
 
 
 
+// Header tag para páginas con fondo blanco
+header {
+    background-color: white;
+}
+
+#header-transparente .menu-ordenador > ul > li > a:hover {
+    color: #202124;
+}
+
+#header-transparente .menu-ordenador > ul > li > a::before {
+    background-color: #202124;
+}
+
+#header-transparente .btn-menu-hamburguesa svg {
+    fill: black;
+}
+
+
+
+
 // h1
 h1 {
     margin-top: 5px;
@@ -20,7 +40,7 @@ h1 {
 @media (max-width: 484px) {
 
     #porfolio {
-        padding: 14px;
+        padding: 14px 20px;
     }
     
 }
@@ -38,6 +58,7 @@ h1 {
     position: relative;
     margin: 0 20px 40px;
     min-width: 300px;
+    max-width: 400px;
     background-repeat: no-repeat;
     background-size: cover;
 }

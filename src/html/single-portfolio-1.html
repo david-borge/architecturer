@@ -18,10 +18,10 @@
     <meta property="og:url" content="https://192.168.1.42:3000/" />
     <meta property="og:image" content="https://192.168.1.42:3000/img/logo/architecturer-compartir.jpg">
 
-    
-    <!-- Hash del script #script-cambiar-palabras-h1 -->
-    <!-- TODO: hay que actualizarlo cada vez que se cambie el contenido de #script-cambiar-palabras-h1. Sacarlo del error de la consola de desarrollador de Chrome. -->
-    <meta name="amp-script-src" content="sha384-pZM9L0e2Eud605He1Zkf6aatDWRI167lIVWvtDnufzrX7sk7ZFb44tnYh1lknnPW">
+
+    <!-- Hash del script #script-copyright-con-ano-actual -->
+    <!-- TODO: hay que actualizarlo cada vez que se cambie el contenido de #script-copyright-con-ano-actual. Sacarlo del error de la consola de desarrollador de Chrome. -->
+        <meta name="amp-script-src" content="sha384-pZM9L0e2Eud605He1Zkf6aatDWRI167lIVWvtDnufzrX7sk7ZFb44tnYh1lknnPW sha384-X4oHzM7irc7oXbRb3dmUGBkBxfn6WPpt5aMlfGAoomeYTqW39mk70_x-kFUADuZJ">
 
 
     <!-- Datos estructurados (schema.org) -->
@@ -128,7 +128,7 @@
     @@include('partials/google-tag-manager-body-tag.html')
 
     <!-- Header tag -->
-    @@include('partials/header-tag.html')
+    @@include('partials/header-tag-paginas-con-fondo-blanco.html')
     @@include('partials/header-cambiar-en-scroll.html')
 
 
@@ -258,7 +258,7 @@
 
         <div class="seccion" style="padding-top: 0;">
             <div class="container">
-                <div class="row gx-5">
+                <div class="row gx-5 invertir-orden-en-movil">
                     <div class="col-md-4">
                         <div class="barra-lateral" style="max-width: 315px;">
 
@@ -269,11 +269,11 @@
                             <div class="barra-lateral-contenido">Concept, Creative Direction, Sketching, Design, Technical Strategy, Site Development, Backend Support</div>
                             
                             <h2 class="barra-lateral-titulo">Categories</h2>
-                            <div class="barra-lateral-contenido">Residential, Landscape</div>
+                            <div class="barra-lateral-contenido mb-0">Residential, Landscape</div>
 
                         </div>
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-8 mb-5 mb-md-0">
                         <div style="max-width: 555px;">
                             
                             <h2 style="font-size: 22px;">Designing with balance and care</h2>
@@ -287,9 +287,9 @@
             </div>
         </div>
         
-        <div class="seccion" style="padding-top: 0;">
+        <div id="seccion-3-imagenes" class="seccion" style="padding-top: 0; padding-bottom: 0;">
             <div class="container" style="background-color: #DBDEDB;">
-                <div class="row gx-5" style="padding: 80px 60px 40px 60px;">
+                <div class="row gx-5">
                     <div class="col-md-4" style="margin-bottom: 40px;">
 
                         <amp-img src="https://192.168.1.42:3000/img/portfolio/single-portfolio-1/attractive-young-smiling-african-woman-sitting-on-STVVV47.webp"
@@ -356,7 +356,7 @@
                         <p class="fw-light" style="margin-bottom: 80px; line-height: 31px;">As development continues, engineers may visit building destinations to guarantee that temporary workers pursue the plan, keep to the timetable, utilize the predefined materials, and meet work-quality models. Cras chinwag brown bread Eaton cracking goal so I said a load of old tosh baking cakes, geeza arse it's your round grub sloshed burke.</p>
                         
                         <p class="text-center fw-light" style="margin-bottom: 40px; font-size: 24px; line-height: 43px;">"The unique architect with ideas from outside the world. Where design and science meet. With people's comfort in mind. Designing with balance and care"</p>
-                        <p class="text-center">John Doeer - Unix Inc.</p>
+                        <p class="text-center mb-0">John Doeer - Unix Inc.</p>
 
                     </div>
                 </div>
@@ -410,7 +410,7 @@
                 <div class="row justify-content-center">
                     <div class="col-md-7">
 
-                        <p class="fw-light" style="line-height: 31px;">As development continues, engineers may visit building destinations to guarantee that temporary workers pursue the plan, keep to the timetable, utilize the predefined materials, and meet work-quality models. Cras chinwag brown bread Eaton cracking goal so I said a load of old tosh baking cakes, geeza arse it's your round grub sloshed burke.</p>
+                        <p class="fw-light mb-0" style="line-height: 31px;">As development continues, engineers may visit building destinations to guarantee that temporary workers pursue the plan, keep to the timetable, utilize the predefined materials, and meet work-quality models. Cras chinwag brown bread Eaton cracking goal so I said a load of old tosh baking cakes, geeza arse it's your round grub sloshed burke.</p>
                         
                     </div>
                 </div>
@@ -432,7 +432,7 @@
                                 <div class="barra-lateral-contenido text-md-end">Susan Smith</div>
                                 
                                 <h2 class="barra-lateral-titulo text-md-end">Development</h2>
-                                <div class="barra-lateral-contenido text-md-end">Paul Newman, Dida Hadii</div>
+                                <div class="barra-lateral-contenido text-md-end mb-0">Paul Newman, Dida Hadii</div>
         
                             </div>
                             <div class="col-md-6">
@@ -444,7 +444,7 @@
                                 <div class="barra-lateral-contenido">Rebecca Johnson</div>
                                 
                                 <h2 class="barra-lateral-titulo">Budget Planning</h2>
-                                <div class="barra-lateral-contenido">Dida Hadii</div>
+                                <div class="barra-lateral-contenido mb-0">Dida Hadii</div>
 
                             </div>
                         </div>

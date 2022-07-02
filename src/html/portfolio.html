@@ -4,7 +4,12 @@
 
 
 
-	<!-- Page Title, Description & URL canónica -->
+	<!-- AMP Preloads: Hero image (Preload an important image in the first viewport to improve page load time.) -->
+    <!-- Referencia: https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content -->
+    <link rel="preload" href="https://192.168.1.42:3000/img/portfolio/cultural-center/cultural-center-miniatura@400w.webp" as="image">
+    <link rel="preload" href="https://192.168.1.42:3000/img/portfolio/cultural-center/cultural-center-miniatura@600w.webp" as="image">
+
+    <!-- Page Title, Description & URL canónica -->
     <!-- TODO: cambiar en todas las páginas -->
 	<title>${{ portfolio.titulo }}$ - ${{ _web.titulo }}$</title>
 	<meta name="description" content="${{ portfolio.descripcion }}$">
@@ -19,10 +24,10 @@
     <meta property="og:image" content="https://192.168.1.42:3000/img/logo/architecturer-compartir.jpg">
 
     
-    <!-- Hash del script #script-cambiar-palabras-h1 -->
-    <!-- TODO: hay que actualizarlo cada vez que se cambie el contenido de #script-cambiar-palabras-h1. Sacarlo del error de la consola de desarrollador de Chrome. -->
-    <meta name="amp-script-src" content="sha384-8wcVMIMBjKmwJ9o-cpS5yJG7bD-58oZpeEgoJzsBbLD8QZ08cLhOmtgewPaeCauZ">
-
+    <!-- Hash del script #script-copyright-con-ano-actual -->
+    <!-- TODO: hay que actualizarlo cada vez que se cambie el contenido de #script-copyright-con-ano-actual. Sacarlo del error de la consola de desarrollador de Chrome. -->
+    <meta name="amp-script-src" content="sha384-pZM9L0e2Eud605He1Zkf6aatDWRI167lIVWvtDnufzrX7sk7ZFb44tnYh1lknnPW sha384-X4oHzM7irc7oXbRb3dmUGBkBxfn6WPpt5aMlfGAoomeYTqW39mk70_x-kFUADuZJ">
+    
 
     <!-- Datos estructurados (schema.org) -->
     <!-- Referencia: https://developers.google.com/search/docs/data-types/article -->
@@ -129,7 +134,7 @@
     @@include('partials/google-tag-manager-body-tag.html')
 
     <!-- Header tag -->
-    @@include('partials/header-tag.html')
+    @@include('partials/header-tag-paginas-con-fondo-blanco.html')
     @@include('partials/header-cambiar-en-scroll.html')
 
 
@@ -139,7 +144,7 @@
         <div class="seccion">
             <div class="container">
                 
-                <div style="margin: 30px 10px 0 20px;" amp-fx="fly-in-bottom">
+                <div style="margin: 30px 0 0px 0;" amp-fx="fly-in-bottom">
                     <div class="row">
                         <div class="col-md-3" style="margin-bottom: 25px;">
 
@@ -152,37 +157,30 @@
                             <div id="porfolio-filtro" style='display: flex; flex-wrap: wrap;'>
                         
                                 <div id="porfolio-filtro-todos" class="porfolio-filtro activo"
-                                    on="tap:porfolio-filtro-todos.toggleClass(class='activo', force=true), porfolio-filtro-residential.toggleClass(class='activo', force=false), porfolio-filtro-hospitality.toggleClass(class='activo', force=false), porfolio-filtro-education.toggleClass(class='activo', force=false), porfolio-filtro-commercial.toggleClass(class='activo', force=false), porfolio-modern-house.show, porfolio-cultural-center.show, porfolio-minimalist-house.show, porfolio-luxury-penthouse.show, porfolio-maya-hills.show, porfolio-rustic-steel-house.show, porfolio-the-hall-home.show, porfolio-silk-espresso.show, porfolio-convension-center.show;" role="button" tabindex="-1">
+                                    on="tap:porfolio-filtro-todos.toggleClass(class='activo', force=true), porfolio-filtro-residential.toggleClass(class='activo', force=false), porfolio-filtro-hospitality.toggleClass(class='activo', force=false),  porfolio-filtro-hotel-and-resort.toggleClass(class='activo', force=false), porfolio-modern-house.show, porfolio-cultural-center.show, porfolio-minimalist-house.show, porfolio-luxury-penthouse.show, porfolio-maya-hills.show, porfolio-rustic-steel-house.show, porfolio-the-hall-home.show, porfolio-silk-espresso.show, porfolio-convension-center.show;" role="button" tabindex="-1">
                                     <div class="porfolio-filtro-contenido">
                                         <h2>Ver todo</h2>
                                     </div>
                                 </div>
                         
                                 <div id="porfolio-filtro-residential" class="porfolio-filtro"
-                                    on="tap:porfolio-filtro-todos.toggleClass(class='activo', force=false), porfolio-filtro-residential.toggleClass(class='activo', force=true), porfolio-filtro-hospitality.toggleClass(class='activo', force=false), porfolio-filtro-education.toggleClass(class='activo', force=false), porfolio-filtro-commercial.toggleClass(class='activo', force=false), porfolio-modern-house.show, porfolio-cultural-center.hide, porfolio-minimalist-house.hide, porfolio-luxury-penthouse.show, porfolio-maya-hills.hide, porfolio-rustic-steel-house.hide, porfolio-the-hall-home.show, porfolio-silk-espresso.hide, porfolio-convension-center.hide;" role="button" tabindex="-1">
+                                    on="tap:porfolio-filtro-todos.toggleClass(class='activo', force=false), porfolio-filtro-residential.toggleClass(class='activo', force=true), porfolio-filtro-hospitality.toggleClass(class='activo', force=false),  porfolio-filtro-hotel-and-resort.toggleClass(class='activo', force=false), porfolio-modern-house.show, porfolio-cultural-center.hide, porfolio-minimalist-house.hide, porfolio-luxury-penthouse.show, porfolio-maya-hills.hide, porfolio-rustic-steel-house.hide, porfolio-the-hall-home.show, porfolio-silk-espresso.hide, porfolio-convension-center.hide;" role="button" tabindex="-1">
                                     <div class="porfolio-filtro-contenido">
                                         <h2>Residential</h2>
                                     </div>
                                 </div>
                         
                                 <div id="porfolio-filtro-hospitality" class="porfolio-filtro"
-                                    on="tap:porfolio-filtro-todos.toggleClass(class='activo', force=false),porfolio-filtro-residential.toggleClass(class='activo', force=false),porfolio-filtro-hospitality.toggleClass(class='activo', force=true),porfolio-filtro-education.toggleClass(class='activo', force=false),porfolio-filtro-commercial.toggleClass(class='activo', force=false), porfolio-modern-house.show, porfolio-cultural-center.show, porfolio-minimalist-house.hide, porfolio-luxury-penthouse.show, porfolio-maya-hills.hide, porfolio-rustic-steel-house.show, porfolio-the-hall-home.show, porfolio-silk-espresso.hide, porfolio-convension-center.show;" role="button" tabindex="-1">
+                                    on="tap:porfolio-filtro-todos.toggleClass(class='activo', force=false),porfolio-filtro-residential.toggleClass(class='activo', force=false),porfolio-filtro-hospitality.toggleClass(class='activo', force=true),porfolio-filtro-hotel-and-resort.toggleClass(class='activo', force=false), porfolio-modern-house.hide, porfolio-cultural-center.show, porfolio-minimalist-house.hide, porfolio-luxury-penthouse.hide, porfolio-maya-hills.hide, porfolio-rustic-steel-house.show, porfolio-the-hall-home.hide, porfolio-silk-espresso.hide, porfolio-convension-center.show;" role="button" tabindex="-1">
                                     <div class="porfolio-filtro-contenido">
                                         <h2>Hospitality</h2>
                                     </div>
                                 </div>
                         
-                                <div id="porfolio-filtro-education" class="porfolio-filtro"
-                                    on="tap:porfolio-filtro-todos.toggleClass(class='activo', force=false),porfolio-filtro-residential.toggleClass(class='activo', force=false),porfolio-filtro-hospitality.toggleClass(class='activo', force=false),porfolio-filtro-education.toggleClass(class='activo', force=true),porfolio-filtro-commercial.toggleClass(class='activo', force=false), porfolio-modern-house.hide, porfolio-cultural-center.show, porfolio-minimalist-house.hide, porfolio-luxury-penthouse.hide, porfolio-maya-hills.hide, porfolio-rustic-steel-house.show, porfolio-the-hall-home.hide, porfolio-silk-espresso.hide, porfolio-convension-center.show;" role="button" tabindex="-1">
+                                <div id="porfolio-filtro-hotel-and-resort" class="porfolio-filtro"
+                                    on="tap:porfolio-filtro-todos.toggleClass(class='activo', force=false),porfolio-filtro-residential.toggleClass(class='activo', force=false),porfolio-filtro-hospitality.toggleClass(class='activo', force=false),porfolio-filtro-hotel-and-resort.toggleClass(class='activo', force=true), porfolio-modern-house.hide, porfolio-cultural-center.hide, porfolio-minimalist-house.show, porfolio-luxury-penthouse.hide, porfolio-maya-hills.show, porfolio-rustic-steel-house.hide, porfolio-the-hall-home.hide, porfolio-silk-espresso.show, porfolio-convension-center.hide;" role="button" tabindex="-1">
                                     <div class="porfolio-filtro-contenido">
-                                        <h2>Education</h2>
-                                    </div>
-                                </div>
-                        
-                                <div id="porfolio-filtro-commercial" class="porfolio-filtro"
-                                    on="tap:porfolio-filtro-todos.toggleClass(class='activo', force=false),porfolio-filtro-residential.toggleClass(class='activo', force=false),porfolio-filtro-hospitality.toggleClass(class='activo', force=false),porfolio-filtro-education.toggleClass(class='activo', force=false),porfolio-filtro-commercial.toggleClass(class='activo', force=true), porfolio-modern-house.hide, porfolio-cultural-center.hide, porfolio-minimalist-house.show, porfolio-luxury-penthouse.hide, porfolio-maya-hills.show, porfolio-rustic-steel-house.hide, porfolio-the-hall-home.hide, porfolio-silk-espresso.show, porfolio-convension-center.hide;" role="button" tabindex="-1">
-                                    <div class="porfolio-filtro-contenido">
-                                        <h2>Commercial</h2>
+                                        <h2>Hotel & Resort</h2>
                                     </div>
                                 </div>
                                 
@@ -192,25 +190,70 @@
                         </div>
                     </div>
                 </div>
-                
-            
+
+            </div>
+        
+            <div class="container" style="padding-right: 0; padding-left: 0;">
+
                 <!-- Lista de Webs (.porfolio-item) -->
                 <div style="display: flex; justify-content: center;">
                     <div id="porfolio" class="porfolio" style='margin-bottom: 20px;' amp-fx="fly-in-bottom">
                         
+                        <div id="porfolio-cultural-center" class="porfolio-item">
+                            <a href="https://192.168.1.42:3000/single-portfolio-2.html">
+                                
+                                <amp-img media="(min-width: 490px)"
+                                    src="https://192.168.1.42:3000/img/portfolio/cultural-center/cultural-center-miniatura@400w.webp"
+                                    width="387"
+                                    height="535"
+                                    layout="responsive"
+                                    alt="Cultural Center">
+
+                                        <amp-img fallback
+                                            src="https://192.168.1.42:3000/img/portfolio/cultural-center/cultural-center-miniatura@400w.jpg"
+                                            width="387"
+                                            height="535"
+                                            layout="responsive"
+                                            class="d-block mx-auto"
+                                            alt="Cultural Center"></amp-img>
+
+                                </amp-img>
+                                
+                                <amp-img media="(max-width: 489px)"
+                                    src="https://192.168.1.42:3000/img/portfolio/cultural-center/cultural-center-miniatura@600w.webp"
+                                    width="387"
+                                    height="535"
+                                    layout="responsive"
+                                    alt="Cultural Center">
+
+                                        <amp-img fallback
+                                            src="https://192.168.1.42:3000/img/portfolio/cultural-center/cultural-center-miniatura@600w.jpg"
+                                            width="387"
+                                            height="535"
+                                            layout="responsive"
+                                            class="d-block mx-auto"
+                                            alt="Cultural Center"></amp-img>
+
+                                </amp-img>
+
+                                <h3>Cultural Center</h3>
+                                <div class="tipologia">Hospitality</div>
+
+                            </a>
+                        </div>
+            
                         <div id="porfolio-modern-house" class="porfolio-item">
                             <a href="https://192.168.1.42:3000/single-portfolio-1.html">
                                 
                                 <amp-img media="(min-width: 490px)"
-                                    src="https://192.168.1.42:3000/img/portfolio/modern-house/modern-house-miniatura.webp"
+                                    src="https://192.168.1.42:3000/img/portfolio/modern-house/modern-house-miniatura@400w.webp"
                                     width="387"
                                     height="535"
                                     layout="responsive"
-                                    class="d-block mx-auto"
                                     alt="Modern House">
 
                                         <amp-img fallback
-                                            src="https://192.168.1.42:3000/img/portfolio/modern-house/modern-house-miniatura.jpg"
+                                            src="https://192.168.1.42:3000/img/portfolio/modern-house/modern-house-miniatura@400w.jpg"
                                             width="387"
                                             height="535"
                                             layout="responsive"
@@ -220,15 +263,14 @@
                                 </amp-img>
                                 
                                 <amp-img media="(max-width: 489px)"
-                                    src="https://192.168.1.42:3000/img/portfolio/modern-house/modern-house-miniatura@300w.webp"
+                                    src="https://192.168.1.42:3000/img/portfolio/modern-house/modern-house-miniatura@600w.webp"
                                     width="387"
                                     height="535"
                                     layout="responsive"
-                                    class="d-block mx-auto"
                                     alt="Modern House">
 
                                         <amp-img fallback
-                                            src="https://192.168.1.42:3000/img/portfolio/modern-house/modern-house-miniatura@300w.jpg"
+                                            src="https://192.168.1.42:3000/img/portfolio/modern-house/modern-house-miniatura@600w.jpg"
                                             width="387"
                                             height="535"
                                             layout="responsive"
@@ -243,64 +285,18 @@
                             </a>
                         </div>
                         
-                        <div id="porfolio-cultural-center" class="porfolio-item">
-                            <a href="https://192.168.1.42:3000/single-portfolio-2.html">
-                                
-                                <amp-img media="(min-width: 490px)"
-                                    src="https://192.168.1.42:3000/img/portfolio/cultural-center/cultural-center-miniatura.webp"
-                                    width="387"
-                                    height="535"
-                                    layout="responsive"
-                                    class="d-block mx-auto"
-                                    alt="Cultural Center">
-
-                                        <amp-img fallback
-                                            src="https://192.168.1.42:3000/img/portfolio/cultural-center/cultural-center-miniatura.jpg"
-                                            width="387"
-                                            height="535"
-                                            layout="responsive"
-                                            class="d-block mx-auto"
-                                            alt="Cultural Center"></amp-img>
-
-                                </amp-img>
-                                
-                                <amp-img media="(max-width: 489px)"
-                                    src="https://192.168.1.42:3000/img/portfolio/cultural-center/cultural-center-miniatura@300w.webp"
-                                    width="387"
-                                    height="535"
-                                    layout="responsive"
-                                    class="d-block mx-auto"
-                                    alt="Cultural Center">
-
-                                        <amp-img fallback
-                                            src="https://192.168.1.42:3000/img/portfolio/cultural-center/cultural-center-miniatura@300w.jpg"
-                                            width="387"
-                                            height="535"
-                                            layout="responsive"
-                                            class="d-block mx-auto"
-                                            alt="Cultural Center"></amp-img>
-
-                                </amp-img>
-
-                                <h3>Cultural Center</h3>
-                                <div class="tipologia">Residential</div>
-
-                            </a>
-                        </div>
-            
                         <div id="porfolio-minimalist-house" class="porfolio-item">
                             <a href="https://192.168.1.42:3000/single-portfolio-1.html">
                                 
                                 <amp-img media="(min-width: 490px)"
-                                    src="https://192.168.1.42:3000/img/portfolio/minimalist-house/minimalist-house-miniatura.webp"
+                                    src="https://192.168.1.42:3000/img/portfolio/minimalist-house/minimalist-house-miniatura@400w.webp"
                                     width="387"
                                     height="535"
                                     layout="responsive"
-                                    class="d-block mx-auto"
                                     alt="Minimalist House">
 
                                         <amp-img fallback
-                                            src="https://192.168.1.42:3000/img/portfolio/minimalist-house/minimalist-house-miniatura.jpg"
+                                            src="https://192.168.1.42:3000/img/portfolio/minimalist-house/minimalist-house-miniatura@400w.jpg"
                                             width="387"
                                             height="535"
                                             layout="responsive"
@@ -310,15 +306,14 @@
                                 </amp-img>
                                 
                                 <amp-img media="(max-width: 489px)"
-                                    src="https://192.168.1.42:3000/img/portfolio/minimalist-house/minimalist-house-miniatura@300w.webp"
+                                    src="https://192.168.1.42:3000/img/portfolio/minimalist-house/minimalist-house-miniatura@600w.webp"
                                     width="387"
                                     height="535"
                                     layout="responsive"
-                                    class="d-block mx-auto"
                                     alt="Minimalist House">
 
                                         <amp-img fallback
-                                            src="https://192.168.1.42:3000/img/portfolio/minimalist-house/minimalist-house-miniatura@300w.jpg"
+                                            src="https://192.168.1.42:3000/img/portfolio/minimalist-house/minimalist-house-miniatura@600w.jpg"
                                             width="387"
                                             height="535"
                                             layout="responsive"
@@ -337,15 +332,14 @@
                             <a href="https://192.168.1.42:3000/single-portfolio-2.html">
                                 
                                 <amp-img media="(min-width: 490px)"
-                                    src="https://192.168.1.42:3000/img/portfolio/luxury-penthouse/luxury-penthouse-miniatura.webp"
+                                    src="https://192.168.1.42:3000/img/portfolio/luxury-penthouse/luxury-penthouse-miniatura@400w.webp"
                                     width="387"
                                     height="535"
                                     layout="responsive"
-                                    class="d-block mx-auto"
                                     alt="Luxury Penthouse">
 
                                         <amp-img fallback
-                                            src="https://192.168.1.42:3000/img/portfolio/luxury-penthouse/luxury-penthouse-miniatura.jpg"
+                                            src="https://192.168.1.42:3000/img/portfolio/luxury-penthouse/luxury-penthouse-miniatura@400w.jpg"
                                             width="387"
                                             height="535"
                                             layout="responsive"
@@ -355,15 +349,14 @@
                                 </amp-img>
                                 
                                 <amp-img media="(max-width: 489px)"
-                                    src="https://192.168.1.42:3000/img/portfolio/luxury-penthouse/luxury-penthouse-miniatura@300w.webp"
+                                    src="https://192.168.1.42:3000/img/portfolio/luxury-penthouse/luxury-penthouse-miniatura@600w.webp"
                                     width="387"
                                     height="535"
                                     layout="responsive"
-                                    class="d-block mx-auto"
                                     alt="Luxury Penthouse">
 
                                         <amp-img fallback
-                                            src="https://192.168.1.42:3000/img/portfolio/luxury-penthouse/luxury-penthouse-miniatura@300w.jpg"
+                                            src="https://192.168.1.42:3000/img/portfolio/luxury-penthouse/luxury-penthouse-miniatura@600w.jpg"
                                             width="387"
                                             height="535"
                                             layout="responsive"
@@ -382,15 +375,14 @@
                             <a href="https://192.168.1.42:3000/single-portfolio-1.html">
                                 
                                 <amp-img media="(min-width: 490px)"
-                                    src="https://192.168.1.42:3000/img/portfolio/maya-hills/maya-hills-miniatura.webp"
+                                    src="https://192.168.1.42:3000/img/portfolio/maya-hills/maya-hills-miniatura@400w.webp"
                                     width="387"
                                     height="535"
                                     layout="responsive"
-                                    class="d-block mx-auto"
                                     alt="Maya Hills">
 
                                         <amp-img fallback
-                                            src="https://192.168.1.42:3000/img/portfolio/maya-hills/maya-hills-miniatura.jpg"
+                                            src="https://192.168.1.42:3000/img/portfolio/maya-hills/maya-hills-miniatura@400w.jpg"
                                             width="387"
                                             height="535"
                                             layout="responsive"
@@ -400,15 +392,14 @@
                                 </amp-img>
                                 
                                 <amp-img media="(max-width: 489px)"
-                                    src="https://192.168.1.42:3000/img/portfolio/maya-hills/maya-hills-miniatura@300w.webp"
+                                    src="https://192.168.1.42:3000/img/portfolio/maya-hills/maya-hills-miniatura@600w.webp"
                                     width="387"
                                     height="535"
                                     layout="responsive"
-                                    class="d-block mx-auto"
                                     alt="Maya Hills">
 
                                         <amp-img fallback
-                                            src="https://192.168.1.42:3000/img/portfolio/maya-hills/maya-hills-miniatura@300w.jpg"
+                                            src="https://192.168.1.42:3000/img/portfolio/maya-hills/maya-hills-miniatura@600w.jpg"
                                             width="387"
                                             height="535"
                                             layout="responsive"
@@ -427,15 +418,14 @@
                             <a href="https://192.168.1.42:3000/single-portfolio-2.html">
                                 
                                 <amp-img media="(min-width: 490px)"
-                                    src="https://192.168.1.42:3000/img/portfolio/rustic-steel-house/rustic-steel-house-miniatura.webp"
+                                    src="https://192.168.1.42:3000/img/portfolio/rustic-steel-house/rustic-steel-house-miniatura@400w.webp"
                                     width="387"
                                     height="535"
                                     layout="responsive"
-                                    class="d-block mx-auto"
                                     alt="Rustic Steel House">
 
                                         <amp-img fallback
-                                            src="https://192.168.1.42:3000/img/portfolio/rustic-steel-house/rustic-steel-house-miniatura.jpg"
+                                            src="https://192.168.1.42:3000/img/portfolio/rustic-steel-house/rustic-steel-house-miniatura@400w.jpg"
                                             width="387"
                                             height="535"
                                             layout="responsive"
@@ -445,15 +435,14 @@
                                 </amp-img>
 
                                 <amp-img media="(max-width: 489px)"
-                                    src="https://192.168.1.42:3000/img/portfolio/rustic-steel-house/rustic-steel-house-miniatura@300w.webp"
+                                    src="https://192.168.1.42:3000/img/portfolio/rustic-steel-house/rustic-steel-house-miniatura@600w.webp"
                                     width="387"
                                     height="535"
                                     layout="responsive"
-                                    class="d-block mx-auto"
                                     alt="Rustic Steel House">
 
                                         <amp-img fallback
-                                            src="https://192.168.1.42:3000/img/portfolio/rustic-steel-house/rustic-steel-house-miniatura@300w.jpg"
+                                            src="https://192.168.1.42:3000/img/portfolio/rustic-steel-house/rustic-steel-house-miniatura@600w.jpg"
                                             width="387"
                                             height="535"
                                             layout="responsive"
@@ -463,7 +452,7 @@
                                 </amp-img>
 
                                 <h3>Rustic Steel House</h3>
-                                <div class="tipologia">Residential</div>
+                                <div class="tipologia">Hospitality</div>
 
                             </a>
                         </div>
@@ -472,15 +461,14 @@
                             <a href="https://192.168.1.42:3000/single-portfolio-1.html">
                                 
                                 <amp-img media="(min-width: 490px)"
-                                    src="https://192.168.1.42:3000/img/portfolio/the-hall-home/the-hall-home-miniatura.webp"
+                                    src="https://192.168.1.42:3000/img/portfolio/the-hall-home/the-hall-home-miniatura@400w.webp"
                                     width="387"
                                     height="535"
                                     layout="responsive"
-                                    class="d-block mx-auto"
                                     alt="The Hall Home">
 
                                         <amp-img fallback
-                                            src="https://192.168.1.42:3000/img/portfolio/the-hall-home/the-hall-home-miniatura.jpg"
+                                            src="https://192.168.1.42:3000/img/portfolio/the-hall-home/the-hall-home-miniatura@400w.jpg"
                                             width="387"
                                             height="535"
                                             layout="responsive"
@@ -490,15 +478,14 @@
                                 </amp-img>
 
                                 <amp-img media="(max-width: 489px)"
-                                    src="https://192.168.1.42:3000/img/portfolio/the-hall-home/the-hall-home-miniatura@300w.webp"
+                                    src="https://192.168.1.42:3000/img/portfolio/the-hall-home/the-hall-home-miniatura@600w.webp"
                                     width="387"
                                     height="535"
                                     layout="responsive"
-                                    class="d-block mx-auto"
                                     alt="The Hall Home">
 
                                         <amp-img fallback
-                                            src="https://192.168.1.42:3000/img/portfolio/the-hall-home/the-hall-home-miniatura@300w.jpg"
+                                            src="https://192.168.1.42:3000/img/portfolio/the-hall-home/the-hall-home-miniatura@600w.jpg"
                                             width="387"
                                             height="535"
                                             layout="responsive"
@@ -517,15 +504,14 @@
                             <a href="https://192.168.1.42:3000/single-portfolio-2.html">
                                 
                                 <amp-img media="(min-width: 490px)"
-                                    src="https://192.168.1.42:3000/img/portfolio/silk-espresso/silk-espresso-miniatura.webp"
+                                    src="https://192.168.1.42:3000/img/portfolio/silk-espresso/silk-espresso-miniatura@400w.webp"
                                     width="387"
                                     height="535"
                                     layout="responsive"
-                                    class="d-block mx-auto"
                                     alt="Silk Espresso">
 
                                         <amp-img fallback
-                                            src="https://192.168.1.42:3000/img/portfolio/silk-espresso/silk-espresso-miniatura.jpg"
+                                            src="https://192.168.1.42:3000/img/portfolio/silk-espresso/silk-espresso-miniatura@400w.jpg"
                                             width="387"
                                             height="535"
                                             layout="responsive"
@@ -535,15 +521,14 @@
                                 </amp-img>
                                 
                                 <amp-img media="(max-width: 489px)"
-                                    src="https://192.168.1.42:3000/img/portfolio/silk-espresso/silk-espresso-miniatura@300w.webp"
+                                    src="https://192.168.1.42:3000/img/portfolio/silk-espresso/silk-espresso-miniatura@600w.webp"
                                     width="387"
                                     height="535"
                                     layout="responsive"
-                                    class="d-block mx-auto"
                                     alt="Silk Espresso">
 
                                         <amp-img fallback
-                                            src="https://192.168.1.42:3000/img/portfolio/silk-espresso/silk-espresso-miniatura@300w.jpg"
+                                            src="https://192.168.1.42:3000/img/portfolio/silk-espresso/silk-espresso-miniatura@600w.jpg"
                                             width="387"
                                             height="535"
                                             layout="responsive"
@@ -562,15 +547,14 @@
                             <a href="https://192.168.1.42:3000/single-portfolio-1.html">
                                 
                                 <amp-img media="(min-width: 490px)"
-                                    src="https://192.168.1.42:3000/img/portfolio/convension-center/convension-center-miniatura.webp"
+                                    src="https://192.168.1.42:3000/img/portfolio/convension-center/convension-center-miniatura@400w.webp"
                                     width="387"
                                     height="535"
                                     layout="responsive"
-                                    class="d-block mx-auto"
                                     alt="Convension Center">
 
                                         <amp-img fallback
-                                            src="https://192.168.1.42:3000/img/portfolio/convension-center/convension-center-miniatura.jpg"
+                                            src="https://192.168.1.42:3000/img/portfolio/convension-center/convension-center-miniatura@400w.jpg"
                                             width="387"
                                             height="535"
                                             layout="responsive"
@@ -580,15 +564,14 @@
                                 </amp-img>
                                 
                                 <amp-img media="(max-width: 489px)"
-                                    src="https://192.168.1.42:3000/img/portfolio/convension-center/convension-center-miniatura@300w.webp"
+                                    src="https://192.168.1.42:3000/img/portfolio/convension-center/convension-center-miniatura@600w.webp"
                                     width="387"
                                     height="535"
                                     layout="responsive"
-                                    class="d-block mx-auto"
                                     alt="Convension Center">
 
                                         <amp-img fallback
-                                            src="https://192.168.1.42:3000/img/portfolio/convension-center/convension-center-miniatura@300w.jpg"
+                                            src="https://192.168.1.42:3000/img/portfolio/convension-center/convension-center-miniatura@600w.jpg"
                                             width="387"
                                             height="535"
                                             layout="responsive"
@@ -598,7 +581,7 @@
                                 </amp-img>
 
                                 <h3>Convension Center</h3>
-                                <div class="tipologia">Residential</div>
+                                <div class="tipologia">Hospitality</div>
 
                             </a>
                         </div>

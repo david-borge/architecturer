@@ -78,6 +78,14 @@ header ul > li > a {
     margin-bottom: 30px;
 }
 
+@media (max-width: 600px) {
+
+    #hero h1 {
+        font-size: 30px;
+    }
+    
+}
+
 
 // Hero - Cambiar palabras
 // FIXME: añadir animación

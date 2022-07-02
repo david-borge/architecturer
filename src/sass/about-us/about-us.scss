@@ -4,13 +4,17 @@
 
 
 
+// Header
+#header-transparente ul > li > a {
+    color: white;
+}
+
+
 // Sección "The well-simplified..."
 #seccion-the-well-simplified {
-    padding-top: 90px;
+    padding-top: 200px;
     padding-bottom: 90px;
     background-color: black;
-
-    min-height: 640px;
 
     display: flex;
     flex-direction: column;
@@ -26,14 +30,26 @@ h1 {
     letter-spacing: -1px;
 }
 
-@media (max-width: 996px) {
+amp-script[script="script-cambiar-palabras-h1"] {
+    display: inline; 
+}
+
+@media (max-width: 1010px) {
 
     h1 {
         font-size: 80px;
     }
 
-    h1 br {
-        display: none;
+    amp-script[script="script-cambiar-palabras-h1"] {
+        display: inline; 
+    }
+
+}
+
+@media (max-width: 991px) {
+
+    amp-script[script="script-cambiar-palabras-h1"] {
+        display: block; 
     }
 
 }
@@ -42,6 +58,22 @@ h1 {
 
     h1 {
         font-size: 40px;
+    }
+
+    h1 br {
+        display: none;
+    }
+
+    amp-script[script="script-cambiar-palabras-h1"] {
+        display: inline; 
+    }
+
+}
+
+@media (max-width: 775px) {
+
+    amp-script[script="script-cambiar-palabras-h1"] {
+        display: block; 
     }
 
 }

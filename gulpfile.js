@@ -222,11 +222,12 @@ var htmlminOptions = {
 // Configuración de Gulp: ubicación de los archivos de destino
 var dist = "./dist";
 var filesPathDest = {
-    dist: dist,
-    html: dist + "/" + localization,
-    css:  dist + "/" + localization + "/css",
-    js:   dist + "/" + localization + "/js",
-    img:  dist + "/" + localization + "/img",
+    dist:     dist,
+    html:     dist + "/" + localization,
+    css:      dist + "/" + localization + "/css",
+    js:       dist + "/" + localization + "/js",
+    img:      dist + "/" + localization + "/img",
+    iframes:  dist + "/" + localization + "/iframes"
 }
 
 
@@ -569,7 +570,7 @@ function generar_y_optimizar_imagenes_reponsive_con_cache(terminar_tarea) {
                 ] )
             .pipe( srcset([{
                     match:  '(min-width: 200px)',  // El tamaño mínimo o máximo de las imágenes de las cuales hay que generar imágenes responsive.
-                    width:  [1, 1400, 1200, 992, 768, 576, 300],  // El 1 indica que también hay que tener la imagen original
+                    width:  [1, 1400, 1200, 992, 768, 600, 576, 400, 300],  // El 1 indica que también hay que tener la imagen original
                     format: ['jpg', 'webp']  // Formatos de imágenes que hay que generar
                 }]) )
             .pipe( cache( image() ) )  // A imagemin() se le puede pasar un parámetro de configuración con distintas opciones para distintos tipos de archivo.
@@ -1193,6 +1194,7 @@ exports.borrar_cache = borrar_cache;
 
 // Tarea Gulp: borrar la carpeta dist.
 // Instalación: npm install --save-dev del
+// Documentación: https://www.npmjs.com/package/del
 // Para ejecturarla, escribir en la terminal: gulp borrar_carpeta_dist
 function borrar_carpeta_dist(terminar_tarea) {
     
@@ -1207,6 +1209,34 @@ function borrar_carpeta_dist(terminar_tarea) {
 
 }
 exports.borrar_carpeta_dist = borrar_carpeta_dist;
+
+
+
+// Tarea Gulp: borrar la carpeta dist.
+// Instalación: npm install --save-dev del
+// Documentación: https://www.npmjs.com/package/del
+// Para ejecturarla, escribir en la terminal: gulp borrar_carpeta_dist_excepto_img_y_video
+function borrar_carpeta_dist_excepto_img_y_video(terminar_tarea) {
+    
+    // En la terminal, se indica el inicio de esta tarea con: Starting 'borrar_carpeta_dist_excepto_img_y_video'...
+
+    // Código que se ejecutará al ejecutar esta tarea de Gulp
+    // console.log("Hola desde la tarea de Gulp borrar_carpeta_dist_excepto_img_y_video!");  // Imprime el mensaje en la terminal
+    return del( [
+        filesPathDest.html + '/**/*.html',
+        filesPathDest.css,
+        filesPathDest.js,
+        filesPathDest.iframes,
+        filesPathDest.html + "/include",
+        filesPathDest.html + "/partials",
+        filesPathDest.html + "/vendor"
+    ] );
+
+    // Terminar esta tarea
+    terminar_tarea(); // Corresponde con el mensaje de la terminal: Finished 'borrar_carpeta_dist_excepto_img_y_video' after xxxx ms
+
+}
+exports.borrar_carpeta_dist_excepto_img_y_video = borrar_carpeta_dist_excepto_img_y_video;
 
 
 
@@ -1248,7 +1278,7 @@ exports.buildDev = series([
                         ]);
 
 exports.build = series([
-                            borrar_carpeta_dist,
+                            borrar_carpeta_dist_excepto_img_y_video,
                             exports.buildDev,
 
                             // Añadir a continuación las tareas de Gulp que quiera ejecutar en build, pero no en watch.

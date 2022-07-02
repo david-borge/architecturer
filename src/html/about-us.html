@@ -19,9 +19,10 @@
     <meta property="og:image" content="https://192.168.1.42:3000/img/logo/architecturer-compartir.jpg">
 
     
-    <!-- Hash del script #script-cambiar-palabras-h1 -->
-    <!-- TODO: hay que actualizarlo cada vez que se cambie el contenido de #script-cambiar-palabras-h1. Sacarlo del error de la consola de desarrollador de Chrome. -->
-    <meta name="amp-script-src" content="sha384-pZM9L0e2Eud605He1Zkf6aatDWRI167lIVWvtDnufzrX7sk7ZFb44tnYh1lknnPW">
+    <!-- Hash de los scripts #script-cambiar-palabras-h1 y #script-copyright-con-ano-actual-->
+    <!-- TODO: hay que actualizarlo cada vez que se cambie el contenido de #script-cambiar-palabras-h1 y de #script-copyright-con-ano-actual. Sacarlo del error de la consola de desarrollador de Chrome. -->
+    <meta name="amp-script-src" content="sha384-X4oHzM7irc7oXbRb3dmUGBkBxfn6WPpt5aMlfGAoomeYTqW39mk70_x-kFUADuZJ
+                                         sha384-pZM9L0e2Eud605He1Zkf6aatDWRI167lIVWvtDnufzrX7sk7ZFb44tnYh1lknnPW">
 
 
     <!-- Datos estructurados (schema.org) -->
@@ -141,7 +142,8 @@
                 <div class="mb-4">Delivering high-quality projects</div>
 
                 <!-- NOTA: para el desarrollo, añadir data-ampdevmode a la etiqueta <amp-script>. La quito con Gulp automáticamente en las builds. -->
-                <h1>The well-<br/>simplified <amp-script script="script-cambiar-palabras-h1" layout="fixed-height" height="25" style="display: inline; opacity: 1;" data-ampdevmode><span id="cambiar-palabras-h1" class="cambiar-palabras">designing</span></amp-script></h1>
+                <h1>The well-<br/>simplified&nbsp;<amp-script script="script-cambiar-palabras-h1" layout="fixed-height" height="109" style="opacity: 1;" data-ampdevmode><span id="cambiar-palabras-h1" class="cambiar-palabras">designing</span></amp-script></h1>
+                <!-- Nota: pongo &nbsp; después de simplified en lugar de un espacio para que el espacio no se elimine el proceso de minificar el HTML. -->
 
                 <!-- Script para cambiar las palabras en el h1 -->
                 <!-- TODO: Para que funcione, hay que poner el hash que te indique la consola de desarrollador: <meta name="amp-script-src" content="XXXXXXX">; y cambiarlo cada vez que cambie el contenido del script. -->
@@ -175,7 +177,7 @@
                 height="587"
                 snap-align="start"
                 controls="auto"
-                visible-count="(min-width: 975px) 2.5, (min-width: 751px) 2.2, 1.1"
+                visible-count="(min-width: 1715px) 3.1, (min-width: 1530px) 2.8, (min-width: 975px) 2.5, (min-width: 751px) 2.2, 1.1"
                 advance-count="1"
                 auto-advance="true"
                 auto-advance-count="1"

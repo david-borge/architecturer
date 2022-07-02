@@ -4,6 +4,26 @@
 
 
 
+// Header tag para páginas con fondo blanco
+header {
+    background-color: white;
+}
+
+#header-transparente .menu-ordenador > ul > li > a:hover {
+    color: #202124;
+}
+
+#header-transparente .menu-ordenador > ul > li > a::before {
+    background-color: #202124;
+}
+
+#header-transparente .btn-menu-hamburguesa svg {
+    fill: black;
+}
+
+
+
+
 // Main
 main {
     margin-top: 76px;
@@ -49,6 +69,20 @@ h1 {
 
     .caja-dos-imagenes-verticales {
         padding: 40px 0;
+    }
+
+}
+
+
+// Sección con 3 imágenes
+#seccion-3-imagenes .row {
+    padding: 40px 0 0 0;
+}
+
+@media (min-width: 768px) {
+
+    #seccion-3-imagenes .row {
+        padding: 80px 60px 40px 60px;
     }
 
 }
