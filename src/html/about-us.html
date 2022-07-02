@@ -92,6 +92,7 @@
     <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
     <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
     <script async custom-element="amp-base-carousel" src="https://cdn.ampproject.org/v0/amp-base-carousel-0.1.js"></script>
+    <script async custom-element="amp-fx-collection" src="https://cdn.ampproject.org/v0/amp-fx-collection-0.1.js"></script>
     
 
 
@@ -134,7 +135,7 @@
 
 
     <!-- Contenido principal -->
-    <main role="main">
+    <main role="main" style="background-color: black;">
         
         <div id="seccion-the-well-simplified">
             <div class="container">
@@ -170,7 +171,7 @@
             </div>
         </div>
 
-        <div class="seccion-galeria" style="background-color: black;">
+        <div class="seccion-galeria" style="background-color: black;" amp-fx="fly-in-bottom">
 
             <amp-base-carousel
                 layout="fixed-height"
@@ -264,7 +265,7 @@
             
         </div>
 
-        <div id="seccion-the-innovative-designs" class="seccion">
+        <div id="seccion-the-innovative-designs" class="seccion" amp-fx="fly-in-right">
             <div class="container">
 
                 <div style="max-width: 535px;">The innovative designs to enhance the human experience</div>
@@ -272,10 +273,10 @@
             </div>
         </div>
 
-        <div id="seccion-our-team" class="seccion">
+        <div id="seccion-our-team" class="seccion" style="background-color: white;">
             <div class="container">
                 <div class="row">
-                    <div class="col-12 col-md-3">
+                    <div class="col-12 col-md-3" amp-fx="fly-in-left">
 
                         <h2>Our Team</h2>
 
@@ -287,7 +288,7 @@
                         <div class="row">
                             <div class="col-12 col-md-6">
 
-                                <div class="empleado">
+                                <div class="empleado" amp-fx="fly-in-bottom">
 
                                     <amp-img
                                         src="https://192.168.1.42:3000/img/about-us/equipo/johnny-doeer.webp"
@@ -316,7 +317,7 @@
                             <div class="col-12 col-md-6">
 
                                 
-                                <div class="empleado">
+                                <div class="empleado" amp-fx="fly-in-bottom">
 
                                     <amp-img
                                         src="https://192.168.1.42:3000/img/about-us/equipo/corey-wilson.webp"
@@ -347,7 +348,7 @@
                         <div class="row">
                             <div class="col-12 col-md-6">
 
-                                <div class="empleado">
+                                <div class="empleado" amp-fx="fly-in-bottom">
 
                                     <amp-img
                                         src="https://192.168.1.42:3000/img/about-us/equipo/kara-miller.webp"
@@ -375,8 +376,7 @@
                             </div>
                             <div class="col-12 col-md-6">
 
-                                
-                                <div class="empleado">
+                                <div class="empleado" amp-fx="fly-in-bottom">
 
                                     <amp-img
                                         src="https://192.168.1.42:3000/img/about-us/equipo/sophia-zandler.webp"

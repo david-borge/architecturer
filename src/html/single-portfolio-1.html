@@ -4,6 +4,14 @@
 
 
 
+
+	<!-- AMP Preloads: Hero image (Preload an important image in the first viewport to improve page load time.) -->
+    <!-- Referencia: https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content -->
+    <link rel="preload" href="https://192.168.1.42:3000/img/portfolio/single-portfolio-1/single-portfolio-1-principal@1400w.webp" as="image">
+
+
+
+
 	<!-- Page Title, Description & URL canónica -->
     <!-- TODO: cambiar en todas las páginas -->
 	<title>${{ single-portfolio-1.titulo }}$ - ${{ _web.titulo }}$</title>
@@ -91,7 +99,8 @@
     <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
     <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
     <script async custom-element="amp-base-carousel" src="https://cdn.ampproject.org/v0/amp-base-carousel-0.1.js"></script>
-    
+    <script async custom-element="amp-fx-collection" src="https://cdn.ampproject.org/v0/amp-fx-collection-0.1.js"></script>
+
 
 
 
@@ -145,7 +154,7 @@
             </div>
         </div>
 
-        <div class="seccion" style="padding-top: 0;">
+        <div class="seccion" style="padding-top: 0;" amp-fx="fly-in-bottom">
             <div class="container">
 
                 <!-- <amp-img src="https://192.168.1.42:3000/img/portfolio/single-portfolio-1/single-portfolio-1-principal.webp"
@@ -260,7 +269,7 @@
             <div class="container">
                 <div class="row gx-5 invertir-orden-en-movil">
                     <div class="col-md-4">
-                        <div class="barra-lateral" style="max-width: 315px;">
+                        <div class="barra-lateral" style="max-width: 315px;" amp-fx="fly-in-left">
 
                             <h2 class="barra-lateral-titulo">Client</h2>
                             <div class="barra-lateral-contenido">Complex Arch</div>
@@ -273,7 +282,7 @@
 
                         </div>
                     </div>
-                    <div class="col-md-8 mb-5 mb-md-0">
+                    <div class="col-md-8 mb-5 mb-md-0" amp-fx="fly-in-right">
                         <div style="max-width: 555px;">
                             
                             <h2 style="font-size: 22px;">Designing with balance and care</h2>
@@ -290,7 +299,7 @@
         <div id="seccion-3-imagenes" class="seccion" style="padding-top: 0; padding-bottom: 0;">
             <div class="container" style="background-color: #DBDEDB;">
                 <div class="row gx-5">
-                    <div class="col-md-4" style="margin-bottom: 40px;">
+                    <div class="col-md-4" style="margin-bottom: 40px;" amp-fx="fade-in">
 
                         <amp-img src="https://192.168.1.42:3000/img/portfolio/single-portfolio-1/attractive-young-smiling-african-woman-sitting-on-STVVV47.webp"
                             width="360"
@@ -308,7 +317,7 @@
                         </amp-img>
 
                     </div>
-                    <div class="col-md-4" style="margin-bottom: 40px;">
+                    <div class="col-md-4" style="margin-bottom: 40px;" amp-fx="fade-in">
 
                         <amp-img src="https://192.168.1.42:3000/img/portfolio/single-portfolio-1/kari-shea-580156-unsplash.webp"
                             width="360"
@@ -326,7 +335,7 @@
                         </amp-img>
 
                     </div>
-                    <div class="col-md-4" style="margin-bottom: 40px;">
+                    <div class="col-md-4" style="margin-bottom: 40px;" amp-fx="fade-in">
 
                         <amp-img src="https://192.168.1.42:3000/img/portfolio/single-portfolio-1/hue-graphy-532156-unsplash.webp"
                             width="360"
@@ -353,10 +362,10 @@
                 <div class="row justify-content-center">
                     <div class="col-md-7">
 
-                        <p class="fw-light" style="margin-bottom: 80px; line-height: 31px;">As development continues, engineers may visit building destinations to guarantee that temporary workers pursue the plan, keep to the timetable, utilize the predefined materials, and meet work-quality models. Cras chinwag brown bread Eaton cracking goal so I said a load of old tosh baking cakes, geeza arse it's your round grub sloshed burke.</p>
+                        <p class="fw-light" style="margin-bottom: 80px; line-height: 31px;" amp-fx="fly-in-bottom">As development continues, engineers may visit building destinations to guarantee that temporary workers pursue the plan, keep to the timetable, utilize the predefined materials, and meet work-quality models. Cras chinwag brown bread Eaton cracking goal so I said a load of old tosh baking cakes, geeza arse it's your round grub sloshed burke.</p>
                         
-                        <p class="text-center fw-light" style="margin-bottom: 40px; font-size: 24px; line-height: 43px;">"The unique architect with ideas from outside the world. Where design and science meet. With people's comfort in mind. Designing with balance and care"</p>
-                        <p class="text-center mb-0">John Doeer - Unix Inc.</p>
+                        <p class="text-center fw-light" style="margin-bottom: 40px; font-size: 24px; line-height: 43px;" amp-fx="fly-in-bottom">"The unique architect with ideas from outside the world. Where design and science meet. With people's comfort in mind. Designing with balance and care"</p>
+                        <p class="text-center mb-0" amp-fx="fly-in-bottom">John Doeer - Unix Inc.</p>
 
                     </div>
                 </div>
@@ -373,7 +382,8 @@
                             height="695"
                             layout="responsive"
                             alt="House paarman"
-                            style="margin-bottom: 40px;">
+                            style="margin-bottom: 40px;"
+                            amp-fx="fade-in">
 
                                 <amp-img fallback
                                     src="https://192.168.1.42:3000/img/portfolio/single-portfolio-1/house-paarman-1.jpg"
@@ -389,7 +399,8 @@
                             width="1160"
                             height="537"
                             layout="responsive"
-                            alt="Podad Carrboro House">
+                            alt="Podad Carrboro House"
+                            amp-fx="fade-in">
 
                                 <amp-img fallback
                                     src="https://192.168.1.42:3000/img/portfolio/single-portfolio-1/podad_CarrboroHouse_1838_4.jpg"
@@ -410,7 +421,7 @@
                 <div class="row justify-content-center">
                     <div class="col-md-7">
 
-                        <p class="fw-light mb-0" style="line-height: 31px;">As development continues, engineers may visit building destinations to guarantee that temporary workers pursue the plan, keep to the timetable, utilize the predefined materials, and meet work-quality models. Cras chinwag brown bread Eaton cracking goal so I said a load of old tosh baking cakes, geeza arse it's your round grub sloshed burke.</p>
+                        <p class="fw-light mb-0" style="line-height: 31px;" amp-fx="fly-in-bottom">As development continues, engineers may visit building destinations to guarantee that temporary workers pursue the plan, keep to the timetable, utilize the predefined materials, and meet work-quality models. Cras chinwag brown bread Eaton cracking goal so I said a load of old tosh baking cakes, geeza arse it's your round grub sloshed burke.</p>
                         
                     </div>
                 </div>
@@ -423,7 +434,7 @@
                     <div class="col-md-7">
 
                         <div class="row gx-5">
-                            <div class="col-md-6">
+                            <div class="col-md-6" amp-fx="fly-in-left">
 
                                 <h2 class="barra-lateral-titulo text-md-end">Design Leads</h2>
                                 <div class="barra-lateral-contenido text-md-end">Jordan Mcnamara, Thomas Addition</div>
@@ -435,7 +446,7 @@
                                 <div class="barra-lateral-contenido text-md-end mb-0">Paul Newman, Dida Hadii</div>
         
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6" amp-fx="fly-in-right">
                                 
                                 <h2 class="barra-lateral-titulo">Technical Leads</h2>
                                 <div class="barra-lateral-contenido">Thomas Addition, Rocho Monreal</div>

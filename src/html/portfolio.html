@@ -6,8 +6,13 @@
 
 	<!-- AMP Preloads: Hero image (Preload an important image in the first viewport to improve page load time.) -->
     <!-- Referencia: https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content -->
-    <link rel="preload" href="https://192.168.1.42:3000/img/portfolio/cultural-center/cultural-center-miniatura@400w.webp" as="image">
-    <link rel="preload" href="https://192.168.1.42:3000/img/portfolio/cultural-center/cultural-center-miniatura@600w.webp" as="image">
+    <link rel="preload" href="https://192.168.1.42:3000/img/portfolio/cultural-center/cultural-center-miniatura@400w.webp" as="image" media="(min-width: 490px)">
+    <link rel="preload" href="https://192.168.1.42:3000/img/portfolio/cultural-center/cultural-center-miniatura@600w.webp" as="image" media="(max-width: 489px)">
+    <link rel="preload" href="https://192.168.1.42:3000/img/portfolio/modern-house/modern-house-miniatura@400w.webp" as="image" media="(min-width: 490px)">
+    <link rel="preload" href="https://192.168.1.42:3000/img/portfolio/minimalist-house/minimalist-house-miniatura@400w.webp" as="image" media="(min-width: 490px)">
+
+
+    
 
     <!-- Page Title, Description & URL canónica -->
     <!-- TODO: cambiar en todas las páginas -->
