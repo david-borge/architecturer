@@ -90,7 +90,7 @@ header .menu-ordenador > ul > li > a:hover::before {
 
 #header-con-fondo {
     opacity: 0;
-    transform: translateY(-162px);
+    transform: translateY(-152px);
 }
 
 #header-transparente .menu-ordenador > ul > li > a:hover {
@@ -105,7 +105,7 @@ header .menu-ordenador > ul > li > a:hover::before {
 } */
 
 #header-con-fondo {
-    margin-top: -1px;
+    margin-top: 0;
     background-color: white;
 }
 

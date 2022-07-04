@@ -4,3 +4,21 @@
 
 
 
+// Header tag para páginas con fondo negro
+#header-con-fondo {
+    background-color: black;
+}
+
+header .menu-ordenador > ul > li > a,
+header .menu-ordenador > ul > li > a:hover {
+    color: white;
+}
+
+header .menu-ordenador > ul > li > a::before,
+#header-con-fondo .menu-ordenador > ul > li > a::before {
+    background-color: white;
+}
+
+#header-con-fondo .btn-menu-hamburguesa svg {
+    fill: white;
+}

@@ -76,6 +76,7 @@ main {
 // Botones - CTA
 .cta {
     display: block;
+    border: 1px solid white;
     border-radius: 10px;
     padding: 10px 30px;
     width: max-content;
@@ -90,8 +91,8 @@ main {
 }
 
 .cta:hover {
-    color: white;
-    background-color: $color-acento;
+    color: $color-principal;
+    background-color: white;
 }
 
 @media (max-width: 450px) {
@@ -202,4 +203,66 @@ main {
 // Imágenes con lightbox
 amp-img[lightbox]:hover {
     cursor: zoom-in;
+}
+
+
+// Banner de aceptación de cookies
+#banner-cookies-amp-consent {
+    right: 20px;
+    left: auto;
+    bottom: 20px;
+    width: calc(100% - 40px);
+  
+    padding: 15px;
+  
+    background-color: #fff;
+    box-shadow: 0 0 30px 0 rgb(0 0 0 / 15%);
+    border-radius: 8px;
+  
+    line-height: 1.6rem;
+    font-weight: 400;
+    color: #48525c;
+    font-size: .875rem;
+}
+
+@media (min-width: 768px) {
+
+    #banner-cookies-amp-consent {
+        max-width: 500px;
+    }
+
+}
+
+.banner-cookies-listado-botones {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-banner-cookies {
+    margin: 8px 15px;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px 15px;
+
+    min-width: 150px;
+}
+
+.btn-aceptar {
+    background-color: black;
+    color: white;
+}
+
+.btn-aceptar:hover {
+    background-color: darken(black, 10%);
+}
+
+.btn-rechazar {
+    background-color: #f1f1f1;
+    color: black;
+}
+
+.btn-rechazar:hover {
+    background-color: darken(#f1f1f1, 10%);
 }

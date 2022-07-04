@@ -26,12 +26,13 @@
     <meta property="og:title" content="${{ portfolio.titulo }}$ - ${{ _web.titulo }}$" />
     <meta property="og:description" content="${{ portfolio.descripcion }}$">
     <meta property="og:url" content="https://192.168.1.42:3000/" />
-    <meta property="og:image" content="https://192.168.1.42:3000/img/logo/architecturer-compartir.jpg">
+    <meta property="og:image" content="https://192.168.1.42:3000/img/logo/architecturer-compartir.jpg?v=2">
 
     
     <!-- Hash del script #script-copyright-con-ano-actual -->
     <!-- TODO: hay que actualizarlo cada vez que se cambie el contenido de #script-copyright-con-ano-actual. Sacarlo del error de la consola de desarrollador de Chrome. -->
-    <meta name="amp-script-src" content="sha384-pZM9L0e2Eud605He1Zkf6aatDWRI167lIVWvtDnufzrX7sk7ZFb44tnYh1lknnPW sha384-X4oHzM7irc7oXbRb3dmUGBkBxfn6WPpt5aMlfGAoomeYTqW39mk70_x-kFUADuZJ">
+    <meta name="amp-script-src" content="sha384-pZM9L0e2Eud605He1Zkf6aatDWRI167lIVWvtDnufzrX7sk7ZFb44tnYh1lknnPW
+                                         sha384-X4oHzM7irc7oXbRb3dmUGBkBxfn6WPpt5aMlfGAoomeYTqW39mk70_x-kFUADuZJ">
     
 
     <!-- Datos estructurados (schema.org) -->
@@ -101,7 +102,7 @@
     <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
     <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
     <script async custom-element="amp-fx-collection" src="https://cdn.ampproject.org/v0/amp-fx-collection-0.1.js"></script>
-
+    <script async custom-element="amp-consent" src="https://cdn.ampproject.org/v0/amp-consent-0.1.js"></script>
     
 
 
@@ -164,28 +165,28 @@
                                 <div id="porfolio-filtro-todos" class="porfolio-filtro activo"
                                     on="tap:porfolio-filtro-todos.toggleClass(class='activo', force=true), porfolio-filtro-residential.toggleClass(class='activo', force=false), porfolio-filtro-hospitality.toggleClass(class='activo', force=false),  porfolio-filtro-hotel-and-resort.toggleClass(class='activo', force=false), porfolio-modern-house.show, porfolio-cultural-center.show, porfolio-minimalist-house.show, porfolio-luxury-penthouse.show, porfolio-maya-hills.show, porfolio-rustic-steel-house.show, porfolio-the-hall-home.show, porfolio-silk-espresso.show, porfolio-convension-center.show;" role="button" tabindex="-1">
                                     <div class="porfolio-filtro-contenido">
-                                        <h2>Ver todo</h2>
+                                        <div>All</div>
                                     </div>
                                 </div>
                         
                                 <div id="porfolio-filtro-residential" class="porfolio-filtro"
                                     on="tap:porfolio-filtro-todos.toggleClass(class='activo', force=false), porfolio-filtro-residential.toggleClass(class='activo', force=true), porfolio-filtro-hospitality.toggleClass(class='activo', force=false),  porfolio-filtro-hotel-and-resort.toggleClass(class='activo', force=false), porfolio-modern-house.show, porfolio-cultural-center.hide, porfolio-minimalist-house.hide, porfolio-luxury-penthouse.show, porfolio-maya-hills.hide, porfolio-rustic-steel-house.hide, porfolio-the-hall-home.show, porfolio-silk-espresso.hide, porfolio-convension-center.hide;" role="button" tabindex="-1">
                                     <div class="porfolio-filtro-contenido">
-                                        <h2>Residential</h2>
+                                        <div>Residential</div>
                                     </div>
                                 </div>
                         
                                 <div id="porfolio-filtro-hospitality" class="porfolio-filtro"
                                     on="tap:porfolio-filtro-todos.toggleClass(class='activo', force=false),porfolio-filtro-residential.toggleClass(class='activo', force=false),porfolio-filtro-hospitality.toggleClass(class='activo', force=true),porfolio-filtro-hotel-and-resort.toggleClass(class='activo', force=false), porfolio-modern-house.hide, porfolio-cultural-center.show, porfolio-minimalist-house.hide, porfolio-luxury-penthouse.hide, porfolio-maya-hills.hide, porfolio-rustic-steel-house.show, porfolio-the-hall-home.hide, porfolio-silk-espresso.hide, porfolio-convension-center.show;" role="button" tabindex="-1">
                                     <div class="porfolio-filtro-contenido">
-                                        <h2>Hospitality</h2>
+                                        <div>Hospitality</div>
                                     </div>
                                 </div>
                         
                                 <div id="porfolio-filtro-hotel-and-resort" class="porfolio-filtro"
                                     on="tap:porfolio-filtro-todos.toggleClass(class='activo', force=false),porfolio-filtro-residential.toggleClass(class='activo', force=false),porfolio-filtro-hospitality.toggleClass(class='activo', force=false),porfolio-filtro-hotel-and-resort.toggleClass(class='activo', force=true), porfolio-modern-house.hide, porfolio-cultural-center.hide, porfolio-minimalist-house.show, porfolio-luxury-penthouse.hide, porfolio-maya-hills.show, porfolio-rustic-steel-house.hide, porfolio-the-hall-home.hide, porfolio-silk-espresso.show, porfolio-convension-center.hide;" role="button" tabindex="-1">
                                     <div class="porfolio-filtro-contenido">
-                                        <h2>Hotel & Resort</h2>
+                                        <div>Hotel & Resort</div>
                                     </div>
                                 </div>
                                 
@@ -241,7 +242,7 @@
 
                                 </amp-img>
 
-                                <h3>Cultural Center</h3>
+                                <h2>Cultural Center</h2>
                                 <div class="tipologia">Hospitality</div>
 
                             </a>
@@ -284,7 +285,7 @@
 
                                 </amp-img>
 
-                                <h3>Modern House</h3>
+                                <h2>Modern House</h2>
                                 <div class="tipologia">Residential</div>
 
                             </a>
@@ -327,7 +328,7 @@
 
                                 </amp-img>
 
-                                <h3>Minimalist House</h3>
+                                <h2>Minimalist House</h2>
                                 <div class="tipologia">Hotel & Resort</div>
 
                             </a>
@@ -370,7 +371,7 @@
 
                                 </amp-img>
 
-                                <h3>Luxury Penthouse</h3>
+                                <h2>Luxury Penthouse</h2>
                                 <div class="tipologia">Residential</div>
 
                             </a>
@@ -413,7 +414,7 @@
 
                                 </amp-img>
 
-                                <h3>Maya Hills</h3>
+                                <h2>Maya Hills</h2>
                                 <div class="tipologia">Hotel & Resort</div>
 
                             </a>
@@ -456,7 +457,7 @@
 
                                 </amp-img>
 
-                                <h3>Rustic Steel House</h3>
+                                <h2>Rustic Steel House</h2>
                                 <div class="tipologia">Hospitality</div>
 
                             </a>
@@ -499,7 +500,7 @@
 
                                 </amp-img>
 
-                                <h3>The Hall Home</h3>
+                                <h2>The Hall Home</h2>
                                 <div class="tipologia">Residential</div>
 
                             </a>
@@ -542,7 +543,7 @@
 
                                 </amp-img>
 
-                                <h3>Silk Espresso</h3>
+                                <h2>Silk Espresso</h2>
                                 <div class="tipologia">Hotel & Resort</div>
 
                             </a>
@@ -585,7 +586,7 @@
 
                                 </amp-img>
 
-                                <h3>Convension Center</h3>
+                                <h2>Convension Center</h2>
                                 <div class="tipologia">Hospitality</div>
 
                             </a>
@@ -609,6 +610,10 @@
 
     <!-- Menú móvil (sidebar) -->
     @@include('partials/sidebars/sidebar-menu-movil.html')
+
+    
+    <!-- Banner de aceptación de cookies -->
+    @@include('partials/banners/banner-aceptacion-cookies.html')
 
 
 </body>

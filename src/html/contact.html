@@ -16,12 +16,13 @@
     <meta property="og:title" content="${{ _web.titulo }}$" />
     <meta property="og:description" content="${{ contact.descripcion }}$">
     <meta property="og:url" content="https://192.168.1.42:3000/contact.html" />
-    <meta property="og:image" content="https://192.168.1.42:3000/img/logo/architecturer-compartir.jpg">
+    <meta property="og:image" content="https://192.168.1.42:3000/img/logo/architecturer-compartir.jpg?v=2">
 
 
     <!-- Hash del script #script-copyright-con-ano-actual -->
     <!-- TODO: hay que actualizarlo cada vez que se cambie el contenido de #script-copyright-con-ano-actual. Sacarlo del error de la consola de desarrollador de Chrome. -->
-    <meta name="amp-script-src" content="sha384-pZM9L0e2Eud605He1Zkf6aatDWRI167lIVWvtDnufzrX7sk7ZFb44tnYh1lknnPW sha384-X4oHzM7irc7oXbRb3dmUGBkBxfn6WPpt5aMlfGAoomeYTqW39mk70_x-kFUADuZJ">
+    <meta name="amp-script-src" content="sha384-pZM9L0e2Eud605He1Zkf6aatDWRI167lIVWvtDnufzrX7sk7ZFb44tnYh1lknnPW
+                                         sha384-X4oHzM7irc7oXbRb3dmUGBkBxfn6WPpt5aMlfGAoomeYTqW39mk70_x-kFUADuZJ">
 
     
     <!-- Datos estructurados (schema.org) -->
@@ -33,7 +34,7 @@
 
     <!-- Extensiones AMP - Importar otras Extensiones AMP aquí -->
     <!-- TODO: quitar las innecesarias. -->
-    
+    <script async custom-element="amp-consent" src="https://cdn.ampproject.org/v0/amp-consent-0.1.js"></script>
 
     <!-- Extensiones AMP - Formulario -->
     <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
@@ -47,8 +48,6 @@
     <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
 
     <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
-
-    <script async custom-element="amp-fx-collection" src="https://cdn.ampproject.org/v0/amp-fx-collection-0.1.js"></script>
     
 
 
@@ -87,7 +86,7 @@
     @@include('partials/google-tag-manager-body-tag.html')
 
     <!-- Header tag -->
-    @@include('partials/header-tag.html')
+    @@include('partials/header-tag-paginas-con-fondo-negro.html')
     @@include('partials/header-cambiar-en-scroll.html')
 
 
@@ -137,20 +136,20 @@
                             <!-- OTROS TIPOS DE CAMPOS: https://amp.dev/documentation/examples/components/amp-form/?format=websites -->
                             <!-- Nota: poner el atributo action implica usar HTTP para obtener la respuesta, lo que recarga la página al obtenerla. Mientras que usar el atributo action-xhr, usa XMLHTTPREQUEST, por lo que no se recargar la página al obtener la resupuesta. -->
                             <!-- TODO: FIXME: añadir eventos de form (x3) a GTM. Ver: https://amp.dev/documentation/components/amp-form/#analytics -->
-                            <form id="formulario-contacto" action-xhr="https://192.168.1.42:3000/include/enviar-formulario-contact.php" method="post" target="_top" autocomplete="off">
+                            <form id="formulario-contacto" action-xhr="https://192.168.1.42:3000/include/enviar-formulario-contacto.php" method="post" target="_top" autocomplete="off">
 
                                 <!-- reCAPTCHA -->
-                                <!-- Nota: ver la cuenta de Gmail que tiene este reCAPTCHA en el PASO 5.1 de enviar-formulario-contact.php -->
+                                <!-- Nota: ver la cuenta de Gmail que tiene este reCAPTCHA en el PASO 5.1 de enviar-formulario-contacto.php -->
                                 <!-- TODO: Poner la clave de sitio web (clave pública) en el atributo data-sitekey -->
                                 <amp-recaptcha-input
                                     layout="nodisplay"
                                     name="recaptcha_token"
-                                    data-sitekey="6LeDKjQdAAAAAFWYsHniUFmt-LPk-dJ8z1vgq-5q"
+                                    data-sitekey="6LcV1dQcAAAAAAi-Oe9BIU9vA2SJVBGB8OwGHJFB"
                                     data-action="contactar">
                                 </amp-recaptcha-input>
                                 
                                 <!-- Campos del formulario -->
-                                <!-- TODO: adaptar los divs con submit-success, submit-error y el archivo enviar-formulario-contact.php cuando cambien los datos del formulario -->
+                                <!-- TODO: adaptar los divs con submit-success, submit-error y el archivo enviar-formulario-contacto.php cuando cambien los datos del formulario -->
                                 <fieldset>
                                     
                                     <div class="row">
@@ -190,14 +189,14 @@
                                         <div class="col-12" style="margin-bottom: 30px;">
                                             <div id="acepto-la-politica-de-proteccion-de-datos-form-group" class="form-group" style="display: flex;">
                                                 <input id="acepto-la-politica-de-proteccion-de-datos" name="acepto-la-politica-de-proteccion-de-datos" type="checkbox" value="acepto" required class="form-check-input">
-                                                <label for="acepto-la-politica-de-proteccion-de-datos" class="form-label">Acepto la <a href="https://192.168.1.42:3000/privacy-policy.html" target="_blank" rel="noopener" style="display: inline; color: #222;">Política de protección de datos</a>.</label>
+                                                <label for="acepto-la-politica-de-proteccion-de-datos" class="form-label">I accept the <a href="https://192.168.1.42:3000/privacy-policy.html" target="_blank" rel="noopener" style="display: inline; color: #222;">Privacy Policy</a>.</label>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="row">
                                         <div class="col-12">
-                                            <button type="submit" class="btn btn-primary w-100">Enviar mensaje</button>
+                                            <button type="submit" class="btn btn-primary w-100">Send message</button>
                                         </div>
                                     </div>
 
@@ -205,25 +204,25 @@
 
                                 <!-- Se muestra cuando el formulario se esté procesando -->
                                 <div submitting>
-                                    <p>Enviando...</p>
+                                    <p style="margin-top: 30px;">Sending...</p>
                                 </div>
 
                                 <!-- Se muestra cuando el formulario se haya enviado con éxito (the response is successful (i.e., has a status of 2XX)) -->
                                 <div submit-success>
                                     <template type="amp-mustache">
 
-                                        <p>¡Mensaje enviado correctamente!</p>
+                                        <p style="margin-top: 30px;">The message was sent successfully!</p>
 
                                         <!-- TODO: comentar esto en producción -->
                                         <div style="border: 1px solid green; padding: 15px;">
-                                            <p><strong>Datos devueltos en JSON por enviar-formulario-contact.php:</strong></p>
+                                            <p><strong>Datos devueltos en JSON por enviar-formulario-contacto.php:</strong></p>
                                             <ul>
                                                 <li><strong>reCAPTCHA</strong>: {{estado_recaptcha}}</li>
                                                 <li><strong>Puntuación de reCAPTCHA</strong>: {{puntuacion_recaptcha}}</li>
                                                 <li><strong>Correo</strong>: {{se_ha_enviado_el_correo}}</li>
                                                 <li><strong>Nombre y apellidos</strong>: {{nombre_y_apellidos_desde_enviar_formulario_contacto}}</li>
                                                 <li><strong>Correo electrónico</strong>: {{correo_electronico_desde_enviar_formulario_contacto}}</li>
-                                                <li><strong>Teléfono</strong>: {{telefono}}</li>
+                                                <li><strong>Teléfono</strong>: {{telefono_desde_enviar_formulario_contacto}}</li>
                                                 <li><strong>Mensaje</strong>: {{mensaje_desde_enviar_formulario_contacto}}</li>
                                                 <li><strong>Error</strong>: {{error}}</li>
                                             </ul>
@@ -236,18 +235,18 @@
                                 <div submit-error>
                                     <template type="amp-mustache">
 
-                                        <p>¡Vaya! Hubo un error al enviar el mensaje, por favor, inténtelo de nuevo.</p>
+                                        <p style="margin-top: 30px; color: red;">Oops! There was an error when sending the message, please try again.</p>
 
                                         <!-- TODO: comentar esto en producción -->
                                         <div style="border: 1px solid red; padding: 15px;">
-                                            <p><strong>Datos devueltos en JSON por enviar-formulario-contact.php:</strong></p>
+                                            <p><strong>Datos devueltos en JSON por enviar-formulario-contacto.php:</strong></p>
                                             <ul>
                                                 <li><strong>reCAPTCHA</strong>: {{estado_recaptcha}}</li>
                                                 <li><strong>Puntuación de reCAPTCHA</strong>: {{puntuacion_recaptcha}}</li>
                                                 <li><strong>Correo</strong>: {{se_ha_enviado_el_correo}}</li>
                                                 <li><strong>Nombre y apellidos</strong>: {{nombre_y_apellidos_desde_enviar_formulario_contacto}}</li>
                                                 <li><strong>Correo electrónico</strong>: {{correo_electronico_desde_enviar_formulario_contacto}}</li>
-                                                <li><strong>Teléfono</strong>: {{telefono}}</li>
+                                                <li><strong>Teléfono</strong>: {{telefono_desde_enviar_formulario_contacto}}</li>
                                                 <li><strong>Mensaje</strong>: {{mensaje_desde_enviar_formulario_contacto}}</li>
                                                 <li><strong>Error</strong>: {{error}}</li>
                                             </ul>
@@ -295,6 +294,10 @@
 
     <!-- Menú móvil (sidebar) -->
     @@include('partials/sidebars/sidebar-menu-movil.html')
+
+    
+    <!-- Banner de aceptación de cookies -->
+    @@include('partials/banners/banner-aceptacion-cookies.html')
 
 
 </body>

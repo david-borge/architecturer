@@ -45,6 +45,7 @@ $campo_formulario_mensaje            = $_POST['mensaje'];
 // TODO: comentar en producción
 /* $campo_formulario_nombre_y_apellidos = "Mi nombre y apellidos de prueba";
 $campo_formulario_correo_electronico = "micorreodeprueba@micorreodeprueba.com";
+$campo_formulario_telefono           = "123 456 789";
 $campo_formulario_mensaje            = "Mi mensaje de prueba."; */
 
 
@@ -102,7 +103,7 @@ try {
     /** PASO 4.7: Configuración del correo - Desde qué cuenta va a poner que se manda el correo **/
     // NOTA IMPORTANTE: al usar SMTP, el correo desde el que llega es el que se haya puesto en la configuración SMTP (PASO 4.6), este campo de correo es ignorado.
     // TODO: Poner nombre y correo.
-    $correo_a_enviar->setFrom( "enviar.formulario.prueba@gmail.com", "NOMBRE_PROYECTO" );
+    $correo_a_enviar->setFrom( "enviar.formulario.prueba@gmail.com", "Architecturer" );
 
 
     /** PASO 4.8: Configuración del correo - A qué correos se va a mandar el correo (receptor normal, CC y BCC) **/
@@ -129,7 +130,7 @@ try {
 
     /** PASO 4.10: Configuración del correo - Asunto del correo **/
     // TODO: cambiar asunto
-    $correo_a_enviar->Subject = 'Contacto web - NOMBRE_PROYECTO - '.$campo_formulario_nombre_y_apellidos;
+    $correo_a_enviar->Subject = 'Contacto web - David Borge - Portfolio - Architecturer - '.$campo_formulario_nombre_y_apellidos;
 
 
     /** PASO 4.11: Configuración del correo - Cuerpo del correo (en HTML) **/
@@ -144,7 +145,7 @@ try {
 
     /** PASO 4.12: Configuración del correo - Cuerpo del correo (en texto plano para clientes sin HTML) **/
     // TODO: cuerpo del correo (en texto plano para clientes sin HTML)
-    $correo_a_enviar->AltBody = $campo_formulario_nombre_y_apellidos . ' - ' . $campo_formulario_correo_electronico . ' - ' . $campo_formulario_mensaje;
+    $correo_a_enviar->AltBody = $campo_formulario_nombre_y_apellidos . ' - ' . $campo_formulario_correo_electronico . ' - ' . $campo_formulario_telefono . ' - ' . $campo_formulario_mensaje;
 
 
 
@@ -165,7 +166,7 @@ try {
 
     /** PASO 5.3: Validar reCAPTCHA - Clave secreta **/
     // TODO: poner la clave secreta en esta variable:
-    $recaptcha_clave_secreta = "6LeDKjQdAAAAAKB8CP2iV_8Lm7dJPuOiC_zw_46D";
+    $recaptcha_clave_secreta = "6LcV1dQcAAAAAFESEcrY-aAHpaMcj5-SFVuadjlY";
 
 
     /** PASO 5.4: Validar reCAPTCHA - Conectar con el verificador del recaptcha y obtener la respuesta (que estará en la variable boleana $validacion_de_recaptcha->success). **/

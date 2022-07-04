@@ -1,0 +1,55 @@
+<amp-consent id="banner-cookies-amp-consent" layout="nodisplay">
+
+    <!-- consentInstanceId: nada que yo use. -->
+    <!-- consentRequired: marcar como true o el banner no sale. -->
+    <!-- promptUI: es el contenido del banner. El valor tiene que ser el ID del elemento que está justo debajo de este script. -->
+    <!-- (opcional) postPromptUI: lo que queda después de aceptar las cookies. Como la barrita blanca de Complianz en WordPress. El valor tiene que ser el ID del elemento que está debajo del elemento al que hace referencia promptUI. -->
+    <script type="application/json">
+        {
+            "consentInstanceId": "consent-id",
+            "consentRequired": true,
+            "promptUI": "consentDialog"
+        }
+    </script>
+
+    <div id="consentDialog">
+
+        <!-- <div class="dismiss-button" role="button" tabindex="0" on="tap:banner-cookies-amp-consent.dismiss">X</div> -->
+
+        <p class="text-center" style="font-size:16px">Gestionar el Consentimiento de las Cookies</p>
+        <p>Este portal web únicamente utiliza cookies propias con finalidad técnica, no recaba ni cede datos de carácter personal de los usuarios sin su conocimiento. Sin embargo, contiene enlaces a sitios web de terceros con políticas de privacidad ajenas a las nuestras que usted podrá decidir si acepta o no cuando acceda a ellos.</p>
+
+        <div style="display: flex; flex-wrap: wrap;">
+
+            <div style="margin-bottom: 10px; margin-right: 20px;">
+                <input id="cookies-funcionales" type="checkbox" checked disabled>
+                <label for="cookies-funcionales">Cookies Funcionales</label>
+            </div>
+
+            <div style="margin-bottom: 10px; margin-right: 20px;">
+                <input id="cookies-estadisticas" type="checkbox">
+                <label for="cookies-estadisticas">Cookies Estadísticas</label>
+            </div>
+
+            <div style="margin-bottom: 10px;">
+                <input id="cookies-de-marketing" type="checkbox">
+                <label for="cookies-de-marketing">Cookies de Marketing</label>
+            </div>
+
+        </div>        
+        
+        <div class="banner-cookies-listado-botones">
+
+            <button on="tap:banner-cookies-amp-consent.accept" class="btn-banner-cookies btn-aceptar">Aceptar todo</button>
+            
+            <button on="tap:banner-cookies-amp-consent.reject" class="btn-banner-cookies btn-rechazar">Rechazar</button>
+
+        </div>
+
+    </div>
+
+    <!-- <div id="post-consent-ui">
+        <button on="tap:banner-cookies-amp-consent.prompt()">Update Consent</button>
+    </div> -->
+
+</amp-consent>

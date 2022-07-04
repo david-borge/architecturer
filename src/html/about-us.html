@@ -16,13 +16,13 @@
     <meta property="og:title" content="${{ about-us.titulo }}$ - ${{ _web.titulo }}$" />
     <meta property="og:description" content="${{ about-us.descripcion }}$">
     <meta property="og:url" content="https://192.168.1.42:3000/" />
-    <meta property="og:image" content="https://192.168.1.42:3000/img/logo/architecturer-compartir.jpg">
+    <meta property="og:image" content="https://192.168.1.42:3000/img/logo/architecturer-compartir.jpg?v=2">
 
     
     <!-- Hash de los scripts #script-cambiar-palabras-h1 y #script-copyright-con-ano-actual-->
     <!-- TODO: hay que actualizarlo cada vez que se cambie el contenido de #script-cambiar-palabras-h1 y de #script-copyright-con-ano-actual. Sacarlo del error de la consola de desarrollador de Chrome. -->
-    <meta name="amp-script-src" content="sha384-X4oHzM7irc7oXbRb3dmUGBkBxfn6WPpt5aMlfGAoomeYTqW39mk70_x-kFUADuZJ
-                                         sha384-pZM9L0e2Eud605He1Zkf6aatDWRI167lIVWvtDnufzrX7sk7ZFb44tnYh1lknnPW">
+    <meta name="amp-script-src" content="sha384-pZM9L0e2Eud605He1Zkf6aatDWRI167lIVWvtDnufzrX7sk7ZFb44tnYh1lknnPW
+                                         sha384-X4oHzM7irc7oXbRb3dmUGBkBxfn6WPpt5aMlfGAoomeYTqW39mk70_x-kFUADuZJ">
 
 
     <!-- Datos estructurados (schema.org) -->
@@ -93,6 +93,7 @@
     <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
     <script async custom-element="amp-base-carousel" src="https://cdn.ampproject.org/v0/amp-base-carousel-0.1.js"></script>
     <script async custom-element="amp-fx-collection" src="https://cdn.ampproject.org/v0/amp-fx-collection-0.1.js"></script>
+    <script async custom-element="amp-consent" src="https://cdn.ampproject.org/v0/amp-consent-0.1.js"></script>
     
 
 
@@ -421,6 +422,10 @@
 
     <!-- Menú móvil (sidebar) -->
     @@include('partials/sidebars/sidebar-menu-movil.html')
+
+    
+    <!-- Banner de aceptación de cookies -->
+    @@include('partials/banners/banner-aceptacion-cookies.html')
 
 
 </body>

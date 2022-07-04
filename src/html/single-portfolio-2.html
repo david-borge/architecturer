@@ -16,12 +16,13 @@
     <meta property="og:title" content="${{ single-portfolio-2.titulo }}$ - ${{ _web.titulo }}$" />
     <meta property="og:description" content="${{ single-portfolio-2.descripcion }}$">
     <meta property="og:url" content="https://192.168.1.42:3000/" />
-    <meta property="og:image" content="https://192.168.1.42:3000/img/logo/architecturer-compartir.jpg">
+    <meta property="og:image" content="https://192.168.1.42:3000/img/logo/architecturer-compartir.jpg?v=2">
 
     
     <!-- Hash del script #script-copyright-con-ano-actual -->
     <!-- TODO: hay que actualizarlo cada vez que se cambie el contenido de #script-copyright-con-ano-actual. Sacarlo del error de la consola de desarrollador de Chrome. -->
-        <meta name="amp-script-src" content="sha384-pZM9L0e2Eud605He1Zkf6aatDWRI167lIVWvtDnufzrX7sk7ZFb44tnYh1lknnPW sha384-X4oHzM7irc7oXbRb3dmUGBkBxfn6WPpt5aMlfGAoomeYTqW39mk70_x-kFUADuZJ">
+    <meta name="amp-script-src" content="sha384-pZM9L0e2Eud605He1Zkf6aatDWRI167lIVWvtDnufzrX7sk7ZFb44tnYh1lknnPW
+                                         sha384-X4oHzM7irc7oXbRb3dmUGBkBxfn6WPpt5aMlfGAoomeYTqW39mk70_x-kFUADuZJ">
 
 
     <!-- Datos estructurados (schema.org) -->
@@ -93,6 +94,7 @@
     <script async custom-element="amp-lightbox-gallery" src="https://cdn.ampproject.org/v0/amp-lightbox-gallery-0.1.js"></script>
     <script async custom-element="amp-base-carousel" src="https://cdn.ampproject.org/v0/amp-base-carousel-0.1.js"></script>
     <script async custom-element="amp-fx-collection" src="https://cdn.ampproject.org/v0/amp-fx-collection-0.1.js"></script>
+    <script async custom-element="amp-consent" src="https://cdn.ampproject.org/v0/amp-consent-0.1.js"></script>
     
 
 
@@ -144,7 +146,7 @@
 
                     <div class="mb-2" style="font-size: 18px; color: #545454;">Residential</div>
 
-                    <h1 style="margin-bottom: 25px; font-family: 'Cormorant Garamond', serif; font-weight: 600; letter-spacing: -1px;">The Creative Eye</h1>
+                    <h1 class="text-center" style="margin-bottom: 25px; font-family: 'Cormorant Garamond', serif; font-weight: 600; letter-spacing: -1px;">The Creative Eye</h1>
 
                     <div style="max-width: 666px">
                         <p class="text-center fw-light" style="font-size: 18px; line-height: 30px;">As development continues, engineers may visit building destinations to guarantee that temporary workers pursue the plan.</p>
@@ -161,11 +163,30 @@
                 <div class="row gx-5 galeria-portfolio" style="margin-bottom: 60px;">
                     <div class="col-md-4" style="margin-bottom: 40px;">
                         
-                        <amp-img src="https://192.168.1.42:3000/img/portfolio/single-portfolio-2/Black-Exterior-Ideas-for-a-Hauntingly-Beautiful-Home-1.webp"
+                        <amp-img media="(min-width: 768px)"
+                            src="https://192.168.1.42:3000/img/portfolio/single-portfolio-2/Black-Exterior-Ideas-for-a-Hauntingly-Beautiful-Home-1@400w.webp"
                             width="610"
                             height="610"
                             layout="responsive"
-                            alt="Shaping your dreams"
+                            alt="Black Exterior Ideas for a Hauntingly Beautiful Home"
+                            lightbox
+                            amp-fx="fade-in">
+
+                                <amp-img fallback
+                                    src="https://192.168.1.42:3000/img/portfolio/single-portfolio-2/Black-Exterior-Ideas-for-a-Hauntingly-Beautiful-Home-1@400w.jpg"
+                                    width="610"
+                                    height="610"
+                                    layout="responsive"
+                                    alt="Black Exterior Ideas for a Hauntingly Beautiful Home"></amp-img>
+
+                        </amp-img>
+
+                        <amp-img media="(max-width: 767px)"
+                            src="https://192.168.1.42:3000/img/portfolio/single-portfolio-2/Black-Exterior-Ideas-for-a-Hauntingly-Beautiful-Home-1.webp"
+                            width="610"
+                            height="610"
+                            layout="responsive"
+                            alt="Black Exterior Ideas for a Hauntingly Beautiful Home"
                             lightbox
                             amp-fx="fade-in">
 
@@ -174,18 +195,37 @@
                                     width="610"
                                     height="610"
                                     layout="responsive"
-                                    alt="Shaping your dreams"></amp-img>
+                                    alt="Black Exterior Ideas for a Hauntingly Beautiful Home"></amp-img>
 
                         </amp-img>
 
                     </div>
                     <div class="col-md-4" style="margin-bottom: 40px;">
                         
-                        <amp-img src="https://192.168.1.42:3000/img/portfolio/single-portfolio-2/suteki-home-kengo-kuma-portland_dezeen_2364_sq-1.webp"
+                        <amp-img media="(min-width: 768px)"
+                            src="https://192.168.1.42:3000/img/portfolio/single-portfolio-2/suteki-home-kengo-kuma-portland_dezeen_2364_sq-1@400w.webp"
                             width="610"
                             height="610"
                             layout="responsive"
-                            alt="Shaping your dreams"
+                            alt="Suteki home kengo kuma Portland"
+                            lightbox
+                            amp-fx="fade-in">
+
+                                <amp-img fallback
+                                    src="https://192.168.1.42:3000/img/portfolio/single-portfolio-2/suteki-home-kengo-kuma-portland_dezeen_2364_sq-1@400w.jpg"
+                                    width="610"
+                                    height="610"
+                                    layout="responsive"
+                                    alt="Suteki home kengo kuma Portland"></amp-img>
+
+                        </amp-img>
+                        
+                        <amp-img media="(max-width: 767px)"
+                            src="https://192.168.1.42:3000/img/portfolio/single-portfolio-2/suteki-home-kengo-kuma-portland_dezeen_2364_sq-1.webp"
+                            width="610"
+                            height="610"
+                            layout="responsive"
+                            alt="Suteki home kengo kuma Portland"
                             lightbox
                             amp-fx="fade-in">
 
@@ -194,18 +234,37 @@
                                     width="610"
                                     height="610"
                                     layout="responsive"
-                                    alt="Shaping your dreams"></amp-img>
+                                    alt="Suteki home kengo kuma Portland"></amp-img>
 
                         </amp-img>
 
                     </div>
                     <div class="col-md-4" style="margin-bottom: 40px;">
                         
-                        <amp-img src="https://192.168.1.42:3000/img/portfolio/single-portfolio-2/53910-sofa-and-armchairs-in-modern-house-MH4YE6Q.webp"
+                        <amp-img media="(min-width: 768px)"
+                            src="https://192.168.1.42:3000/img/portfolio/single-portfolio-2/53910-sofa-and-armchairs-in-modern-house-MH4YE6Q@400w.webp"
                             width="610"
                             height="610"
                             layout="responsive"
-                            alt="Shaping your dreams"
+                            alt="Sofa and armchairs in modern house"
+                            lightbox
+                            amp-fx="fade-in">
+
+                                <amp-img fallback
+                                    src="https://192.168.1.42:3000/img/portfolio/single-portfolio-2/53910-sofa-and-armchairs-in-modern-house-MH4YE6Q@400w.jpg"
+                                    width="610"
+                                    height="610"
+                                    layout="responsive"
+                                    alt="Sofa and armchairs in modern house"></amp-img>
+
+                        </amp-img>
+                        
+                        <amp-img media="(max-width: 767px)"
+                            src="https://192.168.1.42:3000/img/portfolio/single-portfolio-2/53910-sofa-and-armchairs-in-modern-house-MH4YE6Q.webp"
+                            width="610"
+                            height="610"
+                            layout="responsive"
+                            alt="Sofa and armchairs in modern house"
                             lightbox
                             amp-fx="fade-in">
 
@@ -214,18 +273,37 @@
                                     width="610"
                                     height="610"
                                     layout="responsive"
-                                    alt="Shaping your dreams"></amp-img>
+                                    alt="Sofa and armchairs in modern house"></amp-img>
 
                         </amp-img>
 
                     </div>
                     <div class="col-md-4" style="margin-bottom: 40px;">
                         
-                        <amp-img src="https://192.168.1.42:3000/img/portfolio/single-portfolio-2/herzog-bar-build-inc-architects-dezeen-pinterest-bars-ss.webp"
+                        <amp-img media="(min-width: 768px)"
+                            src="https://192.168.1.42:3000/img/portfolio/single-portfolio-2/herzog-bar-build-inc-architects-dezeen-pinterest-bars-ss@400w.webp"
                             width="610"
                             height="610"
                             layout="responsive"
-                            alt="Shaping your dreams"
+                            alt="Herzog bar build inc architects"
+                            lightbox
+                            amp-fx="fade-in">
+
+                                <amp-img fallback
+                                    src="https://192.168.1.42:3000/img/portfolio/single-portfolio-2/herzog-bar-build-inc-architects-dezeen-pinterest-bars-ss@400w.jpg"
+                                    width="610"
+                                    height="610"
+                                    layout="responsive"
+                                    alt="Herzog bar build inc architects"></amp-img>
+
+                        </amp-img>
+                        
+                        <amp-img media="(max-width: 767px)"
+                            src="https://192.168.1.42:3000/img/portfolio/single-portfolio-2/herzog-bar-build-inc-architects-dezeen-pinterest-bars-ss.webp"
+                            width="610"
+                            height="610"
+                            layout="responsive"
+                            alt="Herzog bar build inc architects"
                             lightbox
                             amp-fx="fade-in">
 
@@ -234,18 +312,37 @@
                                     width="610"
                                     height="610"
                                     layout="responsive"
-                                    alt="Shaping your dreams"></amp-img>
+                                    alt="Herzog bar build inc architects"></amp-img>
 
                         </amp-img>
 
                     </div>
                     <div class="col-md-4" style="margin-bottom: 40px;">
                         
-                        <amp-img src="https://192.168.1.42:3000/img/portfolio/single-portfolio-2/high-desert-modern-deforest-architects-architecture-house-oregon-usa_dezeen_2364_sq.webp"
+                        <amp-img media="(min-width: 768px)"
+                            src="https://192.168.1.42:3000/img/portfolio/single-portfolio-2/high-desert-modern-deforest-architects-architecture-house-oregon-usa_dezeen_2364_sq@400w.webp"
                             width="610"
                             height="610"
                             layout="responsive"
-                            alt="Shaping your dreams"
+                            alt="High desert modern deforest architects architecture house Oregon USA"
+                            lightbox
+                            amp-fx="fade-in">
+
+                                <amp-img fallback
+                                    src="https://192.168.1.42:3000/img/portfolio/single-portfolio-2/high-desert-modern-deforest-architects-architecture-house-oregon-usa_dezeen_2364_sq@400w.jpg"
+                                    width="610"
+                                    height="610"
+                                    layout="responsive"
+                                    alt="High desert modern deforest architects architecture house Oregon USA"></amp-img>
+
+                        </amp-img>
+                        
+                        <amp-img media="(max-width: 767px)"
+                            src="https://192.168.1.42:3000/img/portfolio/single-portfolio-2/high-desert-modern-deforest-architects-architecture-house-oregon-usa_dezeen_2364_sq.webp"
+                            width="610"
+                            height="610"
+                            layout="responsive"
+                            alt="High desert modern deforest architects architecture house Oregon USA"
                             lightbox
                             amp-fx="fade-in">
 
@@ -254,18 +351,37 @@
                                     width="610"
                                     height="610"
                                     layout="responsive"
-                                    alt="Shaping your dreams"></amp-img>
+                                    alt="High desert modern deforest architects architecture house Oregon USA"></amp-img>
 
                         </amp-img>
 
                     </div>
                     <div class="col-md-4" style="margin-bottom: 40px;">
                         
-                        <amp-img src="https://192.168.1.42:3000/img/portfolio/single-portfolio-2/HillRoadBlack_MCacioppo016.webp"
+                        <amp-img media="(min-width: 768px)"
+                            src="https://192.168.1.42:3000/img/portfolio/single-portfolio-2/HillRoadBlack_MCacioppo016@400w.webp"
                             width="610"
                             height="610"
                             layout="responsive"
-                            alt="Shaping your dreams"
+                            alt="Hill Road Black MCacioppo"
+                            lightbox
+                            amp-fx="fade-in">
+
+                                <amp-img fallback
+                                    src="https://192.168.1.42:3000/img/portfolio/single-portfolio-2/HillRoadBlack_MCacioppo016@400w.jpg"
+                                    width="610"
+                                    height="610"
+                                    layout="responsive"
+                                    alt="Hill Road Black MCacioppo"></amp-img>
+
+                        </amp-img>
+
+                        <amp-img media="(max-width: 767px)"
+                            src="https://192.168.1.42:3000/img/portfolio/single-portfolio-2/HillRoadBlack_MCacioppo016.webp"
+                            width="610"
+                            height="610"
+                            layout="responsive"
+                            alt="Hill Road Black MCacioppo"
                             lightbox
                             amp-fx="fade-in">
 
@@ -274,10 +390,9 @@
                                     width="610"
                                     height="610"
                                     layout="responsive"
-                                    alt="Shaping your dreams"></amp-img>
+                                    alt="Hill Road Black MCacioppo"></amp-img>
 
                         </amp-img>
-
                     </div>
                 </div>
 
@@ -532,14 +647,14 @@
                                 width="783"
                                 height="568"
                                 layout="responsive"
-                                alt="About Us 01">
+                                alt="Umber Apollo architects Tokyo house Japan architecture black steel">
     
                                     <amp-img fallback
                                         src="https://192.168.1.42:3000/img/portfolio/single-portfolio-2/umber-apollo-architects-tokyo-house-japan-architecture-black-steel_dezeen_2364_col_4.jpg"
                                         width="783"
                                         height="568"
                                         layout="responsive"
-                                        alt="About Us 01"></amp-img>
+                                        alt="Umber Apollo architects Tokyo house Japan architecture black steel"></amp-img>
     
                             </amp-img>
                         </div>
@@ -551,14 +666,14 @@
                                 width="783"
                                 height="568"
                                 layout="responsive"
-                                alt="About Us 02">
+                                alt="Modern new luxury bathroom interior design">
     
                                     <amp-img fallback
                                         src="https://192.168.1.42:3000/img/portfolio/single-portfolio-2/modern-new-luxury-bathroom-interior-design-3F5D5SH.jpg"
                                         width="783"
                                         height="568"
                                         layout="responsive"
-                                        alt="About Us 02"></amp-img>
+                                        alt="Modern new luxury bathroom interior design"></amp-img>
                                     
                             </amp-img>
                         </div>
@@ -570,14 +685,14 @@
                                 width="783"
                                 height="568"
                                 layout="responsive"
-                                alt="About Us 03">
+                                alt="What makes a modern house">
     
                                     <amp-img fallback
                                         src="https://192.168.1.42:3000/img/portfolio/single-portfolio-2/What-makes-a-modern-house-10.jpg"
                                         width="783"
                                         height="568"
                                         layout="responsive"
-                                        alt="About Us 03"></amp-img>
+                                        alt="What makes a modern house"></amp-img>
                                     
                             </amp-img>
                         </div>
@@ -589,14 +704,14 @@
                                 width="783"
                                 height="568"
                                 layout="responsive"
-                                alt="About Us 04">
+                                alt="Modern house exterior">
     
                                     <amp-img fallback
                                         src="https://192.168.1.42:3000/img/portfolio/single-portfolio-2/modern-house-exterior-GF59AUJ.jpg"
                                         width="783"
                                         height="568"
                                         layout="responsive"
-                                        alt="About Us 04"></amp-img>
+                                        alt="Modern house exterior"></amp-img>
     
                             </amp-img>
                         </div>
@@ -634,6 +749,10 @@
 
     <!-- Menú móvil (sidebar) -->
     @@include('partials/sidebars/sidebar-menu-movil.html')
+
+    
+    <!-- Banner de aceptación de cookies -->
+    @@include('partials/banners/banner-aceptacion-cookies.html')
 
 
 </body>
