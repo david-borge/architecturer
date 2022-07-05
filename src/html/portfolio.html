@@ -4,10 +4,11 @@
 
 
 
-	<!-- AMP Preloads: Hero image (Preload an important image in the first viewport to improve page load time.) -->
+    <!-- AMP Page Image Preloads (Preload an important image in the first viewport to improve page load time.) -->
     <!-- Referencia: https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content -->
-    <link rel="preload" href="https://192.168.1.42:3000/img/portfolio/cultural-center/cultural-center-miniatura@400w.webp" as="image" media="(min-width: 490px)">
-    <link rel="preload" href="https://192.168.1.42:3000/img/portfolio/cultural-center/cultural-center-miniatura@600w.webp" as="image" media="(max-width: 489px)">
+    <link rel="preload" href="https://192.168.1.42:3000/img/logo/architecturer-logo.svg" as="image">
+    <link rel="preload" href="https://192.168.1.42:3000/img/portfolio/contemporary-house/contemporary-house-miniatura@400w.webp" as="image" media="(min-width: 490px)">
+    <link rel="preload" href="https://192.168.1.42:3000/img/portfolio/contemporary-house/contemporary-house-miniatura@600w.webp" as="image" media="(max-width: 489px)">
     <link rel="preload" href="https://192.168.1.42:3000/img/portfolio/modern-house/modern-house-miniatura@400w.webp" as="image" media="(min-width: 490px)">
     <link rel="preload" href="https://192.168.1.42:3000/img/portfolio/minimalist-house/minimalist-house-miniatura@400w.webp" as="image" media="(min-width: 490px)">
 
@@ -163,28 +164,28 @@
                             <div id="porfolio-filtro" style='display: flex; flex-wrap: wrap;'>
                         
                                 <div id="porfolio-filtro-todos" class="porfolio-filtro activo"
-                                    on="tap:porfolio-filtro-todos.toggleClass(class='activo', force=true), porfolio-filtro-residential.toggleClass(class='activo', force=false), porfolio-filtro-hospitality.toggleClass(class='activo', force=false),  porfolio-filtro-hotel-and-resort.toggleClass(class='activo', force=false), porfolio-modern-house.show, porfolio-cultural-center.show, porfolio-minimalist-house.show, porfolio-luxury-penthouse.show, porfolio-maya-hills.show, porfolio-rustic-steel-house.show, porfolio-the-hall-home.show, porfolio-silk-espresso.show, porfolio-convension-center.show;" role="button" tabindex="-1">
+                                    on="tap:porfolio-filtro-todos.toggleClass(class='activo', force=true), porfolio-filtro-residential.toggleClass(class='activo', force=false), porfolio-filtro-hospitality.toggleClass(class='activo', force=false),  porfolio-filtro-hotel-and-resort.toggleClass(class='activo', force=false), porfolio-modern-house.show, porfolio-contemporary-house.show, porfolio-minimalist-house.show, porfolio-craftsman-house.show, porfolio-maya-hills.show, porfolio-rustic-steel-house.show, porfolio-the-hall-home.show, porfolio-silk-espresso.show, porfolio-convension-center.show;" role="button" tabindex="-1">
                                     <div class="porfolio-filtro-contenido">
                                         <div>All</div>
                                     </div>
                                 </div>
                         
                                 <div id="porfolio-filtro-residential" class="porfolio-filtro"
-                                    on="tap:porfolio-filtro-todos.toggleClass(class='activo', force=false), porfolio-filtro-residential.toggleClass(class='activo', force=true), porfolio-filtro-hospitality.toggleClass(class='activo', force=false),  porfolio-filtro-hotel-and-resort.toggleClass(class='activo', force=false), porfolio-modern-house.show, porfolio-cultural-center.hide, porfolio-minimalist-house.hide, porfolio-luxury-penthouse.show, porfolio-maya-hills.hide, porfolio-rustic-steel-house.hide, porfolio-the-hall-home.show, porfolio-silk-espresso.hide, porfolio-convension-center.hide;" role="button" tabindex="-1">
+                                    on="tap:porfolio-filtro-todos.toggleClass(class='activo', force=false), porfolio-filtro-residential.toggleClass(class='activo', force=true), porfolio-filtro-hospitality.toggleClass(class='activo', force=false),  porfolio-filtro-hotel-and-resort.toggleClass(class='activo', force=false), porfolio-modern-house.show, porfolio-contemporary-house.hide, porfolio-minimalist-house.hide, porfolio-craftsman-house.show, porfolio-maya-hills.hide, porfolio-rustic-steel-house.hide, porfolio-the-hall-home.show, porfolio-silk-espresso.hide, porfolio-convension-center.hide;" role="button" tabindex="-1">
                                     <div class="porfolio-filtro-contenido">
                                         <div>Residential</div>
                                     </div>
                                 </div>
                         
                                 <div id="porfolio-filtro-hospitality" class="porfolio-filtro"
-                                    on="tap:porfolio-filtro-todos.toggleClass(class='activo', force=false),porfolio-filtro-residential.toggleClass(class='activo', force=false),porfolio-filtro-hospitality.toggleClass(class='activo', force=true),porfolio-filtro-hotel-and-resort.toggleClass(class='activo', force=false), porfolio-modern-house.hide, porfolio-cultural-center.show, porfolio-minimalist-house.hide, porfolio-luxury-penthouse.hide, porfolio-maya-hills.hide, porfolio-rustic-steel-house.show, porfolio-the-hall-home.hide, porfolio-silk-espresso.hide, porfolio-convension-center.show;" role="button" tabindex="-1">
+                                    on="tap:porfolio-filtro-todos.toggleClass(class='activo', force=false),porfolio-filtro-residential.toggleClass(class='activo', force=false),porfolio-filtro-hospitality.toggleClass(class='activo', force=true),porfolio-filtro-hotel-and-resort.toggleClass(class='activo', force=false), porfolio-modern-house.hide, porfolio-contemporary-house.show, porfolio-minimalist-house.hide, porfolio-craftsman-house.hide, porfolio-maya-hills.hide, porfolio-rustic-steel-house.show, porfolio-the-hall-home.hide, porfolio-silk-espresso.hide, porfolio-convension-center.show;" role="button" tabindex="-1">
                                     <div class="porfolio-filtro-contenido">
                                         <div>Hospitality</div>
                                     </div>
                                 </div>
                         
                                 <div id="porfolio-filtro-hotel-and-resort" class="porfolio-filtro"
-                                    on="tap:porfolio-filtro-todos.toggleClass(class='activo', force=false),porfolio-filtro-residential.toggleClass(class='activo', force=false),porfolio-filtro-hospitality.toggleClass(class='activo', force=false),porfolio-filtro-hotel-and-resort.toggleClass(class='activo', force=true), porfolio-modern-house.hide, porfolio-cultural-center.hide, porfolio-minimalist-house.show, porfolio-luxury-penthouse.hide, porfolio-maya-hills.show, porfolio-rustic-steel-house.hide, porfolio-the-hall-home.hide, porfolio-silk-espresso.show, porfolio-convension-center.hide;" role="button" tabindex="-1">
+                                    on="tap:porfolio-filtro-todos.toggleClass(class='activo', force=false),porfolio-filtro-residential.toggleClass(class='activo', force=false),porfolio-filtro-hospitality.toggleClass(class='activo', force=false),porfolio-filtro-hotel-and-resort.toggleClass(class='activo', force=true), porfolio-modern-house.hide, porfolio-contemporary-house.hide, porfolio-minimalist-house.show, porfolio-craftsman-house.hide, porfolio-maya-hills.show, porfolio-rustic-steel-house.hide, porfolio-the-hall-home.hide, porfolio-silk-espresso.show, porfolio-convension-center.hide;" role="button" tabindex="-1">
                                     <div class="porfolio-filtro-contenido">
                                         <div>Hotel & Resort</div>
                                     </div>
@@ -205,44 +206,44 @@
                 <div style="display: flex; justify-content: center;">
                     <div id="porfolio" class="porfolio" style='margin-bottom: 20px;' amp-fx="fly-in-bottom">
                         
-                        <div id="porfolio-cultural-center" class="porfolio-item">
+                        <div id="porfolio-contemporary-house" class="porfolio-item">
                             <a href="https://192.168.1.42:3000/single-portfolio-2.html">
                                 
                                 <amp-img media="(min-width: 490px)"
-                                    src="https://192.168.1.42:3000/img/portfolio/cultural-center/cultural-center-miniatura@400w.webp"
+                                    src="https://192.168.1.42:3000/img/portfolio/contemporary-house/contemporary-house-miniatura@400w.webp"
                                     width="387"
                                     height="535"
                                     layout="responsive"
-                                    alt="Cultural Center">
+                                    alt="Contemporary House">
 
                                         <amp-img fallback
-                                            src="https://192.168.1.42:3000/img/portfolio/cultural-center/cultural-center-miniatura@400w.jpg"
+                                            src="https://192.168.1.42:3000/img/portfolio/contemporary-house/contemporary-house-miniatura@400w.jpg"
                                             width="387"
                                             height="535"
                                             layout="responsive"
                                             class="d-block mx-auto"
-                                            alt="Cultural Center"></amp-img>
+                                            alt="Contemporary House"></amp-img>
 
                                 </amp-img>
                                 
                                 <amp-img media="(max-width: 489px)"
-                                    src="https://192.168.1.42:3000/img/portfolio/cultural-center/cultural-center-miniatura@600w.webp"
+                                    src="https://192.168.1.42:3000/img/portfolio/contemporary-house/contemporary-house-miniatura@600w.webp"
                                     width="387"
                                     height="535"
                                     layout="responsive"
-                                    alt="Cultural Center">
+                                    alt="Contemporary House">
 
                                         <amp-img fallback
-                                            src="https://192.168.1.42:3000/img/portfolio/cultural-center/cultural-center-miniatura@600w.jpg"
+                                            src="https://192.168.1.42:3000/img/portfolio/contemporary-house/contemporary-house-miniatura@600w.jpg"
                                             width="387"
                                             height="535"
                                             layout="responsive"
                                             class="d-block mx-auto"
-                                            alt="Cultural Center"></amp-img>
+                                            alt="Contemporary House"></amp-img>
 
                                 </amp-img>
 
-                                <h2>Cultural Center</h2>
+                                <h2>Contemporary House</h2>
                                 <div class="tipologia">Hospitality</div>
 
                             </a>
@@ -334,44 +335,44 @@
                             </a>
                         </div>
                         
-                        <div id="porfolio-luxury-penthouse" class="porfolio-item">
+                        <div id="porfolio-craftsman-house" class="porfolio-item">
                             <a href="https://192.168.1.42:3000/single-portfolio-2.html">
                                 
                                 <amp-img media="(min-width: 490px)"
-                                    src="https://192.168.1.42:3000/img/portfolio/luxury-penthouse/luxury-penthouse-miniatura@400w.webp"
+                                    src="https://192.168.1.42:3000/img/portfolio/craftsman-house/craftsman-house-miniatura@400w.webp"
                                     width="387"
                                     height="535"
                                     layout="responsive"
-                                    alt="Luxury Penthouse">
+                                    alt="Craftsman House">
 
                                         <amp-img fallback
-                                            src="https://192.168.1.42:3000/img/portfolio/luxury-penthouse/luxury-penthouse-miniatura@400w.jpg"
+                                            src="https://192.168.1.42:3000/img/portfolio/craftsman-house/craftsman-house-miniatura@400w.jpg"
                                             width="387"
                                             height="535"
                                             layout="responsive"
                                             class="d-block mx-auto"
-                                            alt="Luxury Penthouse"></amp-img>
+                                            alt="Craftsman House"></amp-img>
 
                                 </amp-img>
                                 
                                 <amp-img media="(max-width: 489px)"
-                                    src="https://192.168.1.42:3000/img/portfolio/luxury-penthouse/luxury-penthouse-miniatura@600w.webp"
+                                    src="https://192.168.1.42:3000/img/portfolio/craftsman-house/craftsman-house-miniatura@600w.webp"
                                     width="387"
                                     height="535"
                                     layout="responsive"
-                                    alt="Luxury Penthouse">
+                                    alt="Craftsman House">
 
                                         <amp-img fallback
-                                            src="https://192.168.1.42:3000/img/portfolio/luxury-penthouse/luxury-penthouse-miniatura@600w.jpg"
+                                            src="https://192.168.1.42:3000/img/portfolio/craftsman-house/craftsman-house-miniatura@600w.jpg"
                                             width="387"
                                             height="535"
                                             layout="responsive"
                                             class="d-block mx-auto"
-                                            alt="Luxury Penthouse"></amp-img>
+                                            alt="Craftsman House"></amp-img>
 
                                 </amp-img>
 
-                                <h2>Luxury Penthouse</h2>
+                                <h2>Craftsman House</h2>
                                 <div class="tipologia">Residential</div>
 
                             </a>
