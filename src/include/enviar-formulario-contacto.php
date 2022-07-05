@@ -153,7 +153,7 @@ try {
                              "<p><strong>Correo electrónico:</strong> " . $campo_formulario_correo_electronico . "</p>" . 
                              "<p><strong>Teléfono:</strong> "           . $campo_formulario_telefono . "</p>" . 
                              "<p><strong>Mensaje:</strong><br/>"        . nl2br(htmlspecialchars($campo_formulario_mensaje)) . "</p>" . 
-                             "<p style='margin-top:60px;font-style:italic'>Este mensaje fue enviado desde el <strong>formulario de contacto</strong> de la web de <strong>Architecturer</strong> (<a href='https://davidborge.com/architecturer/contact.html'>https://davidborge.com/architecturer/contact.html</a>).</p>";
+                             "<p style='margin-top:60px;font-style:italic'>Este mensaje fue enviado desde el <strong>formulario de contacto</strong> de la web de <strong>Architecturer</strong> (<a href='" . $_SERVER['HTTP_REFERER']."'>" . $_SERVER['HTTP_REFERER']."</a>).</p>";
 
 
     /** PASO 4.12: Configuración del correo - Cuerpo del correo (en texto plano para clientes sin HTML) **/
