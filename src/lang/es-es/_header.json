@@ -1,3 +1,8 @@
 {
-    "titulo": "Esto es el Header"
+    "home": "Inicio",
+    "about-us": "Sobre Nosotros",
+    "portfolio": "Portafolio",
+    "contact": "Contacto",
+    "architecturer-logo-blanco-alt": "Architecturer Logo en blanco",
+    "architecturer-logo-alt": "Architecturer Logo"
 }

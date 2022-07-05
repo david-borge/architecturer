@@ -162,7 +162,9 @@ const { dest, parallel, series } = require('gulp');
 const url_desarrollo = "https://192.168.1.42:3000";  // TODO: si cambia la URL de desarrollo, también hay que cambiarla en todos los archivos de la carpeta src y también en la tarea watch().
 
 const url_produccion = "https://davidborge.com/architecturer";
+// const url_produccion = "https://davidborge.es/architecturer";
 // const url_produccion = "https://localhost/architecturer/dist/en";
+// const url_produccion = "https://localhost/architecturer/dist/es-es";
 
 
 /***** Fin de: Configuración de la web *****/
@@ -194,6 +196,7 @@ var filesPathSrc = {
 //        - Este archivo: variable url_produccion
 //        - Archivo: src\lang\en\_lang.json
 var localization = "en";
+// var localization = "es-es";
 
 var i18nOptions = {
     langDir: filesPathSrc.lang,
@@ -933,11 +936,11 @@ function copiar_otros_archivos_a_dist(terminar_tarea) {
                          )
                       .pipe( gulp.dest(filesPathDest.html) );
 
-    // Archivos HTML que incluyo con iframes
-    var tarea3 = gulp.src(
-                            ['./src/iframes/**/*']
-                        )
-                      .pipe( gulp.dest(filesPathDest.html + "/iframes/") );
+    // (No los uso en este proyecto) Archivos HTML que incluyo con iframes
+    //var tarea3 = gulp.src(
+    //                        ['./src/iframes/**/*']
+    //                    )
+    //                  .pipe( gulp.dest(filesPathDest.html + "/iframes/") );
     
     // Vídeos
     var tarea3 = gulp.src(

@@ -16,33 +16,33 @@
 
         <!-- <div class="dismiss-button" role="button" tabindex="0" on="tap:banner-cookies-amp-consent.dismiss">X</div> -->
 
-        <p class="text-center" style="font-size:16px">Gestionar el Consentimiento de las Cookies</p>
-        <p>Este portal web únicamente utiliza cookies propias con finalidad técnica, no recaba ni cede datos de carácter personal de los usuarios sin su conocimiento. Sin embargo, contiene enlaces a sitios web de terceros con políticas de privacidad ajenas a las nuestras que usted podrá decidir si acepta o no cuando acceda a ellos.</p>
+        <p class="text-center" style="font-size:16px">${{ banner-aceptacion-cookies.titulo }}$</p>
+        <p>${{ banner-aceptacion-cookies.descripcion }}$</p>
 
         <div style="display: flex; flex-wrap: wrap;">
 
             <div style="margin-bottom: 10px; margin-right: 20px;">
                 <input id="cookies-funcionales" type="checkbox" checked disabled>
-                <label for="cookies-funcionales">Cookies Funcionales</label>
+                <label for="cookies-funcionales">${{ banner-aceptacion-cookies.cookies-funcionales }}$</label>
             </div>
 
             <div style="margin-bottom: 10px; margin-right: 20px;">
                 <input id="cookies-estadisticas" type="checkbox">
-                <label for="cookies-estadisticas">Cookies Estadísticas</label>
+                <label for="cookies-estadisticas">${{ banner-aceptacion-cookies.cookies-estadisticas }}$</label>
             </div>
 
             <div style="margin-bottom: 10px;">
                 <input id="cookies-de-marketing" type="checkbox">
-                <label for="cookies-de-marketing">Cookies de Marketing</label>
+                <label for="cookies-de-marketing">${{ banner-aceptacion-cookies.cookies-de-marketing }}$</label>
             </div>
 
         </div>        
         
         <div class="banner-cookies-listado-botones">
 
-            <button on="tap:banner-cookies-amp-consent.accept" class="btn-banner-cookies btn-aceptar">Aceptar todo</button>
+            <button on="tap:banner-cookies-amp-consent.accept" class="btn-banner-cookies btn-aceptar">${{ banner-aceptacion-cookies.aceptar-todo }}$</button>
             
-            <button on="tap:banner-cookies-amp-consent.reject" class="btn-banner-cookies btn-rechazar">Rechazar</button>
+            <button on="tap:banner-cookies-amp-consent.reject" class="btn-banner-cookies btn-rechazar">${{ banner-aceptacion-cookies.rechazar }}$</button>
 
         </div>
 

@@ -1,0 +1,11 @@
+{
+    "titulo": "Gestionar el Consentimiento de las Cookies",
+    "descripcion": "Este portal web únicamente utiliza cookies propias con finalidad técnica, no recaba ni cede datos de carácter personal de los usuarios sin su conocimiento. Sin embargo, contiene enlaces a sitios web de terceros con políticas de privacidad ajenas a las nuestras que usted podrá decidir si acepta o no cuando acceda a ellos.",
+
+    "cookies-funcionales": "Cookies Funcionales",
+    "cookies-estadisticas": "Cookies Estadísticas",
+    "cookies-de-marketing": "Cookies de Marketing",
+
+    "aceptar-todo": "Aceptar todo",
+    "rechazar": "Rechazar"
+}

@@ -1,0 +1,49 @@
+{
+    "titulo":  "Portafolio Único 1",
+    "descripcion": "Una forma integrada de arquitectura",
+
+    "main-image": "Imagen principal",
+
+    "client": "Cliente",
+    "client-descripcion": "Complex Arch",
+
+    "focus": "Foco",
+    "focus-descripcion": "Concepto, dirección creativa, boceto, diseño, estrategia técnica, desarrollo del sitio, soporte de backend",
+
+    "categories": "Categorías",
+    "categories-descripcion": "Residencial, Paisaje",
+
+    "designing-with-balance-and-care": "Diseño con equilibrio y cuidado",
+    "designing-with-balance-and-care-parrafo-1": "Exercitation photo booth stumptown tote bag Banksy, elit small batch freegan sed. Craft beer elit seitan exercitation, photo booth et 8-bit kale chips proident chillwave deep v laborum. Aliquip veniam delectus, Marfa eiusmod Pinterest in do umami readymade swag.",
+    "designing-with-balance-and-care-parrafo-2": "Salvia esse nihil, flexitarian Truffaut synth art party deep v chillwave. Seitan High Life reprehenderit consectetur cupidatat kogi. Et leggings fanny pack.",
+
+    "attractive-young-smiling-african-woman-sitting-on-couch": "Atractiva joven sonriente africana sentada en el sofá",
+    "kari-shea": "Kari Shea",
+    "hue-graphy": "Hue Graphy",
+
+    "as-development-continues": "A medida que el desarrollo continúa, los ingenieros pueden visitar destinos de construcción para garantizar que los trabajadores temporales persigan el plan, mantengan el horario, utilicen los materiales predefinidos y cumplan con los modelos de calidad de trabajo. Meta de agrietamiento de pan de pan marrón chinwag, así que dije una carga de viejos pasteles de hornear Tosh, Geeza Ass es tu grub redonda slashed Burke.",
+
+    "the-unique-architect": "\"El arquitecto único con ideas de fuera del mundo. Donde se encuentran el diseño y la ciencia. Con la comodidad de la gente en mente. Diseño con equilibrio y cuidado\"",
+    "john-doeer-unix-inc": "John Doeer - Unix Inc.",
+
+    "house-paarman": "House paarman",
+    "podad-carrboro-house": "Podad Carrboro House",
+    
+    "design-leads": "Diseñadores Líderes",
+    "design-leads-descripcion": "Jordan Mcnamara, Thomas Addition",
+    
+    "project-management": "Gestión de Proyectos",
+    "project-management-descripcion": "Susan Smith",
+    
+    "development": "Desarrollo",
+    "development-descripcion": "Paul Newman, Dida Hadii",
+    
+    "technical-leads": "Líderes técnicos",
+    "technical-leads-descripcion": "Thomas Addition, Rocho Monreal",
+    
+    "design": "Diseño",
+    "design-descripcion": "Rebecca Johnson",
+    
+    "budget-planning": "Planificación Presupuestaria",
+    "budget-planning-descripcion": "Dida Hadii"
+}

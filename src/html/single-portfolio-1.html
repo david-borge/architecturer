@@ -16,14 +16,14 @@
 	<!-- Page Title, Description & URL canónica -->
     <!-- TODO: cambiar en todas las páginas -->
 	<title>${{ single-portfolio-1.titulo }}$ - ${{ _web.titulo }}$</title>
-	<meta name="description" content="${{ single-portfolio-1.descripcion }}$">
+	<meta name="description" content="${{ single-portfolio-1.descripcion }}$.">
     <link rel="canonical" href="https://192.168.1.42:3000/">
     
     
     <!-- Compartir en Redes y WhatsApp (Open Graph protocol): Page Title, Description, URL & Imagen (JPG or PNG with a size less than 300KB and minimum dimensions of 1200 x 630 for Facebook (https://developers.facebook.com/docs/sharing/webmasters/images/#precaching)) -->
     <!-- TODO: cambiar en todas las páginas -->
     <meta property="og:title" content="${{ single-portfolio-1.titulo }}$ - ${{ _web.titulo }}$" />
-    <meta property="og:description" content="${{ single-portfolio-1.descripcion }}$">
+    <meta property="og:description" content="${{ single-portfolio-1.descripcion }}$.">
     <meta property="og:url" content="https://192.168.1.42:3000/" />
     <meta property="og:image" content="https://192.168.1.42:3000/img/logo/architecturer-compartir.jpg?v=2">
 
@@ -149,9 +149,9 @@
         <div class="seccion">
             <div class="container">
 
-                <div class="mb-4">Residential</div>
+                <div class="mb-4">${{ portfolio.filtro-residential }}$</div>
 
-                <h1>An integrated way of architecture</h1>
+                <h1>${{ single-portfolio-1.descripcion }}$</h1>
 
             </div>
         </div>
@@ -163,14 +163,14 @@
                     width="1280"
                     height="853"
                     layout="responsive"
-                    alt="An integrated way of architecture - Main image">
+                    alt="${{ single-portfolio-1.descripcion }}$ - ${{ single-portfolio-1.main-image }}$">
 
                         <amp-img fallback
                             src="https://192.168.1.42:3000/img/portfolio/single-portfolio-1/single-portfolio-1-principal.jpg"
                             width="1280"
                             height="853"
                             layout="responsive"
-                            alt="An integrated way of architecture - Main image"></amp-img>
+                            alt="${{ single-portfolio-1.descripcion }}$ - ${{ single-portfolio-1.main-image }}$"></amp-img>
 
                 </amp-img> -->
 
@@ -179,14 +179,14 @@
                     width="1280"
                     height="853"
                     layout="responsive"
-                    alt="An integrated way of architecture - Main image">
+                    alt="${{ single-portfolio-1.descripcion }}$ - ${{ single-portfolio-1.main-image }}$">
 
                         <amp-img fallback
                             src="https://192.168.1.42:3000/img/portfolio/single-portfolio-1/single-portfolio-1-principal@576w.jpg"
                             width="1280"
                             height="853"
                             layout="responsive"
-                            alt="An integrated way of architecture - Main image"></amp-img>
+                            alt="${{ single-portfolio-1.descripcion }}$ - ${{ single-portfolio-1.main-image }}$"></amp-img>
 
                 </amp-img>
 
@@ -195,14 +195,14 @@
                     width="1280"
                     height="853"
                     layout="responsive"
-                    alt="An integrated way of architecture - Main image">
+                    alt="${{ single-portfolio-1.descripcion }}$ - ${{ single-portfolio-1.main-image }}$">
 
                         <amp-img fallback
                             src="https://192.168.1.42:3000/img/portfolio/single-portfolio-1/single-portfolio-1-principal@768w.jpg"
                             width="1280"
                             height="853"
                             layout="responsive"
-                            alt="An integrated way of architecture - Main image"></amp-img>
+                            alt="${{ single-portfolio-1.descripcion }}$ - ${{ single-portfolio-1.main-image }}$"></amp-img>
 
                 </amp-img>
 
@@ -211,14 +211,14 @@
                     width="1280"
                     height="853"
                     layout="responsive"
-                    alt="An integrated way of architecture - Main image">
+                    alt="${{ single-portfolio-1.descripcion }}$ - ${{ single-portfolio-1.main-image }}$">
 
                         <amp-img fallback
                             src="https://192.168.1.42:3000/img/portfolio/single-portfolio-1/single-portfolio-1-principal@992w.jpg"
                             width="1280"
                             height="853"
                             layout="responsive"
-                            alt="An integrated way of architecture - Main image"></amp-img>
+                            alt="${{ single-portfolio-1.descripcion }}$ - ${{ single-portfolio-1.main-image }}$"></amp-img>
 
                 </amp-img>
 
@@ -227,14 +227,14 @@
                     width="1280"
                     height="853"
                     layout="responsive"
-                    alt="An integrated way of architecture - Main image">
+                    alt="${{ single-portfolio-1.descripcion }}$ - ${{ single-portfolio-1.main-image }}$">
 
                         <amp-img fallback
                             src="https://192.168.1.42:3000/img/portfolio/single-portfolio-1/single-portfolio-1-principal@1200w.jpg"
                             width="1280"
                             height="853"
                             layout="responsive"
-                            alt="An integrated way of architecture - Main image"></amp-img>
+                            alt="${{ single-portfolio-1.descripcion }}$ - ${{ single-portfolio-1.main-image }}$"></amp-img>
 
                 </amp-img>
 
@@ -243,14 +243,14 @@
                     width="1280"
                     height="853"
                     layout="responsive"
-                    alt="An integrated way of architecture - Main image">
+                    alt="${{ single-portfolio-1.descripcion }}$ - ${{ single-portfolio-1.main-image }}$">
 
                         <amp-img fallback
                             src="https://192.168.1.42:3000/img/portfolio/single-portfolio-1/single-portfolio-1-principal@1400w.jpg"
                             width="1280"
                             height="853"
                             layout="responsive"
-                            alt="An integrated way of architecture - Main image"></amp-img>
+                            alt="${{ single-portfolio-1.descripcion }}$ - ${{ single-portfolio-1.main-image }}$"></amp-img>
 
                 </amp-img>
 
@@ -263,24 +263,24 @@
                     <div class="col-md-4">
                         <div class="barra-lateral" style="max-width: 315px;" amp-fx="fly-in-left">
 
-                            <h2 class="barra-lateral-titulo">Client</h2>
-                            <div class="barra-lateral-contenido">Complex Arch</div>
+                            <h2 class="barra-lateral-titulo">${{ single-portfolio-1.client }}$</h2>
+                            <div class="barra-lateral-contenido">${{ single-portfolio-1.client-descripcion }}$</div>
                             
-                            <h2 class="barra-lateral-titulo">Focus</h2>
-                            <div class="barra-lateral-contenido">Concept, Creative Direction, Sketching, Design, Technical Strategy, Site Development, Backend Support</div>
+                            <h2 class="barra-lateral-titulo">${{ single-portfolio-1.focus }}$</h2>
+                            <div class="barra-lateral-contenido">${{ single-portfolio-1.focus-descripcion }}$</div>
                             
-                            <h2 class="barra-lateral-titulo">Categories</h2>
-                            <div class="barra-lateral-contenido mb-0">Residential, Landscape</div>
+                            <h2 class="barra-lateral-titulo">${{ single-portfolio-1.categories }}$</h2>
+                            <div class="barra-lateral-contenido mb-0">${{ single-portfolio-1.categories-descripcion }}$</div>
 
                         </div>
                     </div>
                     <div class="col-md-8 mb-5 mb-md-0" amp-fx="fly-in-right">
                         <div style="max-width: 555px;">
                             
-                            <h2 style="font-size: 22px;">Designing with balance and care</h2>
+                            <h2 style="font-size: 22px;">${{ single-portfolio-1.designing-with-balance-and-care }}$</h2>
 
-                            <p>Exercitation photo booth stumptown tote bag Banksy, elit small batch freegan sed. Craft beer elit seitan exercitation, photo booth et 8-bit kale chips proident chillwave deep v laborum. Aliquip veniam delectus, Marfa eiusmod Pinterest in do umami readymade swag. Selfies iPhone Kickstarter, drinking vinegar.</p>
-                            <p>PBR 3 wolf moon beard Helvetica. Salvia esse nihil, flexitarian Truffaut synth art party deep v chillwave. Seitan High Life reprehenderit consectetur cupidatat kogi. Et leggings fanny pack.</p>
+                            <p>${{ single-portfolio-1.designing-with-balance-and-care-parrafo-1 }}$</p>
+                            <p>${{ single-portfolio-1.designing-with-balance-and-care-parrafo-2 }}$</p>
 
                         </div>
                     </div>
@@ -297,14 +297,14 @@
                             width="360"
                             height="540"
                             layout="responsive"
-                            alt="Attractive young smiling african woman sitting on couch">
+                            alt="${{ single-portfolio-1.attractive-young-smiling-african-woman-sitting-on-couch }}$">
 
                                 <amp-img fallback
                                     src="https://192.168.1.42:3000/img/portfolio/single-portfolio-1/attractive-young-smiling-african-woman-sitting-on-STVVV47.jpg"
                                     width="360"
                                     height="540"
                                     layout="responsive"
-                                    alt="Attractive young smiling african woman sitting on couch"></amp-img>
+                                    alt="${{ single-portfolio-1.attractive-young-smiling-african-woman-sitting-on-couch }}$"></amp-img>
 
                         </amp-img>
 
@@ -315,14 +315,14 @@
                             width="360"
                             height="540"
                             layout="responsive"
-                            alt="Attractive young smiling african woman sitting on couch">
+                            alt="${{ single-portfolio-1.kari-shea }}$">
 
                                 <amp-img fallback
                                     src="https://192.168.1.42:3000/img/portfolio/single-portfolio-1/kari-shea-580156-unsplash.jpg"
                                     width="360"
                                     height="540"
                                     layout="responsive"
-                                    alt="Attractive young smiling african woman sitting on couch"></amp-img>
+                                    alt="${{ single-portfolio-1.kari-shea }}$"></amp-img>
 
                         </amp-img>
 
@@ -333,14 +333,14 @@
                             width="360"
                             height="540"
                             layout="responsive"
-                            alt="Attractive young smiling african woman sitting on couch">
+                            alt="${{ single-portfolio-1.hue-graphy }}$">
 
                                 <amp-img fallback
                                     src="https://192.168.1.42:3000/img/portfolio/single-portfolio-1/hue-graphy-532156-unsplash.jpg"
                                     width="360"
                                     height="540"
                                     layout="responsive"
-                                    alt="Attractive young smiling african woman sitting on couch"></amp-img>
+                                    alt="${{ single-portfolio-1.hue-graphy }}$"></amp-img>
 
                         </amp-img>
 
@@ -354,10 +354,10 @@
                 <div class="row justify-content-center">
                     <div class="col-md-7">
 
-                        <p class="fw-light" style="margin-bottom: 80px; line-height: 31px;" amp-fx="fly-in-bottom">As development continues, engineers may visit building destinations to guarantee that temporary workers pursue the plan, keep to the timetable, utilize the predefined materials, and meet work-quality models. Cras chinwag brown bread Eaton cracking goal so I said a load of old tosh baking cakes, geeza arse it's your round grub sloshed burke.</p>
+                        <p class="fw-light" style="margin-bottom: 80px; line-height: 31px;" amp-fx="fly-in-bottom">${{ single-portfolio-1.as-development-continues }}$</p>
                         
-                        <p class="text-center fw-light" style="margin-bottom: 40px; font-size: 24px; line-height: 43px;" amp-fx="fly-in-bottom">"The unique architect with ideas from outside the world. Where design and science meet. With people's comfort in mind. Designing with balance and care"</p>
-                        <p class="text-center mb-0" amp-fx="fly-in-bottom">John Doeer - Unix Inc.</p>
+                        <p class="text-center fw-light" style="margin-bottom: 40px; font-size: 24px; line-height: 43px;" amp-fx="fly-in-bottom">${{ single-portfolio-1.the-unique-architect }}$</p>
+                        <p class="text-center mb-0" amp-fx="fly-in-bottom">${{ single-portfolio-1.john-doeer-unix-inc }}$</p>
 
                     </div>
                 </div>
@@ -373,7 +373,7 @@
                             width="1160"
                             height="695"
                             layout="responsive"
-                            alt="House paarman"
+                            alt="${{ single-portfolio-1.house-paarman }}$"
                             style="margin-bottom: 40px;"
                             amp-fx="fade-in">
 
@@ -382,7 +382,7 @@
                                     width="1160"
                                     height="695"
                                     layout="responsive"
-                                    alt="House paarman"
+                                    alt="${{ single-portfolio-1.house-paarman }}$"
                                     style="margin-bottom: 40px;"></amp-img>
 
                         </amp-img>
@@ -413,7 +413,7 @@
                 <div class="row justify-content-center">
                     <div class="col-md-7">
 
-                        <p class="fw-light mb-0" style="line-height: 31px;" amp-fx="fly-in-bottom">As development continues, engineers may visit building destinations to guarantee that temporary workers pursue the plan, keep to the timetable, utilize the predefined materials, and meet work-quality models. Cras chinwag brown bread Eaton cracking goal so I said a load of old tosh baking cakes, geeza arse it's your round grub sloshed burke.</p>
+                        <p class="fw-light mb-0" style="line-height: 31px;" amp-fx="fly-in-bottom">${{ single-portfolio-1.as-development-continues }}$</p>
                         
                     </div>
                 </div>
@@ -428,26 +428,26 @@
                         <div class="row gx-5">
                             <div class="col-md-6" amp-fx="fly-in-left">
 
-                                <h2 class="barra-lateral-titulo text-md-end">Design Leads</h2>
-                                <div class="barra-lateral-contenido text-md-end">Jordan Mcnamara, Thomas Addition</div>
+                                <h2 class="barra-lateral-titulo text-md-end">${{ single-portfolio-1.design-leads }}$</h2>
+                                <div class="barra-lateral-contenido text-md-end">${{ single-portfolio-1.design-leads-descripcion }}$</div>
                                 
-                                <h2 class="barra-lateral-titulo text-md-end">Project Management</h2>
-                                <div class="barra-lateral-contenido text-md-end">Susan Smith</div>
+                                <h2 class="barra-lateral-titulo text-md-end">${{ single-portfolio-1.project-management }}$</h2>
+                                <div class="barra-lateral-contenido text-md-end">${{ single-portfolio-1.project-management-descripcion }}$</div>
                                 
-                                <h2 class="barra-lateral-titulo text-md-end">Development</h2>
-                                <div class="barra-lateral-contenido text-md-end mb-0">Paul Newman, Dida Hadii</div>
+                                <h2 class="barra-lateral-titulo text-md-end">${{ single-portfolio-1.development }}$</h2>
+                                <div class="barra-lateral-contenido text-md-end mb-0">${{ single-portfolio-1.development-descripcion }}$</div>
         
                             </div>
                             <div class="col-md-6" amp-fx="fly-in-right">
                                 
-                                <h2 class="barra-lateral-titulo">Technical Leads</h2>
-                                <div class="barra-lateral-contenido">Thomas Addition, Rocho Monreal</div>
+                                <h2 class="barra-lateral-titulo">${{ single-portfolio-1.technical-leads }}$</h2>
+                                <div class="barra-lateral-contenido">${{ single-portfolio-1.technical-leads-descripcion }}$</div>
                                 
-                                <h2 class="barra-lateral-titulo">Design</h2>
-                                <div class="barra-lateral-contenido">Rebecca Johnson</div>
+                                <h2 class="barra-lateral-titulo">${{ single-portfolio-1.design }}$</h2>
+                                <div class="barra-lateral-contenido">${{ single-portfolio-1.design-descripcion }}$</div>
                                 
-                                <h2 class="barra-lateral-titulo">Budget Planning</h2>
-                                <div class="barra-lateral-contenido mb-0">Dida Hadii</div>
+                                <h2 class="barra-lateral-titulo">${{ single-portfolio-1.budget-planning }}$</h2>
+                                <div class="barra-lateral-contenido mb-0">${{ single-portfolio-1.budget-planning-descripcion }}$</div>
 
                             </div>
                         </div>

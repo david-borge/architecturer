@@ -30,7 +30,8 @@
     <!-- Hash de los scripts #script-cambiar-palabras-h1 y #script-copyright-con-ano-actual-->
     <!-- TODO: hay que actualizarlo cada vez que se cambie el contenido de #script-cambiar-palabras-h1 y de #script-copyright-con-ano-actual. Sacarlo del error de la consola de desarrollador de Chrome. -->
     <meta name="amp-script-src" content="sha384-pZM9L0e2Eud605He1Zkf6aatDWRI167lIVWvtDnufzrX7sk7ZFb44tnYh1lknnPW
-                                         sha384-X4oHzM7irc7oXbRb3dmUGBkBxfn6WPpt5aMlfGAoomeYTqW39mk70_x-kFUADuZJ">
+                                         sha384-X4oHzM7irc7oXbRb3dmUGBkBxfn6WPpt5aMlfGAoomeYTqW39mk70_x-kFUADuZJ
+                                         sha384-izTmqrHVvrgZhSwti2M2CS6qH_8g7cmg9POP1dKew9FnD99rr_oVi2eCbSYrY-gB">
 
 
     <!-- Datos estructurados (schema.org) -->
@@ -149,17 +150,17 @@
         <div id="seccion-the-well-simplified">
             <div class="container">
 
-                <div class="mb-4">Delivering high-quality projects</div>
+                <div class="mb-4">${{ about-us.delivering-highquality-projects }}$</div>
 
                 <!-- NOTA: para el desarrollo, añadir data-ampdevmode a la etiqueta <amp-script>. La quito con Gulp automáticamente en las builds. -->
-                <h1>The well-<br/>simplified&nbsp;<amp-script script="script-cambiar-palabras-h1" layout="fixed-height" height="109" style="opacity: 1;" data-ampdevmode><span id="cambiar-palabras-h1" class="cambiar-palabras">designing</span></amp-script></h1>
+                <h1>${{ about-us.h1-the-well }}$<br/>${{ about-us.h1-simplified }}$<amp-script script="script-cambiar-palabras-h1" layout="fixed-height" height="109" style="opacity: 1;" data-ampdevmode><span id="cambiar-palabras-h1" class="cambiar-palabras">${{ about-us.h1-designing }}$</span></amp-script></h1>
                 <!-- Nota: pongo &nbsp; después de simplified en lugar de un espacio para que el espacio no se elimine el proceso de minificar el HTML. -->
 
                 <!-- Script para cambiar las palabras en el h1 -->
                 <!-- TODO: Para que funcione, hay que poner el hash que te indique la consola de desarrollador: <meta name="amp-script-src" content="XXXXXXX">; y cambiarlo cada vez que cambie el contenido del script. -->
                 <script id="script-cambiar-palabras-h1" type="text/plain" target="amp-script">
 
-                    var texts = ["living", "designing", "thinking"];
+                    var texts = ["${{ about-us.h1-living }}$", "${{ about-us.h1-designing }}$", "${{ about-us.h1-thinking }}$"];
                     var contador = 0;
 
                     function funcionCambiarPalabrasH1() {
@@ -200,14 +201,14 @@
                             width="1"
                             height="1"
                             layout="responsive"
-                            alt="About Us 01">
+                            alt="${{ about-us.about-us-01 }}$">
 
                                 <amp-img fallback
                                     src="https://192.168.1.42:3000/img/about-us/galeria/about-us-01.jpg"
                                     width="1"
                                     height="1"
                                     layout="responsive"
-                                    alt="About Us 01"></amp-img>
+                                    alt="${{ about-us.about-us-01 }}$"></amp-img>
 
                         </amp-img>
                     </div>
@@ -219,14 +220,14 @@
                             width="1"
                             height="1"
                             layout="responsive"
-                            alt="About Us 02">
+                            alt="${{ about-us.about-us-02 }}$">
 
                                 <amp-img fallback
                                     src="https://192.168.1.42:3000/img/about-us/galeria/about-us-02.jpg"
                                     width="1"
                                     height="1"
                                     layout="responsive"
-                                    alt="About Us 02"></amp-img>
+                                    alt="${{ about-us.about-us-02 }}$"></amp-img>
                                 
                         </amp-img>
                     </div>
@@ -238,14 +239,14 @@
                             width="1"
                             height="1"
                             layout="responsive"
-                            alt="About Us 03">
+                            alt="${{ about-us.about-us-03 }}$">
 
                                 <amp-img fallback
                                     src="https://192.168.1.42:3000/img/about-us/galeria/about-us-03.jpg"
                                     width="1"
                                     height="1"
                                     layout="responsive"
-                                    alt="About Us 03"></amp-img>
+                                    alt="${{ about-us.about-us-03 }}$"></amp-img>
                                 
                         </amp-img>
                     </div>
@@ -257,14 +258,14 @@
                             width="1"
                             height="1"
                             layout="responsive"
-                            alt="About Us 04">
+                            alt="${{ about-us.about-us-04 }}$">
 
                                 <amp-img fallback
                                     src="https://192.168.1.42:3000/img/about-us/galeria/about-us-04.jpg"
                                     width="1"
                                     height="1"
                                     layout="responsive"
-                                    alt="About Us 04"></amp-img>
+                                    alt="${{ about-us.about-us-04 }}$"></amp-img>
 
                         </amp-img>
                     </div>
@@ -277,7 +278,7 @@
         <div id="seccion-the-innovative-designs" class="seccion" amp-fx="fly-in-right">
             <div class="container">
 
-                <div style="max-width: 535px;">The innovative designs to enhance the human experience</div>
+                <div style="max-width: 535px;">${{ about-us.the-innovative-designs-to-enhance-the-human-experience }}$</div>
 
             </div>
         </div>
@@ -287,9 +288,9 @@
                 <div class="row">
                     <div class="col-12 col-md-3" amp-fx="fly-in-left">
 
-                        <h2>Our Team</h2>
+                        <h2>${{ about-us.our-team }}$</h2>
 
-                        <p style="font-weight: 300; line-height: 2em;">As development continues, engineers may visit building destinations to guarantee that temporary workers pursue the plan, keep to the timetable, utilize the predefined materials, and meet work-quality models.</p>
+                        <p style="font-weight: 300; line-height: 2em;">${{ about-us.our-team-parrafo }}$</p>
 
                     </div>
                     <div class="col-12 col-md-9">
@@ -305,7 +306,7 @@
                                         height="570"
                                         layout="responsive"
                                         class="d-block mx-auto"
-                                        alt="Johnny Doeer">
+                                        alt="${{ about-us.johnny-doeer }}$">
 
                                             <amp-img fallback
                                                 src="https://192.168.1.42:3000/img/about-us/equipo/johnny-doeer.jpg"
@@ -313,12 +314,12 @@
                                                 height="570"
                                                 layout="responsive"
                                                 class="d-block mx-auto"
-                                                alt="Johnny Doeer"></amp-img>
+                                                alt="${{ about-us.johnny-doeer }}$"></amp-img>
 
                                     </amp-img>
 
-                                    <h3>Johnny Doeer</h3>
-                                    <div class="cargo">Lead Architect</div>
+                                    <h3>${{ about-us.johnny-doeer }}$</h3>
+                                    <div class="cargo">${{ about-us.lead-architect }}$</div>
 
                                 </div>
                                 
@@ -334,7 +335,7 @@
                                         height="570"
                                         layout="responsive"
                                         class="d-block mx-auto"
-                                        alt="Corey Wilson">
+                                        alt="${{ about-us.corey-wilson }}$">
 
                                             <amp-img fallback
                                                 src="https://192.168.1.42:3000/img/about-us/equipo/corey-wilson.jpg"
@@ -342,12 +343,12 @@
                                                 height="570"
                                                 layout="responsive"
                                                 class="d-block mx-auto"
-                                                alt="Corey Wilson"></amp-img>
+                                                alt="${{ about-us.corey-wilson }}$"></amp-img>
 
                                     </amp-img>
 
-                                    <h3>Corey Wilson</h3>
-                                    <div class="cargo">Interior Designer</div>
+                                    <h3>${{ about-us.corey-wilson }}$</h3>
+                                    <div class="cargo">${{ about-us.interior-designer }}$</div>
 
                                 </div>
 
@@ -365,7 +366,7 @@
                                         height="570"
                                         layout="responsive"
                                         class="d-block mx-auto"
-                                        alt="Kara Miller">
+                                        alt="${{ about-us.kara-miller }}$">
 
                                             <amp-img fallback
                                                 src="https://192.168.1.42:3000/img/about-us/equipo/kara-miller.jpg"
@@ -373,12 +374,12 @@
                                                 height="570"
                                                 layout="responsive"
                                                 class="d-block mx-auto"
-                                                alt="Kara Miller"></amp-img>
+                                                alt="${{ about-us.kara-miller }}$"></amp-img>
 
                                     </amp-img>
 
-                                    <h3>Kara Miller</h3>
-                                    <div class="cargo">Landscape Designer</div>
+                                    <h3>${{ about-us.kara-miller }}$</h3>
+                                    <div class="cargo">${{ about-us.landscape-designer }}$</div>
 
                                 </div>
                                 
@@ -393,7 +394,7 @@
                                         height="570"
                                         layout="responsive"
                                         class="d-block mx-auto"
-                                        alt="Sophia Zandler">
+                                        alt="${{ about-us.sophia-zandler }}$">
 
                                             <amp-img fallback
                                                 src="https://192.168.1.42:3000/img/about-us/equipo/sophia-zandler.jpg"
@@ -401,12 +402,12 @@
                                                 height="570"
                                                 layout="responsive"
                                                 class="d-block mx-auto"
-                                                alt="Sophia Zandler"></amp-img>
+                                                alt="${{ about-us.sophia-zandler }}$"></amp-img>
 
                                     </amp-img>
 
-                                    <h3>Sophia Zandler</h3>
-                                    <div class="cargo">Junior Designer</div>
+                                    <h3>${{ about-us.sophia-zandler }}$</h3>
+                                    <div class="cargo">${{ about-us.junior-designer }}$</div>
 
                                 </div>
 

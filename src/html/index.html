@@ -29,7 +29,8 @@
     <!-- Hash del script #script-cambiar-palabras-h1 -->
     <!-- TODO: hay que actualizarlo cada vez que se cambie el contenido de #script-cambiar-palabras-h1. Sacarlo del error de la consola de desarrollador de Chrome. -->
     <meta name="amp-script-src" content="sha384-pZM9L0e2Eud605He1Zkf6aatDWRI167lIVWvtDnufzrX7sk7ZFb44tnYh1lknnPW
-                                         sha384-X4oHzM7irc7oXbRb3dmUGBkBxfn6WPpt5aMlfGAoomeYTqW39mk70_x-kFUADuZJ">
+                                         sha384-X4oHzM7irc7oXbRb3dmUGBkBxfn6WPpt5aMlfGAoomeYTqW39mk70_x-kFUADuZJ
+                                         sha384-izTmqrHVvrgZhSwti2M2CS6qH_8g7cmg9POP1dKew9FnD99rr_oVi2eCbSYrY-gB">
 
 
     <!-- Datos estructurados (schema.org) -->
@@ -161,7 +162,7 @@
                     <source src="https://192.168.1.42:3000/video/inicio/video.webm" type="video/webm" />
                     <source src="https://192.168.1.42:3000/video/inicio/video.mp4" type="video/mp4" />
                     <div fallback>
-                        <p>Your browser is not compatible with this video.</p>
+                        <p>${{ _general.your-browser-is-not-compatible-with-this-video }}$</p>
                     </div>
                 </amp-video>
 
@@ -177,7 +178,7 @@
                     <source src="https://192.168.1.42:3000/video/inicio/video-movil.webm" type="video/webm" />
                     <source src="https://192.168.1.42:3000/video/inicio/video-movil.mp4" type="video/mp4" />
                     <div fallback>
-                        <p>Your browser is not compatible with this video.</p>
+                        <p>${{ _general.your-browser-is-not-compatible-with-this-video }}$</p>
                     </div>
                 </amp-video>
 
@@ -206,14 +207,14 @@
             <div class="container">
 
                 <!-- NOTA: para el desarrollo, añadir data-ampdevmode a la etiqueta <amp-script>. La quito con Gulp automáticamente en las builds. -->
-                <h1>A whole different <br/>kind of&nbsp;<amp-script script="script-cambiar-palabras-h1" layout="fixed-height" height="25" style="display: inline; opacity: 1;" data-ampdevmode><span id="cambiar-palabras-h1" class="cambiar-palabras">living</span></amp-script></h1>
+                <h1>${{ index.h1-a-whole-different }}$<br/>${{ index.h1-kind-of }}$<amp-script script="script-cambiar-palabras-h1" layout="fixed-height" height="25" style="display: inline; opacity: 1;" data-ampdevmode><span id="cambiar-palabras-h1" class="cambiar-palabras">${{ index.h1-living }}$</span></amp-script></h1>
                 <!-- Nota: pongo &nbsp; después de simplified en lugar de un espacio para que el espacio no se elimine el proceso de minificar el HTML. -->
 
                 <!-- Script para cambiar las palabras en el h1 -->
                 <!-- TODO: Para que funcione, hay que poner el hash que te indique la consola de desarrollador: <meta name="amp-script-src" content="XXXXXXX">; y cambiarlo cada vez que cambie el contenido del script. -->
                 <script id="script-cambiar-palabras-h1" type="text/plain" target="amp-script">
 
-                    var texts = ["living", "designing", "thinking"];
+                    var texts = ["${{ index.h1-living }}$", "${{ index.h1-designing }}$", "${{ index.h1-thinking }}$"];
                     var contador = 0;
 
                     function funcionCambiarPalabrasH1() {
@@ -231,7 +232,7 @@
 
                 </script>
 
-                <a href="portfolio.html">View Portfolio</a>
+                <a href="portfolio.html">${{ index.view-portfolio }}$</a>
 
             </div>
 

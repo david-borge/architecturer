@@ -1,4 +1,19 @@
 {
     "titulo":      "Contacto",
-    "descripcion": "Contacta con nosotros."
+    "descripcion": "Póngase en contacto con Architecturer en nuestras oficinas o por correo electrónico, teléfono y fax.",
+
+    "as-development-continues": "A medida que el desarrollo continúa, los ingenieros pueden visitar destinos de construcción para garantizar que los trabajadores temporales sigan el plan.",
+    "direccion": "Carretera Hester 22, Riverside, <br/>SW11 4AN, Londres, <br/>Reino Unido",
+    
+    "would-you-like-to-discuss-a-project": "¿Le gustaría discutir un proyecto?",
+
+    "your-name": "Su nombre",
+    "your-email": "Su correo electrónico",
+    "your-phone-number-optional": "Su teléfono (opcional)",
+    "your-message-opcional": "Tu mensaje (opcional)",
+    "i-accept-the": "Acepto la ",
+    "send-message": "Enviar mensaje",
+    "sending": "Enviando...",
+    "the-message-was-sent-successfully": "¡El mensaje fue enviado con éxito!",
+    "oops-there-was-an-error-when-sending-the-message-please-try-again": "¡Vaya! Hubo un error al enviar el mensaje, inténtelo de nuevo."
 }

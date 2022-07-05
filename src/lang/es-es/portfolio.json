@@ -1,4 +1,19 @@
 {
-    "titulo":  "Portfolio",
-    "descripcion": "Portfolio de Architecturer."
+    "titulo":  "Portafolio",
+    "descripcion": "Portafolio de Architecturer. Proyectos Residenciales, de Hospitalidad y de Hotelería & Resort.",
+
+    "filtro-all":  "Todos",
+    "filtro-residential":  "Residencial",
+    "filtro-hospitality":  "Hospitalidad",
+    "filtro-hotel-and-resort":  "Hotelería & Resort",
+    
+    "porfolio-contemporary-house":  "Casa Contemporánea",
+    "porfolio-modern-house":  "Casa Moderna",
+    "porfolio-minimalist-house":  "Casa Minimalista",
+    "porfolio-craftsman-house":  "Casa Artesanal",
+    "porfolio-maya-hills":  "Colinas Mayas",
+    "porfolio-rustic-steel-house":  "Casa de Acero Rústica",
+    "porfolio-the-hall-home":  "La Casa del Salón",
+    "porfolio-silk-espresso":  "Espresso de Seda",
+    "porfolio-convension-center":  "Centro de Convenciones"
 }

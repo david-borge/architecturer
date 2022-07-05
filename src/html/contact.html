@@ -108,12 +108,12 @@
                 <div class="row">
                     <div class="col-md-6 mb-3 mb-md-0">
 
-                        <p style="color: #7D7D7D; line-height: 29px;">As development continues, engineers may visit building destinations to guarantee that temporary workers pursue the plan.</p>
+                        <p style="color: #7D7D7D; line-height: 29px;">${{ contact.as-development-continues }}$</p>
 
                     </div>
                     <div class="col-md-3 mb-3 mb-md-0">
 
-                        <a href="https://www.google.es/maps/place/Foster+%2B+Partners/@51.4803263,-0.1706651,17z/data=!3m1!4b1!4m5!3m4!1s0x48760573b5e05ecb:0xf8e9933169593633!8m2!3d51.4803263!4d-0.1684764?shorturl=1" target="_blank" rel="noopener">Riverside, 22 Hester Rd, <br/>London SW11 4AN, <br/>United Kingdom</a>
+                        <a href="https://www.google.es/maps/place/Foster+%2B+Partners/@51.4803263,-0.1706651,17z/data=!3m1!4b1!4m5!3m4!1s0x48760573b5e05ecb:0xf8e9933169593633!8m2!3d51.4803263!4d-0.1684764?shorturl=1" target="_blank" rel="noopener">${{ contact.direccion }}$</a>
 
                     </div>
                     <div class="col-md-3">
@@ -132,9 +132,9 @@
 
                         <div id="caja-formulario-contacto" style="background-color: white; border-radius: 8px; border: 1px solid black;">
 
-                            <h2 style="margin-bottom: 20px;">Would you like to discuss a project?</h2>
+                            <h2 style="margin-bottom: 20px;">${{ contact.would-you-like-to-discuss-a-project }}$</h2>
 
-                            <p style="margin-bottom: 40px; line-height: 29px;">As development continues, engineers may visit building destinations to guarantee that temporary workers pursue the plan.</p>
+                            <p style="margin-bottom: 40px; line-height: 29px;">${{ contact.as-development-continues }}$</p>
 
                             <!-- Formulario de contacto -->
                             <!-- MUY IMPORTANTE: si algún campo no se necesita, dejarlo oculto y rellenando el valor en el HTML. -->
@@ -162,7 +162,7 @@
                                     <div class="row">
                                         <div class="col-12" style="margin-bottom: 30px;">
                                             <div class="form-group">
-                                                <label for="nombre_y_apellidos" class="form-label">Your name</label>
+                                                <label for="nombre_y_apellidos" class="form-label">${{ contact.your-name }}$</label>
                                                 <input id="nombre_y_apellidos" name="nombre_y_apellidos" type="text" placeholder="" required class="form-control">
                                             </div>
                                         </div>
@@ -171,13 +171,13 @@
                                     <div class="row">
                                         <div class="col-md-6" style="margin-bottom: 30px;">
                                             <div class="form-group">
-                                                <label for="correo_electronico" class="form-label">Your email</label>
+                                                <label for="correo_electronico" class="form-label">${{ contact.your-email }}$</label>
                                                 <input id="correo_electronico" name="correo_electronico" type="email" placeholder="" required class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-md-6" style="margin-bottom: 30px;">
                                             <div class="form-group">
-                                                <label for="telefono" class="form-label">Your phone number (optional)</label>
+                                                <label for="telefono" class="form-label">${{ contact.your-phone-number-optional }}$</label>
                                                 <input id="telefono" name="telefono" type="tel" placeholder="" class="form-control">
                                             </div>
                                         </div>
@@ -186,7 +186,7 @@
                                     <div class="row">
                                         <div class="col-12" style="margin-bottom: 30px;">
                                             <div class="form-group">
-                                                <label for="mensaje" class="form-label">Your message (opcional)</label>
+                                                <label for="mensaje" class="form-label">${{ contact.your-message-opcional }}$</label>
                                                 <textarea id="mensaje" name="mensaje" placeholder="" maxlength="4000" autoexpand class="form-control" style="height: 100px; min-height: 100px; max-height: 200px; resize: vertical;"></textarea>
                                             </div>
                                         </div>
@@ -196,14 +196,14 @@
                                         <div class="col-12" style="margin-bottom: 30px;">
                                             <div id="acepto-la-politica-de-proteccion-de-datos-form-group" class="form-group" style="display: flex;">
                                                 <input id="acepto-la-politica-de-proteccion-de-datos" name="acepto-la-politica-de-proteccion-de-datos" type="checkbox" value="acepto" required class="form-check-input">
-                                                <label for="acepto-la-politica-de-proteccion-de-datos" class="form-label">I accept the <a href="https://192.168.1.42:3000/privacy-policy.html" target="_blank" rel="noopener" style="display: inline; color: #222;">Privacy Policy</a>.</label>
+                                                <label for="acepto-la-politica-de-proteccion-de-datos" class="form-label">${{ contact.i-accept-the }}$<a href="https://192.168.1.42:3000/privacy-policy.html" target="_blank" rel="noopener" style="display: inline; color: #222;">${{ privacy-policy.titulo }}$</a>.</label>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="row">
                                         <div class="col-12">
-                                            <button type="submit" class="btn btn-primary w-100">Send message</button>
+                                            <button type="submit" class="btn btn-primary w-100">${{ contact.send-message }}$</button>
                                         </div>
                                     </div>
 
@@ -211,14 +211,14 @@
 
                                 <!-- Se muestra cuando el formulario se esté procesando -->
                                 <div submitting>
-                                    <p style="margin-top: 30px;">Sending...</p>
+                                    <p style="margin-top: 30px;">${{ contact.sending }}$</p>
                                 </div>
 
                                 <!-- Se muestra cuando el formulario se haya enviado con éxito (the response is successful (i.e., has a status of 2XX)) -->
                                 <div submit-success>
                                     <template type="amp-mustache">
 
-                                        <p style="margin-top: 30px;">The message was sent successfully!</p>
+                                        <p style="margin-top: 30px;">${{ contact.the-message-was-sent-successfully }}$</p>
 
                                         <!-- TODO: comentar esto en producción -->
                                         <!-- <div style="border: 1px solid green; padding: 15px;">
@@ -242,7 +242,7 @@
                                 <div submit-error>
                                     <template type="amp-mustache">
 
-                                        <p style="margin-top: 30px; color: red;">Oops! There was an error when sending the message, please try again.</p>
+                                        <p style="margin-top: 30px; color: red;">${{ contact.oops-there-was-an-error-when-sending-the-message-please-try-again }}$</p>
 
                                         <!-- TODO: comentar esto en producción -->
                                         <!-- <div style="border: 1px solid red; padding: 15px;">

@@ -1,4 +1,19 @@
 {
     "titulo":  "Portfolio",
-    "descripcion": "Architecturer's portfolio. Residential, Hospitality and Hotel & Resort projects."
+    "descripcion": "Architecturer's portfolio. Residential, Hospitality and Hotel & Resort projects.",
+
+    "filtro-all":  "All",
+    "filtro-residential":  "Residential",
+    "filtro-hospitality":  "Hospitality",
+    "filtro-hotel-and-resort":  "Hotel & Resort",
+    
+    "porfolio-contemporary-house":  "Contemporary House",
+    "porfolio-modern-house":  "Modern House",
+    "porfolio-minimalist-house":  "Minimalist House",
+    "porfolio-craftsman-house":  "Craftsman House",
+    "porfolio-maya-hills":  "Maya Hills",
+    "porfolio-rustic-steel-house":  "Rustic Steel House",
+    "porfolio-the-hall-home":  "The Hall Home",
+    "porfolio-silk-espresso":  "Silk Espresso",
+    "porfolio-convension-center":  "Convension Center"
 }
