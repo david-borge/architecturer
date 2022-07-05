@@ -89,6 +89,18 @@ try {
     /** PASO 4.6: Configuración SMTP que se va a usar para mandar el correo **/
     // TODO: rellenar estos datos
     $correo_a_enviar->isSMTP();
+    $correo_a_enviar->Host = 'smtp.1und1.de';
+    $correo_a_enviar->SMTPAuth = true;
+    $correo_a_enviar->Username = 'enviar.formulario.prueba@davidborge.com';  // Correo electrónico
+    $correo_a_enviar->Password = 'A*D5jNK9:)z\czT6n#21232Z';
+    $correo_a_enviar->SMTPSecure = 'ssl';
+    $correo_a_enviar->Port = 465;
+
+    /* $correo_a_enviar->SMTPSecure = 'ssl';
+    $correo_a_enviar->Port = 465; */
+
+    // Antiguo: usar Gmail, que Google ya no lo permite.
+    /* $correo_a_enviar->isSMTP();
     $correo_a_enviar->Host = 'smtp.gmail.com';
     $correo_a_enviar->SMTPAuth = true;
     $correo_a_enviar->Username = 'enviar.formulario.prueba@gmail.com';  // Correo electrónico
@@ -96,14 +108,15 @@ try {
     $correo_a_enviar->SMTPSecure = 'tls';
     $correo_a_enviar->Port = 587;
 
-    /* $correo_a_enviar->SMTPSecure = 'ssl';
+    $correo_a_enviar->SMTPSecure = 'ssl';
     $correo_a_enviar->Port = 465; */
 
 
     /** PASO 4.7: Configuración del correo - Desde qué cuenta va a poner que se manda el correo **/
     // NOTA IMPORTANTE: al usar SMTP, el correo desde el que llega es el que se haya puesto en la configuración SMTP (PASO 4.6), este campo de correo es ignorado.
     // TODO: Poner nombre y correo.
-    $correo_a_enviar->setFrom( "enviar.formulario.prueba@gmail.com", "Architecturer" );
+    $correo_a_enviar->setFrom( "enviar.formulario.prueba@davidborge.com", "Architecturer" );
+    // Antiguo: usar Gmail, que Google ya no lo permite.  // $correo_a_enviar->setFrom( "enviar.formulario.prueba@gmail.com", "Architecturer" );
 
 
     /** PASO 4.8: Configuración del correo - A qué correos se va a mandar el correo (receptor normal, CC y BCC) **/
@@ -140,7 +153,7 @@ try {
                              "<p><strong>Correo electrónico:</strong> " . $campo_formulario_correo_electronico . "</p>" . 
                              "<p><strong>Teléfono:</strong> "           . $campo_formulario_telefono . "</p>" . 
                              "<p><strong>Mensaje:</strong><br/>"        . nl2br(htmlspecialchars($campo_formulario_mensaje)) . "</p>" . 
-                             "<p style='margin-top:60px;font-style:italic'>Este mensaje fue enviado desde el <strong>formulario de contacto</strong> de la web de <strong>Architecturer</strong> (<a href='URL_PAGINA_DE_FORMULARIO'>URL_PAGINA_DE_FORMULARIO</a>).</p>";
+                             "<p style='margin-top:60px;font-style:italic'>Este mensaje fue enviado desde el <strong>formulario de contacto</strong> de la web de <strong>Architecturer</strong> (<a href='https://davidborge.com/architecturer/contact.html'>https://davidborge.com/architecturer/contact.html</a>).</p>";
 
 
     /** PASO 4.12: Configuración del correo - Cuerpo del correo (en texto plano para clientes sin HTML) **/
