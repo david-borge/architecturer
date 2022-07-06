@@ -1,4 +1,15 @@
 {
     "titulo": "Architecturer",
-    "descripcion": "Un tipo de vida, diseño y pensamiento completamente diferentes"
+    "descripcion": "Un tipo de vida, diseño y pensamiento completamente diferentes",
+
+    "calle-y-numero": "Carretera Hester 22, Riverside",
+    "localidad": "Londres",
+    "region": "Londres",
+    "codigo-postal": "SW11 4AN",
+    "pais": "Reino Unido",
+    
+    "correo-electronico": "info@architecturer.com",
+    "telefono": "123 456 789",
+    "telefono-prefijo": "+34",
+    "fax": "987 654 321"
 }

@@ -6,18 +6,18 @@
 
                 <h2>${{ _footer.office }}$</h2>
 
-                <a href="https://www.google.es/maps/place/Foster+%2B+Partners/@51.4803263,-0.1706651,17z/data=!3m1!4b1!4m5!3m4!1s0x48760573b5e05ecb:0xf8e9933169593633!8m2!3d51.4803263!4d-0.1684764?shorturl=1" target="_blank" rel="noopener">${{ _footer.direccion }}$</a>
+                <a href="https://www.google.es/maps/place/Foster+%2B+Partners/@51.4803263,-0.1706651,17z/data=!3m1!4b1!4m5!3m4!1s0x48760573b5e05ecb:0xf8e9933169593633!8m2!3d51.4803263!4d-0.1684764?shorturl=1" target="_blank" rel="noopener">${{ _web.calle-y-numero }}$, <br/>${{ _web.region }}$ ${{ _web.codigo-postal }}$, <br/>${{ _web.pais }}$</a>
 
             </div>
             <div class="col-md-4 mb-4">
 
                 <h2>${{ _footer.contact }}$</h2>
 
-                <a href="mailto:info@architecturer.com">E. info@architecturer.com</a>
+                <a href="mailto:${{ _web.correo-electronico }}$">E. ${{ _web.correo-electronico }}$</a>
 
-                <a href="tel:+34 123 456 789">T. 123 456 789</a>
+                <a href="tel:${{ _web.telefono-prefijo }}$ ${{ _web.telefono }}$">T. ${{ _web.telefono }}$</a>
                 
-                <a href="tel:+34 987 654 321">F. 987 654 321</a>
+                <a href="tel:${{ _web.telefono-prefijo }}$ ${{ _web.fax }}$">F. ${{ _web.fax }}$</a>
 
             </div>
             <div class="col-md-4 mb-4">

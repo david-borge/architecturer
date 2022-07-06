@@ -42,21 +42,21 @@
         {
             "@context":"https://schema.org",
             "@type":"Organization",
-            "name":"Architecturer",
+            "name":"${{ _web.titulo }}$",
             "@id":"https://192.168.1.42:3000/",
             "url":"https://192.168.1.42:3000/",
             "logo":"https://192.168.1.42:3000/img/logo/architecturer-logo.svg",
-            "description":"DESCRIPCIÓN_CORTA_DE_LA_WEB",
+            "description":"${{ _web.descripcion }}$.",
             "address":{
                "@type":"PostalAddress",
-               "streetAddress":"DIRECCION",
-               "addressLocality":"CIUDAD",
-               "addressRegion":"CIUDAD",
-               "postalCode":"CODIGO_POSTAL",
-               "addressCountry":"CODIGO_PAIS"
+               "streetAddress":"${{ _web.calle-y-numero }}$",
+               "addressLocality":"${{ _web.localidad }}$",
+               "addressRegion":"${{ _web.region }}$",
+               "postalCode":"${{ _web.codigo-postal }}$",
+               "addressCountry":"${{ _web.pais }}$"
             },
-            "email":"CORREO_ELECTRONICO",
-            "telephone":"TELEFONO",
+            "email":"${{ _web.correo-electronico }}$",
+            "telephone":"${{ _web.telefono-prefijo }}$ ${{ _web.telefono }}$",
             "image":[
                "https://192.168.1.42:3000/img/logo/architecturer-compartir.jpg"
             ]

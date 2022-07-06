@@ -1,4 +1,15 @@
 {
     "titulo": "Architecturer",
-    "descripcion": "A whole different kind of living, designing and thinking"
+    "descripcion": "A whole different kind of living, designing and thinking",
+
+    "calle-y-numero": "Riverside, 22 Hester Rd",
+    "localidad": "London",
+    "region": "London",
+    "codigo-postal": "SW11 4AN",
+    "pais": "United Kingdom",
+    
+    "correo-electronico": "info@architecturer.com",
+    "telefono": "123 456 789",
+    "telefono-prefijo": "+34",
+    "fax": "987 654 321"
 }

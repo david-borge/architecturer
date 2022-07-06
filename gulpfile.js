@@ -161,8 +161,8 @@ const { dest, parallel, series } = require('gulp');
 // Configuración de la web: URL de desarrollo y URL de producción
 const url_desarrollo = "https://192.168.1.42:3000";  // TODO: si cambia la URL de desarrollo, también hay que cambiarla en todos los archivos de la carpeta src y también en la tarea watch().
 
-const url_produccion = "https://davidborge.com/architecturer";
-// const url_produccion = "https://davidborge.es/architecturer";
+// const url_produccion = "https://davidborge.com/architecturer";
+const url_produccion = "https://davidborge.es/architecturer";
 // const url_produccion = "https://localhost/architecturer/dist/en";
 // const url_produccion = "https://localhost/architecturer/dist/es-es";
 
@@ -195,8 +195,8 @@ var filesPathSrc = {
 // TODO: al cambiar el idioma, cambiarlo también en:
 //        - Este archivo: variable url_produccion
 //        - Archivo: src\lang\en\_lang.json
-var localization = "en";
-// var localization = "es-es";
+// var localization = "en";
+var localization = "es-es";
 
 var i18nOptions = {
     langDir: filesPathSrc.lang,
