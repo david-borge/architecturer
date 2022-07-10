@@ -902,7 +902,7 @@ exports.borrar_enlaces_a_css = borrar_enlaces_a_css;
 
 
 
-// Tarea Gulp: copiar otros archivos a dist (.htaccess, PDFs, etc.).
+// Tarea Gulp: copiar otros archivos a dist (.htaccess, sitemap.xml, robots.txt, manifest.json, PDFs, etc.).
 // Para ejecturarla, escribir en la terminal: gulp otros_archivos
 function copiar_otros_archivos_a_dist(terminar_tarea) {
     
@@ -917,41 +917,62 @@ function copiar_otros_archivos_a_dist(terminar_tarea) {
                         )
                       .pipe( gulp.dest(filesPathDest.html) );
 
-    // Fuentes
+    // sitemap.xml
     var tarea2 = gulp.src(
+                            ['./src/sitemap.xml']
+                        )
+                      .pipe( gulp.dest(filesPathDest.html) );
+
+    // robots.txt
+    var tarea3 = gulp.src(
+                            ['./src/robots.txt']
+                        )
+                      .pipe( gulp.dest(filesPathDest.html) );
+
+    // manifest.json
+    var tarea4 = gulp.src(
+                            ['./src/img/favicon/manifest.json']
+                        )
+                      .pipe( gulp.dest(filesPathDest.img + "/favicon/") );
+
+    // Fuentes
+    var tarea5 = gulp.src(
                             ['./src/fonts/**/*']
                         )
                       .pipe( gulp.dest(filesPathDest.html + "/fonts/") );
 
     // Archivos PHP
-    var tarea3 = gulp.src(
+    var tarea6 = gulp.src(
                             ['./src/**/*.php']
                         )
                       .pipe( gulp.dest(filesPathDest.html) );
 
     // Carpeta "vendor" (generado por Composer para poder usar PHPMailer)
-    var tarea4 = gulp.src(
+    var tarea7 = gulp.src(
                             ['./vendor/**/*'],
                             { base:"." }  // Si no se pone esto, no se respeta bien la estructura de carpetas al copiar.
                          )
                       .pipe( gulp.dest(filesPathDest.html) );
 
-    // (No los uso en este proyecto) Archivos HTML que incluyo con iframes
-    //var tarea3 = gulp.src(
-    //                        ['./src/iframes/**/*']
-    //                    )
-    //                  .pipe( gulp.dest(filesPathDest.html + "/iframes/") );
+    // Archivos HTML que incluyo con iframes
+    var tarea8 = gulp.src(
+                            ['./src/iframes/**/*']
+                        )
+                      .pipe( gulp.dest(filesPathDest.html + "/iframes/") );
     
     // Vídeos
-    var tarea3 = gulp.src(
-                            ['./src/video/**/*']
+    var tarea9 = gulp.src(
+                            [
+                                './src/**/*.mp4',
+                                './src/**/*.webm'
+                            ]
                         )
-                      .pipe( gulp.dest(filesPathDest.html + "/video/") );
+                      .pipe( gulp.dest(filesPathDest.html) );
                                 
     // Terminar esta tarea
     terminar_tarea(); // Corresponde con el mensaje de la terminal: Finished 'copiar_otros_archivos_a_dist' after xxxx ms
 
-    return [ tarea1, tarea2, tarea3, tarea4 ];
+    return [ tarea1, tarea2, tarea3, tarea4, tarea5, tarea6, tarea7, tarea8, tarea9 ];
 
 }
 exports.copiar_otros_archivos_a_dist = copiar_otros_archivos_a_dist;
@@ -970,7 +991,10 @@ function reemplazar_url_desarrollo_por_url_produccion(terminar_tarea) {
     return gulp
         .src( [
                 filesPathDest.html + '/**/*.html',
-                filesPathDest.html + '/**/*.php'
+                filesPathDest.html + '/**/*.php',
+                filesPathDest.html + '/**/.htaccess',
+                filesPathDest.html + '/**/robots.txt',
+                filesPathDest.html + '/**/manifest.json'
             ] )
         .pipe( inject.replace( url_desarrollo,  url_produccion) )
         .pipe( inject.replace( "data-ampdevmode",  "") )
@@ -1232,7 +1256,11 @@ function borrar_carpeta_dist_excepto_img_y_video(terminar_tarea) {
         filesPathDest.iframes,
         filesPathDest.html + "/include",
         filesPathDest.html + "/partials",
-        filesPathDest.html + "/vendor"
+        filesPathDest.html + "/vendor",
+        filesPathDest.html + "/.htaccess",
+        filesPathDest.html + "/robots.txt",
+        filesPathDest.html + '/**/*.js',  // Service Workers
+        filesPathDest.html + '/sitemap.xml',
     ] );
 
     // Terminar esta tarea
