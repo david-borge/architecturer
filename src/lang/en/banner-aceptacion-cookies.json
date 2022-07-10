@@ -1,11 +1,16 @@
 {
-    "titulo": "Manage cookies consent",
-    "descripcion": "This web portal only uses its own cookies for technical purpose, does not collect or yield personal data of users without their knowledge.However, it contains links to third -party websites with privacy policies outside ours that you can decide whether or not to accept when you access them.",
+    "titulo": "Cookie consent",
 
-    "cookies-funcionales": "Functional Cookies",
-    "cookies-estadisticas": "Statistical Cookies",
-    "cookies-de-marketing": "Marketing Cookies",
+    "leer": "Read",
+    "mas": "more",
+    "menos": "less",
 
-    "aceptar-todo": "Accept everything",
+    "descripcion": "This website only uses its own cookies for technical purposes, it does not collect or yield personal data of users without their knowledge. However, it contains links to third-party websites with privacy policies outside ours that you can decide whether or not to accept when you access them.",
+
+    "cookies-funcionales": "Functional",
+    "cookies-estadisticas": "Statistical",
+    "cookies-de-marketing": "Marketing",
+
+    "aceptar-todo": "Accept all",
     "rechazar": "Decline"
 }
