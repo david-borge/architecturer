@@ -7,6 +7,8 @@
     <!-- AMP Page Image Preloads (Preload an important image in the first viewport to improve page load time.) -->
     <!-- Referencia: https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content -->
     <link rel="preload" href="https://192.168.1.42:3000/img/logo/architecturer-logo-blanco.svg" as="image">
+    <link rel="preload" href="https://192.168.1.42:3000/video/inicio/video-poster.webp?v=2" as="image" media="(min-width: 634px)">
+    <link rel="preload" href="https://192.168.1.42:3000/video/inicio/video-movil-poster.webp?v=2" as="image" media="(max-width: 633px)">
     
 
 
@@ -152,6 +154,8 @@
 
                 <div class="overlay"></div>
 
+                <!-- TODO: en los vídeos, hacer preload del póster. -->
+                <!-- NOTA: no se puede hacer preload del vídeo, solo del poster. -->
                 <amp-video media="(min-width: 634px)"
                     width="1920"
                     height="1080"
@@ -168,17 +172,32 @@
                     </div>
                 </amp-video>
 
+                <!-- TODO: en los vídeos, hacer preload del póster. -->
+                <!-- NOTA: no se puede hacer preload del vídeo, solo del poster. -->
+                <!-- Puntuación de Google Lighthouse en móvil con video-movil.wemb de distintos tamaños (y longitudes):
+                        78.5 MB (2' 42s)           -> 78
+                        3.81 MB (25s)              -> 82
+                        2.45 MB (7 s)              -> 85
+                        2.45 MB (7 s) y sin poster -> 93
+                        2.45 MB (7 s) y sin amp-bind en el banner de cookies -> 90
+                        2.45 MB (7 s), sin amp-bind en el banner de cookies y con preload de video-movil-poster.webp -> 88, 91, 92
+                        2.45 MB (7 s), sin amp-bind en el banner de cookies, con preload de video-movil-poster.webp y con data-hero en el vídeo móvil (que no hace nada) -> 92
+                        2.45 MB (7 s), con amp-bind en el banner de cookies, con preload de video-movil-poster.webp y sin data-hero en el vídeo móvil -> 91, 89, 84, 90
+                        2.45 MB (7 s), con amp-bind en el banner de cookies con preload de video-movil-poster.webp, sin data-hero en el vídeo móvil y en Hosting de Pointer -> Lo mismo
+                        2.45 MB (7 s), además, con Service Worker con las optimizaciones básicas (https://gist.github.com/sebastianbenz/1d449dee039202d8b7464f1131eae449)  -> ¿?
+                        2.45 MB (7 s), además, con CDN  -> ¿?    -->
                 <amp-video media="(max-width: 633px)"
-                    width="1080"
-                    height="1920"
+                    width="450"
+                    height="800"
                     layout="responsive"
                     autoplay
                     loop
                     disableremoteplayback
                     noaudio
-                    poster="https://192.168.1.42:3000/video/inicio/video-movil-poster.webp">
-                    <source src="https://192.168.1.42:3000/video/inicio/video-movil.webm?v=2" type="video/webm" />
-                    <source src="https://192.168.1.42:3000/video/inicio/video-movil.mp4?v=2" type="video/mp4" />
+                    poster="https://192.168.1.42:3000/video/inicio/video-movil-poster.webp?v=2"
+                    >
+                    <source src="https://192.168.1.42:3000/video/inicio/video-movil.webm?v=3" type="video/webm" />
+                    <source src="https://192.168.1.42:3000/video/inicio/video-movil.mp4?v=3" type="video/mp4" />
                     <div fallback>
                         <p>${{ _general.your-browser-is-not-compatible-with-this-video }}$</p>
                     </div>
