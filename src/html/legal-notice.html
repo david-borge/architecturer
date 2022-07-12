@@ -23,13 +23,12 @@
     <meta property="og:title" content="${{ legal-notice.titulo }}$ - ${{ _web.titulo }}$" />
     <meta property="og:description" content="${{ legal-notice.descripcion }}$">
     <meta property="og:url" content="https://192.168.1.42:3000/legal-notice.html" />
-    <meta property="og:image" content="http://192.168.0.19:3000/img/logo/architecturer-compartir.jpg?v=2">
+    <meta property="og:image" content="http://192.168.1.42:3000/img/logo/architecturer-compartir.jpg?v=2">
 
     
     <!-- Hash del script #script-copyright-con-ano-actual -->
     <!-- TODO: hay que actualizarlo cada vez que se cambie el contenido de #script-copyright-con-ano-actual. Sacarlo del error de la consola de desarrollador de Chrome. -->
-    <meta name="amp-script-src" content="sha384-pZM9L0e2Eud605He1Zkf6aatDWRI167lIVWvtDnufzrX7sk7ZFb44tnYh1lknnPW
-                                         sha384-X4oHzM7irc7oXbRb3dmUGBkBxfn6WPpt5aMlfGAoomeYTqW39mk70_x-kFUADuZJ">
+    <meta name="amp-script-src" content="sha384-pZM9L0e2Eud605He1Zkf6aatDWRI167lIVWvtDnufzrX7sk7ZFb44tnYh1lknnPW sha384-X4oHzM7irc7oXbRb3dmUGBkBxfn6WPpt5aMlfGAoomeYTqW39mk70_x-kFUADuZJ">
 
 
     <!-- Datos estructurados (schema.org) -->
@@ -136,7 +135,7 @@
     <!-- Cargar Service Worker de la página de "Estás offline" (uso de PWA) -->
     <!-- Fuente: https://web.dev/offline-fallback-page/ -->
     <!-- Generar favicon maskable: https://maskable.app/editor -->
-    @@include('partials/service-workers/service-worker-pagina-estas-offline.html')
+    @@include('partials/service-workers/service-worker-pagina-estas-offline-y-optimizaciones-amp.html')
 
 
 </body>

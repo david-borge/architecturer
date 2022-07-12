@@ -30,9 +30,7 @@
     
     <!-- Hash del script #script-cambiar-palabras-h1 -->
     <!-- TODO: hay que actualizarlo cada vez que se cambie el contenido de #script-cambiar-palabras-h1. Sacarlo del error de la consola de desarrollador de Chrome. -->
-    <meta name="amp-script-src" content="sha384-pZM9L0e2Eud605He1Zkf6aatDWRI167lIVWvtDnufzrX7sk7ZFb44tnYh1lknnPW
-                                         sha384-X4oHzM7irc7oXbRb3dmUGBkBxfn6WPpt5aMlfGAoomeYTqW39mk70_x-kFUADuZJ
-                                         sha384-izTmqrHVvrgZhSwti2M2CS6qH_8g7cmg9POP1dKew9FnD99rr_oVi2eCbSYrY-gB">
+    <meta name="amp-script-src" content="sha384-pZM9L0e2Eud605He1Zkf6aatDWRI167lIVWvtDnufzrX7sk7ZFb44tnYh1lknnPW sha384-X4oHzM7irc7oXbRb3dmUGBkBxfn6WPpt5aMlfGAoomeYTqW39mk70_x-kFUADuZJ sha384-izTmqrHVvrgZhSwti2M2CS6qH_8g7cmg9POP1dKew9FnD99rr_oVi2eCbSYrY-gB">
 
 
     <!-- Datos estructurados (schema.org) -->
@@ -185,7 +183,7 @@
                         2.45 MB (7 s), sin amp-bind en el banner de cookies, con preload de video-movil-poster.webp y con data-hero en el vídeo móvil (que no hace nada) -> 92
                         2.45 MB (7 s), con amp-bind en el banner de cookies, con preload de video-movil-poster.webp y sin data-hero en el vídeo móvil -> 91, 89, 84, 90
                         2.45 MB (7 s), con amp-bind en el banner de cookies con preload de video-movil-poster.webp, sin data-hero en el vídeo móvil y en Hosting de Pointer -> Lo mismo
-                        2.45 MB (7 s), además, con Service Worker con las optimizaciones básicas (https://gist.github.com/sebastianbenz/1d449dee039202d8b7464f1131eae449)  -> ¿?
+                        2.45 MB (7 s), además, con Service Worker con las optimizaciones básicas (https://gist.github.com/sebastianbenz/1d449dee039202d8b7464f1131eae449)  -> 90, 91, 90, 90, 93, 91
                         2.45 MB (7 s), además, con CDN  -> ¿?    -->
                 <amp-video media="(max-width: 633px)"
                     width="450"
@@ -279,9 +277,11 @@
 
     
     <!-- Cargar Service Worker de la página de "Estás offline" (uso de PWA) -->
-    <!-- Fuente: https://web.dev/offline-fallback-page/ -->
     <!-- Generar favicon maskable: https://maskable.app/editor -->
-    @@include('partials/service-workers/service-worker-pagina-estas-offline.html')
+    <!-- Fuente con optimizaciones básicas para AMP: https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/optimize_amp/?format=websites#consider-using-a-service-worker ("check out this sample that...") y https://gist.github.com/sebastianbenz/1d449dee039202d8b7464f1131eae449 -->
+    <!-- Fuente (sin optimizaciones básicas para AMP): https://web.dev/offline-fallback-page/ -->
+    <!-- CUIDADO: los archivos JS de los Service Workers deben ir a la altura del HTML en las builds. -->
+    @@include('partials/service-workers/service-worker-pagina-estas-offline-y-optimizaciones-amp.html')
 
 
 </body>

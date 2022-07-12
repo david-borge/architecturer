@@ -1067,7 +1067,8 @@ function reemplazar_url_desarrollo_por_url_produccion(terminar_tarea) {
                 filesPathDest.html + '/**/*.php',
                 filesPathDest.html + '/**/.htaccess',
                 filesPathDest.html + '/**/robots.txt',
-                filesPathDest.html + '/**/manifest.json'
+                filesPathDest.html + '/**/manifest.json',
+                // FIXME: filesPathDest.html + '/**/*.js',  // JS y Service Workers
             ] )
         .pipe( inject.replace( url_desarrollo,  url_produccion) )
         .pipe( gulp.dest(filesPathDest.html) );
@@ -1089,13 +1090,36 @@ function reemplazar_otros_textos(terminar_tarea) {
 
     // Código que se ejecutará al ejecutar esta tarea de Gulp
     // console.log("Hola desde la tarea de Gulp reemplazar_otros_textos!");  // Imprime el mensaje en la terminal
-    return gulp
-        .src( [
-                filesPathDest.html + '/**/*.html',
-                filesPathDest.html + '/**/*.php'
-            ] )
-        .pipe( inject.replace( " data-ampdevmode=\"true\"",  "") )  // Quitar el atributo data-ampdevmode="true" de las etiquetas <amp-script>
-        .pipe( gulp.dest(filesPathDest.html) );
+    var array_tareas = [];
+
+    // Nueva tarea al array de tareas
+    // Quitar el atributo data-ampdevmode="true" de las etiquetas <amp-script>
+    array_tareas.push(
+
+        gulp
+            .src( [
+                    filesPathDest.html + '/**/*.html',
+                    filesPathDest.html + '/**/*.php'
+                ] )
+            .pipe( inject.replace( " data-ampdevmode",  "") )
+            .pipe( gulp.dest(filesPathDest.html) )
+
+    );
+
+    // Quitar el atributo amp del <html> de algunas páginas
+    // Quitar el atributo data-ampdevmode="true" de las etiquetas <amp-script>
+    array_tareas.push(
+
+        gulp
+            .src( [
+                    filesPathDest.html + '/**/offline.html'
+                ] )
+            .pipe( inject.replace( "<html amp",  "<html") )
+            .pipe( gulp.dest(filesPathDest.html) )
+
+    );
+
+    return mergeStream(array_tareas);
 
     // Terminar esta tarea
     terminar_tarea(); // Corresponde con el mensaje de la terminal: Finished 'reemplazar_otros_textos' after xxxx ms

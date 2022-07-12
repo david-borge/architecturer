@@ -1,0 +1,16 @@
+<!-- Cargar Service Worker de la página de "Estás offline" (uso de PWA) -->
+<!-- Generar favicon maskable: https://maskable.app/editor -->
+<!-- Fuente con optimizaciones básicas para AMP: https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/optimize_amp/?format=websites#consider-using-a-service-worker ("check out this sample that...") y https://gist.github.com/sebastianbenz/1d449dee039202d8b7464f1131eae449 -->
+<!-- Fuente (sin optimizaciones básicas para AMP): https://web.dev/offline-fallback-page/ -->
+<!-- CUIDADO: los archivos JS de los Service Workers deben ir a la altura del HTML en las builds. -->
+
+
+
+
+<!doctype html>
+<title>installing service worker</title>
+<script type='text/javascript'>
+  if('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('https://192.168.1.42:3000/service-worker-pagina-estas-offline-y-optimizaciones-amp.min.js');
+  };
+</script>
