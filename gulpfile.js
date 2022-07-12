@@ -182,6 +182,7 @@ var filesPathSrc = {
     sass: "./src/sass/**/*.scss",
     less: "./src/less/**/*.less",
     js:   "./src/js/**/*.js",
+    serviceworkers:   "./src/js/service-workers/**/*.js",
     img:  "./src/img/**/*.*",
     lang: "./src/lang/",
     ssl: "./src/ssl/"
@@ -481,36 +482,108 @@ exports.convertir_less_en_css_con_sourcemaps_y_anadir_sufijo_min_y_manejar_error
 
 // |- Renombrar el JS minificado añadiendo el sufijo ".min".
 //    Instalación: npm install gulp-rename
-//    Documentación: https://www.npmjs.com/package/gulp-rename
+//    Documentación: https://github.com/hparra/gulp-rename
 function compilar_js_y_concatenar_y_minificar_y_anadir_sufijo_min(terminar_tarea) {
     
     // En la terminal, se indica el inicio de esta tarea con: Starting 'compilar_js_y_concatenar_y_minificar_y_anadir_sufijo_min'...
 
     // Código que se ejecutará al ejecutar esta tarea de Gulp
     // console.log("Hola desde la tarea de Gulp compilar_js_y_concatenar_y_minificar_y_anadir_sufijo_min!");  // Imprime el mensaje en la terminal
-    return gulp
-        .src( filesPathSrc.js )  // Objeto filesPathSrc definido arriba.  // Archivos JS de origen si no importa el orden en el que los voy a concatenar o si no los quiero concatenar.
-        /* .src( [  // Archivos JS de origen si quiero concatenarlos en un orden concreto.
-                    "./src/js/mis-scripts.js",
-                    "./src/js/alert.js"
-                ] ) */
-        .pipe( plumber({ errorHandler: notifier.error }) )  // Mostrar errores en la terminal y las notificaciones del Sistema Operativo. Debe ir después de gulp.src().
-        .pipe( babel({
-                    presets: [ "@babel/env" ]
-                }) )
-        .pipe( concat("main.js") )  // Concatenar JS (unir todos los archivos JS en uno solo). Debe hacerse antes de la minificación y de añadir el sufijo ".min". El parámetro es el nombre del archivo final (que contiene el código de todos los archivos JS en uno solo).
-        .pipe( uglify() )  // Minificar JS
-        .pipe( rename({
-                        suffix: ".min"  // Renombrar el CSS minificado añadiendo el sufijo ".min". Debe ir justo antes de gulp.dest(). El parámetro es el nombre del archivo de salida.
-                        }) )
-        .pipe( gulp.dest(filesPathDest.js) );
-        // .pipe( notifier.success( "js" ) );  // Notificar cuando el JS se ha compilado correctamente.   // Variable definida en notifier.defaults más arriba.;
+    
+    var array_tareas = [];
+
+    // Nueva tarea al array de tareas
+    // JS que quiero combinar en uno solo (main.min.js)
+    array_tareas.push(
+
+        gulp
+            .src( [
+                filesPathSrc.js,
+                "!" + filesPathSrc.serviceworkers,
+                "!" + "./src/js/offline.js"
+            ] )  // Objeto filesPathSrc definido arriba.  // Archivos JS de origen si no importa el orden en el que los voy a concatenar o si no los quiero concatenar.
+            /* .src( [  // Archivos JS de origen si quiero concatenarlos en un orden concreto.
+                        "./src/js/mis-scripts.js",
+                        "./src/js/alert.js"
+                    ] ) */
+            .pipe( plumber({ errorHandler: notifier.error }) )  // Mostrar errores en la terminal y las notificaciones del Sistema Operativo. Debe ir después de gulp.src().
+            .pipe( babel({
+                        presets: [ "@babel/env" ]
+                    }) )
+            .pipe( concat("main.js") )  // Concatenar JS (unir todos los archivos JS en uno solo). Debe hacerse antes de la minificación y de añadir el sufijo ".min". El parámetro es el nombre del archivo final (que contiene el código de todos los archivos JS en uno solo).
+            .pipe( uglify() )  // Minificar JS
+            .pipe( rename({
+                            suffix: ".min"  // Renombrar el CSS minificado añadiendo el sufijo ".min". Debe ir justo antes de gulp.dest(). El parámetro es el nombre del archivo de salida.
+                            }) )
+            .pipe( gulp.dest(filesPathDest.js) )
+            // .pipe( notifier.success( "js" ) );  // Notificar cuando el JS se ha compilado correctamente.   // Variable definida en notifier.defaults más arriba.;
+
+    );
+
+    // Nueva tarea al array de tareas
+    // JS que NO quiero combinar en uno solo, sino que los quiero mantener separados
+    array_tareas.push(
+
+        gulp
+            .src( [
+                "./src/js/offline.js"
+            ] )
+            .pipe( plumber({ errorHandler: notifier.error }) )  // Mostrar errores en la terminal y las notificaciones del Sistema Operativo. Debe ir después de gulp.src().
+            .pipe( uglify() )  // Minificar JS
+            .pipe( rename({
+                            suffix: ".min"  // Renombrar el CSS minificado añadiendo el sufijo ".min". Debe ir justo antes de gulp.dest(). El parámetro es el nombre del archivo de salida.
+                            }) )
+            .pipe( gulp.dest(filesPathDest.js) )
+            // .pipe( notifier.success( "js" ) );  // Notificar cuando el JS se ha compilado correctamente.   // Variable definida en notifier.defaults más arriba.;
+
+    );
+
+    return mergeStream(array_tareas);
 
     // Terminar esta tarea
     terminar_tarea(); // Corresponde con el mensaje de la terminal: Finished 'compilar_js_y_concatenar_y_minificar_y_anadir_sufijo_min' after xxxx ms
 
 }
 exports.compilar_js_y_concatenar_y_minificar_y_anadir_sufijo_min = compilar_js_y_concatenar_y_minificar_y_anadir_sufijo_min;
+
+
+
+// Tarea Gulp: minificar JS de Service Workers (eliminar espacios e indexaciones inncesarias, eliminar comentarios) + renombrar el JS minificado añadiendo el  ".min".
+// Instalación: npm install --save-dev gulp-babel @babel/core @babel/preset-env
+// Documentación: https://www.npmjs.com/package/gulp-babel
+// Explicación de Babel: https://babeljs.io/
+// Para ejecturarla, escribir en la terminal: gulp js_service_workers_minificar_y_anadir_sufijo_min
+
+// |- Minificar JS (unir todos los archivos JS en uno solo).
+//    Instalación: npm install --save-dev gulp-uglify
+//    Documentación: https://www.npmjs.com/package/gulp-uglify
+
+// |- Renombrar el JS minificado añadiendo el sufijo ".min".
+//    Instalación: npm install gulp-rename
+//    Documentación: https://github.com/hparra/gulp-rename
+function js_service_workers_minificar_y_anadir_sufijo_min(terminar_tarea) {
+    
+    // En la terminal, se indica el inicio de esta tarea con: Starting 'js_service_workers_minificar_y_anadir_sufijo_min'...
+
+    // Código que se ejecutará al ejecutar esta tarea de Gulp
+    // console.log("Hola desde la tarea de Gulp js_service_workers_minificar_y_anadir_sufijo_min!");  // Imprime el mensaje en la terminal
+    return gulp
+        .src( [
+            filesPathSrc.serviceworkers
+        ] )  // Objeto filesPathSrc definido arriba.
+        .pipe( plumber({ errorHandler: notifier.error }) )  // Mostrar errores en la terminal y las notificaciones del Sistema Operativo. Debe ir después de gulp.src().
+        .pipe( uglify() )  // Minificar JS
+        .pipe( rename({
+                        suffix: ".min"  // Renombrar el CSS minificado añadiendo el sufijo ".min". Debe ir justo antes de gulp.dest(). El parámetro es el nombre del archivo de salida.
+                        }) )
+.pipe( gulp.dest(filesPathDest.html ) );  // CUIDADO: los archivos JS de los Service Workers deben ir a la altura del HTML en las builds.
+        // .pipe( notifier.success( "js" ) );  // Notificar cuando el JS se ha compilado correctamente.   // Variable definida en notifier.defaults más arriba.;
+
+    // Terminar esta tarea
+    terminar_tarea(); // Corresponde con el mensaje de la terminal: Finished 'js_service_workers_minificar_y_anadir_sufijo_min' after xxxx ms
+
+}
+exports.js_service_workers_minificar_y_anadir_sufijo_min = js_service_workers_minificar_y_anadir_sufijo_min;
 
 
 
@@ -997,7 +1070,6 @@ function reemplazar_url_desarrollo_por_url_produccion(terminar_tarea) {
                 filesPathDest.html + '/**/manifest.json'
             ] )
         .pipe( inject.replace( url_desarrollo,  url_produccion) )
-        .pipe( inject.replace( "data-ampdevmode",  "") )
         .pipe( gulp.dest(filesPathDest.html) );
 
     // Terminar esta tarea
@@ -1304,6 +1376,7 @@ exports.buildDev = series([
                             convertir_sass_en_css_con_plantillas_y_sourcemaps_y_anadir_sufijo_min_y_manejar_errores,
                             // convertir_less_en_css_con_sourcemaps_y_anadir_sufijo_min_y_manejar_errores,  // No uso LESS en este proyecto.
                             compilar_js_y_concatenar_y_minificar_y_anadir_sufijo_min,
+                            js_service_workers_minificar_y_anadir_sufijo_min,
                             // generar_y_optimizar_imagenes_reponsive_con_cache,  // NOTA: comentar para builds rápidas
                             copiar_otros_archivos_a_dist
                         ]);

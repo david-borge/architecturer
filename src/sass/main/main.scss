@@ -33,6 +33,17 @@ main {
 
 
 
+// Fill
+.fill-color-principal {
+    fill: $color-principal;
+}
+
+.fill-color-acento {
+    fill: $color-acento;
+}
+
+
+
 // Pesos de fuente
 .fw-800 {
     font-weight: 800;

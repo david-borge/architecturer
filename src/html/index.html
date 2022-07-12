@@ -104,6 +104,7 @@
     <script async custom-element="amp-consent" src="https://cdn.ampproject.org/v0/amp-consent-0.1.js"></script>
     <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
     <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+    <script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
     
 
 
@@ -275,6 +276,12 @@
     
     <!-- Banner de aceptación de cookies -->
     @@include('partials/banners/banner-aceptacion-cookies.html')
+
+    
+    <!-- Cargar Service Worker de la página de "Estás offline" (uso de PWA) -->
+    <!-- Fuente: https://web.dev/offline-fallback-page/ -->
+    <!-- Generar favicon maskable: https://maskable.app/editor -->
+    @@include('partials/service-workers/service-worker-pagina-estas-offline.html')
 
 
 </body>
