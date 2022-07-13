@@ -1,5 +1,6 @@
 #### Redireccionar de sin www a con www ####
 # Esto es para que funcione CloudFlare, que solo funciona con un subdominio (www.ejemplo.com, por ejemplo).
+# TODO: Hacerlo también en CloudFlare: https://community.cloudflare.com/t/redirect-example-com-to-www-example-com/78348
 RewriteEngine On
 RewriteCond %{HTTP_HOST} !^www\.
 RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
