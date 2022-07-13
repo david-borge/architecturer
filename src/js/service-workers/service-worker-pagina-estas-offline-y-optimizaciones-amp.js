@@ -13,7 +13,7 @@ workbox.skipWaiting();
 workbox.clientsClaim();
 
 // TODO: Provide an URL to enable a custom offline page
-const OFFLINE_PAGE = "http://192.168.1.42:3000/offline.html";
+const OFFLINE_PAGE = "https://192.168.1.42:3000/offline.html";
 
 //Pre-cache the AMP Runtime
 self.addEventListener('install', event => {
@@ -31,9 +31,9 @@ self.addEventListener('install', event => {
     
     // TODO: Add fonts, icons, logos used on your pages
     'https://fonts.gstatic.com/s/inter/v11/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2',
-    'https://davidborge.es/architecturer/img/logo/architecturer-logo-blanco.svg',
-    'https://davidborge.es/architecturer/img/logo/architecturer-logo.svg',
-    // 'https://davidborge.es/architecturer/video/inicio/video-movil.webm?v=3',  // FIXME: parece que añadir esta línea hace el aviso "Avoid enormous network payloads" de Lighthouse un poco peor. La verdad no se qué hace la línea.
+    'https://192.168.1.42:3000/img/logo/architecturer-logo-blanco.svg',
+    'https://192.168.1.42:3000/img/logo/architecturer-logo.svg',
+    // 'https://192.168.1.42:3000/video/inicio/video-movil.webm?v=3',  // FIXME: parece que añadir esta línea hace el aviso "Avoid enormous network payloads" de Lighthouse un poco peor. La verdad no se qué hace la línea.
 
   ];
   if (OFFLINE_PAGE) {

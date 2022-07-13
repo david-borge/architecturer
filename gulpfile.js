@@ -148,6 +148,9 @@ const htmlreplace            = require('gulp-html-replace');
 const zip                    = require('gulp-zip');
 const del                    = require('del');
 const gulpAmpValidator       = require('gulp-amphtml-validator');
+const through2               = require('through2');
+const AmpOptimizer           = require('@ampproject/toolbox-optimizer');
+const ampOptimizer           = AmpOptimizer.create();
 const { dest, parallel, series } = require('gulp');
 
 /***** Fin de: Importar Gulp (para poder usar sus APIs) y sus plugins *****/
@@ -161,8 +164,9 @@ const { dest, parallel, series } = require('gulp');
 // Configuración de la web: URL de desarrollo y URL de producción
 const url_desarrollo = "https://192.168.1.42:3000";  // TODO: si cambia la URL de desarrollo, también hay que cambiarla en todos los archivos de la carpeta src y también en la tarea watch().
 
-// const url_produccion = "https://davidborge.com/architecturer";
-const url_produccion = "https://davidborge.es/architecturer";
+// const url_produccion = "https://www.davidborge.com/architecturer";
+const url_produccion = "https://www.davidborge.es/architecturer";
+
 // const url_produccion = "https://localhost/architecturer/dist/en";
 // const url_produccion = "https://localhost/architecturer/dist/es-es";
 
@@ -196,6 +200,7 @@ var filesPathSrc = {
 // TODO: al cambiar el idioma, cambiarlo también en:
 //        - Este archivo: variable url_produccion
 //        - Archivo: src\lang\en\_lang.json
+
 // var localization = "en";
 var localization = "es-es";
 
@@ -935,7 +940,8 @@ function borrar_carpetas_innecesarias_de_dist(terminar_tarea) {
                     filesPathDest.dist + "/para-meter-en-style",
                     filesPathDest.css,
                     filesPathDest.js,
-                    filesPathDest.html + "/partials"
+                    filesPathDest.html + "/partials",
+                    filesPathDest.html + "/iframes"  // No uso iframes en esta web
                 ] );
 
     // return del( [filesPathDest.dist + "/**/*"] );
@@ -1068,7 +1074,7 @@ function reemplazar_url_desarrollo_por_url_produccion(terminar_tarea) {
                 filesPathDest.html + '/**/.htaccess',
                 filesPathDest.html + '/**/robots.txt',
                 filesPathDest.html + '/**/manifest.json',
-                // FIXME: filesPathDest.html + '/**/*.js',  // JS y Service Workers
+                filesPathDest.html + '/**/*.js',  // JS y Service Workers
             ] )
         .pipe( inject.replace( url_desarrollo,  url_produccion) )
         .pipe( gulp.dest(filesPathDest.html) );
@@ -1126,6 +1132,142 @@ function reemplazar_otros_textos(terminar_tarea) {
 
 }
 exports.reemplazar_otros_textos = reemplazar_otros_textos;
+
+
+
+// Tarea Gulp: cambiar los nombres de los archivos en otros idiomas
+//    Instalación: npm install --save-dev gulp-rename
+//    Documentación: https://github.com/hparra/gulp-rename
+function cambiar_nombres_archivos_en_otros_idiomas(terminar_tarea) {
+    
+    // En la terminal, se indica el inicio de esta tarea con: Starting 'cambiar_nombres_archivos_en_otros_idiomas'...
+
+
+    /**** EN -> ES ****/
+    if( localization == "es-es" ) {
+
+        // Código que se ejecutará al ejecutar esta tarea de Gulp
+        // console.log("Hola desde la tarea de Gulp cambiar_nombres_archivos_en_otros_idiomas!");  // Imprime el mensaje en la terminal
+        var array_tareas = [];
+
+        
+        // about-us.html -> sobre-nosotros.html
+        array_tareas.push(
+
+            gulp
+                .src( filesPathDest.dist + "/" + "es-es" + "/" + "about-us.html" )
+                .pipe( rename( "sobre-nosotros.html") )
+                .pipe( gulp.dest(filesPathDest.html) )
+
+        );
+        del( filesPathDest.dist + "/" + "es-es" + "/" + "about-us.html" );
+
+        // contact.html -> contacto.html
+        array_tareas.push(
+
+            gulp
+                .src( filesPathDest.dist + "/" + "es-es" + "/" + "contact.html" )
+                .pipe( rename( "contacto.html") )
+                .pipe( gulp.dest(filesPathDest.html) )
+
+        );
+        del( filesPathDest.dist + "/" + "es-es" + "/" + "contact.html" );
+
+        // cookies-policy.html -> politica-de-cookies.html
+        array_tareas.push(
+
+            gulp
+                .src( filesPathDest.dist + "/" + "es-es" + "/" + "cookies-policy.html" )
+                .pipe( rename( "politica-de-cookies.html") )
+                .pipe( gulp.dest(filesPathDest.html) )
+
+        );
+        del( filesPathDest.dist + "/" + "es-es" + "/" + "cookies-policy.html" );
+
+        // legal-notice.html -> aviso-legal.html
+        array_tareas.push(
+
+            gulp
+                .src( filesPathDest.dist + "/" + "es-es" + "/" + "legal-notice.html" )
+                .pipe( rename( "aviso-legal.html") )
+                .pipe( gulp.dest(filesPathDest.html) )
+
+        );
+        del( filesPathDest.dist + "/" + "es-es" + "/" + "legal-notice.html" );
+
+        // privacy-policy.html -> politica-de-privacidad.html
+        array_tareas.push(
+
+            gulp
+                .src( filesPathDest.dist + "/" + "es-es" + "/" + "privacy-policy.html" )
+                .pipe( rename( "politica-de-privacidad.html") )
+                .pipe( gulp.dest(filesPathDest.html) )
+
+        );
+        del( filesPathDest.dist + "/" + "es-es" + "/" + "privacy-policy.html" );
+
+        // single-portfolio-1.html -> portfolio-individual-1.html
+        array_tareas.push(
+
+            gulp
+                .src( filesPathDest.dist + "/" + "es-es" + "/" + "single-portfolio-1.html" )
+                .pipe( rename( "portfolio-individual-1.html") )
+                .pipe( gulp.dest(filesPathDest.html) )
+
+        );
+        del( filesPathDest.dist + "/" + "es-es" + "/" + "single-portfolio-1.html" );
+
+        // single-portfolio-2.html -> portfolio-individual-2.html
+        array_tareas.push(
+
+            gulp
+                .src( filesPathDest.dist + "/" + "es-es" + "/" + "single-portfolio-2.html" )
+                .pipe( rename( "portfolio-individual-2.html") )
+                .pipe( gulp.dest(filesPathDest.html) )
+
+        );
+        del( filesPathDest.dist + "/" + "es-es" + "/" + "single-portfolio-2.html" );
+       
+
+        return mergeStream(array_tareas);
+ 
+    }
+
+    // Terminar esta tarea
+    terminar_tarea(); // Corresponde con el mensaje de la terminal: Finished 'cambiar_nombres_archivos_en_otros_idiomas' after xxxx ms
+
+}
+exports.cambiar_nombres_archivos_en_otros_idiomas = cambiar_nombres_archivos_en_otros_idiomas;
+
+
+
+// Tarea Gulp: AMP Optimizer.
+// Instalación: npm install --save-dev @ampproject/toolbox-optimizer
+// Documentación: https://amp.dev/es/documentation/guides-and-tutorials/optimize-and-measure/amp-optimizer-guide/node-amp-optimizer/?format=websites
+// Documentación: https://github.com/ampproject/amp-toolbox/tree/main/packages/optimizer/demo/gulp
+function amp_optimizer(terminar_tarea) {
+    
+    // En la terminal, se indica el inicio de esta tarea con: Starting 'amp_optimizer'...
+
+    // Código que se ejecutará al ejecutar esta tarea de Gulp
+    // console.log("Hola desde la tarea de Gulp amp_optimizer!");  // Imprime el mensaje en la terminal
+    return  gulp.src( filesPathDest.html + '/*.html' )
+                .pipe(
+                    through2.obj(async (file, _, cb) => {
+                    if (file.isBuffer()) {
+                        const optimizedHtml = await ampOptimizer.transformHtml(file.contents.toString());
+                        file.contents = Buffer.from(optimizedHtml);
+                    }
+                    cb(null, file);
+                    })
+                )
+                .pipe( gulp.dest(filesPathDest.html) );
+
+    // Terminar esta tarea
+    terminar_tarea(); // Corresponde con el mensaje de la terminal: Finished 'amp_optimizer' after xxxx ms
+
+}
+exports.amp_optimizer = amp_optimizer;
 
 
 
@@ -1422,7 +1564,33 @@ exports.build = series([
                             borrar_carpetas_innecesarias_de_dist,
                             reemplazar_url_desarrollo_por_url_produccion,
                             reemplazar_otros_textos,
+                            cambiar_nombres_archivos_en_otros_idiomas,
+                            amp_optimizer,
                             // FIXME: validar_amp
+                            /* TODO: Validar AMP usando la terminar: ejecutar los siguientes comandos todos a la vez comprobar todas las páginas a la vez:
+                                amphtml-validator https://www.davidborge.es/pruebas/gulp-amp-template/aviso-legal.html
+                                amphtml-validator https://www.davidborge.es/pruebas/gulp-amp-template/contacto.html
+                                amphtml-validator https://www.davidborge.es/pruebas/gulp-amp-template/error-403.html
+                                amphtml-validator https://www.davidborge.es/pruebas/gulp-amp-template/error-404.html
+                                amphtml-validator https://www.davidborge.es/pruebas/gulp-amp-template/error-405.html
+                                amphtml-validator https://www.davidborge.es/pruebas/gulp-amp-template/error-500.html
+                                amphtml-validator https://www.davidborge.es/pruebas/gulp-amp-template/error-505.html
+                                amphtml-validator https://www.davidborge.es/pruebas/gulp-amp-template/gracias.html
+                                amphtml-validator https://www.davidborge.es/pruebas/gulp-amp-template/index.html
+                                amphtml-validator https://www.davidborge.es/pruebas/gulp-amp-template/politica-de-cookies.html
+                                amphtml-validator https://www.davidborge.es/pruebas/gulp-amp-template/politica-de-privacidad.html
+                                amphtml-validator https://www.davidborge.com/pruebas/gulp-amp-template/legal-notice.html
+                                amphtml-validator https://www.davidborge.com/pruebas/gulp-amp-template/contact.html
+                                amphtml-validator https://www.davidborge.com/pruebas/gulp-amp-template/error-403.html
+                                amphtml-validator https://www.davidborge.com/pruebas/gulp-amp-template/error-404.html
+                                amphtml-validator https://www.davidborge.com/pruebas/gulp-amp-template/error-405.html
+                                amphtml-validator https://www.davidborge.com/pruebas/gulp-amp-template/error-500.html
+                                amphtml-validator https://www.davidborge.com/pruebas/gulp-amp-template/error-505.html
+                                amphtml-validator https://www.davidborge.com/pruebas/gulp-amp-template/thank-you.html
+                                amphtml-validator https://www.davidborge.com/pruebas/gulp-amp-template/index.html
+                                amphtml-validator https://www.davidborge.com/pruebas/gulp-amp-template/cookies-policy.html
+                                amphtml-validator https://www.davidborge.com/pruebas/gulp-amp-template/privacy-policy.html
+                            */
                         ]);
 
 

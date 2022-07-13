@@ -19,7 +19,7 @@ Copyright 2015, 2019, 2020, 2021 Google LLC. All Rights Reserved.
 const OFFLINE_VERSION = 1;
 const CACHE_NAME = "offline";
 // Customize this with a different URL if needed.
-const OFFLINE_URL = "http://192.168.1.42:3000/offline.html";
+const OFFLINE_URL = "https://192.168.1.42:3000/offline.html";
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
