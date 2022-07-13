@@ -554,9 +554,6 @@ exports.compilar_js_y_concatenar_y_minificar_y_anadir_sufijo_min = compilar_js_y
 
 
 // Tarea Gulp: minificar JS de Service Workers (eliminar espacios e indexaciones inncesarias, eliminar comentarios) + renombrar el JS minificado añadiendo el  ".min".
-// Instalación: npm install --save-dev gulp-babel @babel/core @babel/preset-env
-// Documentación: https://www.npmjs.com/package/gulp-babel
-// Explicación de Babel: https://babeljs.io/
 // Para ejecturarla, escribir en la terminal: gulp js_service_workers_minificar_y_anadir_sufijo_min
 
 // |- Minificar JS (unir todos los archivos JS en uno solo).
