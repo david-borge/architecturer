@@ -86,7 +86,15 @@
 
     <!-- Header tag -->
     <header class="header-paginas-con-fondo-negro">
-        @@include('partials/header-tag.html')
+        @@include('partials/header-tag-parte-1.html')
+        <li>
+            <a href="${{ _web.url-otro-idioma }}$/error-405.html" class="menu-cambiar-idioma">${{ _header.bandera }}$</a>
+        </li>
+        @@include('partials/header-tag-parte-2.html')
+        <li>
+            <a href="${{ _web.url-otro-idioma }}$/error-405.html" class="menu-cambiar-idioma">${{ _header.bandera }}$</a>
+        </li>
+        @@include('partials/header-tag-parte-3.html')
     </header>
     @@include('partials/header-cambiar-en-scroll.html')
 
