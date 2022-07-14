@@ -164,8 +164,8 @@ const { dest, parallel, series } = require('gulp');
 // Configuración de la web: URL de desarrollo y URL de producción
 const url_desarrollo = "https://192.168.1.42:3000";  // TODO: si cambia la URL de desarrollo, también hay que cambiarla en todos los archivos de la carpeta src y también en la tarea watch().
 
-// const url_produccion = "https://www.davidborge.com/architecturer";
-const url_produccion = "https://www.davidborge.es/architecturer";
+const url_produccion = "https://www.davidborge.com/architecturer";
+// const url_produccion = "https://www.davidborge.es/architecturer";
 
 // const url_produccion = "https://localhost/architecturer/dist/en";
 // const url_produccion = "https://localhost/architecturer/dist/es-es";
@@ -201,8 +201,8 @@ var filesPathSrc = {
 //        - Este archivo: variable url_produccion
 //        - Archivo: src\lang\en\_lang.json
 
-// var localization = "en";
-var localization = "es-es";
+var localization = "en";
+// var localization = "es-es";
 
 var i18nOptions = {
     langDir: filesPathSrc.lang,
@@ -414,8 +414,8 @@ function convertir_sass_en_css_con_plantillas_y_sourcemaps_y_anadir_sufijo_min_y
         } ))
         .pipe( sourcemaps.write(".") )  // Escribir los archivos de sourcemaps. Debe hacerse antes de gulp.dest(). El punto especifica la ubicación (¿?).
         .pipe( gulp.dest(filesPathDest.css) )
-        .pipe( browserSync.stream() )  // MUY IMPORTANTE: poniendo esto, cuando esté ejecutando la tarea de desarrollo, el CSS se actualiza automáticamente SIN necesidad de recargar la página. Documentación: https://browsersync.io/docs/gulp
-        .pipe( notifier.success( "sass" ) );  // Notificar cuando el CSS de SASS se ha compilado correctamente. Variable definida en notifier.defaults más arriba.
+        .pipe( browserSync.stream() );  // MUY IMPORTANTE: poniendo esto, cuando esté ejecutando la tarea de desarrollo, el CSS se actualiza automáticamente SIN necesidad de recargar la página. Documentación: https://browsersync.io/docs/gulp
+        // .pipe( notifier.success( "sass" ) );  // Notificar cuando el CSS de SASS se ha compilado correctamente. Variable definida en notifier.defaults más arriba.
 
     // Terminar esta tarea
     terminar_tarea(); // Corresponde con el mensaje de la terminal: Finished 'watch' after xxxx ms
