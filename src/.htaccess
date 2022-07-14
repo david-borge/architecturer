@@ -1,13 +1,11 @@
-#### Redireccionar de sin www a con www ####
-# Esto es para que funcione CloudFlare, que solo funciona con un subdominio (www.ejemplo.com, por ejemplo).
-RewriteEngine On
-RewriteCond %{HTTP_HOST} !^www\.
-RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
+#### Redireccionar de sin www a con www y de http a https ####
+# Para que CloudFlare funcione hay que usar www, ya que CloudFlare solo funciona con un subdominio, es decir, tiene que ser https://xxx.ejemplo.com; no puede ser https://ejemplo.com
 
-#### Redireccionar de http a https ####
-RewriteEngine On
-RewriteCond %{HTTPS} !=on
-RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [L,R=301]
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule (.*) https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 
 
