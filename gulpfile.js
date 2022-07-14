@@ -183,8 +183,8 @@ var filesPathSrc = {
 //        - Este archivo: variable url_produccion
 //        - Archivo: src\lang\en\_lang.json
 
-var localization = "en";
-// var localization = "es-es";
+// var localization = "en";
+var localization = "es-es";
 
 var i18nOptions = {
     langDir: filesPathSrc.lang,

@@ -3,6 +3,15 @@
 
 
 
+
+// Header - General
+header {
+    position:fixed;
+    width:100%;
+    max-height: 76px;
+    z-index:2;
+}
+
 header ul {
     margin-bottom: 0;
     list-style-type: none;
@@ -149,6 +158,31 @@ header:hover #header-transparente {
 /* #sidebar-menu-movil svg {
     display: none;
 } */
+
+.header-general .logo {
+    display: none;
+}
+
+
+// Header con fondo negro
+.header-paginas-con-fondo-negro #header-transparente .logo,
+.header-paginas-con-fondo-negro #header-con-fondo .logo-blanco {
+    display: none;
+}
+
+
+// Header con fondo negro y header con fondo negro
+.header-paginas-con-fondo-negro-y-header-con-fondo-negro #header-transparente .logo,
+.header-paginas-con-fondo-negro-y-header-con-fondo-negro #header-con-fondo .logo {
+    display: none;
+}
+
+
+// Header con fondo blanco
+.header-paginas-con-fondo-blanco #header-transparente .logo-blanco,
+.header-paginas-con-fondo-blanco #header-con-fondo .logo-blanco {
+    display: none;
+}
 
 
 // Submenús

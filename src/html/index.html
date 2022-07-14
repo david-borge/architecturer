@@ -6,7 +6,6 @@
 
     <!-- AMP Page Image Preloads (Preload an important image in the first viewport to improve page load time.) -->
     <!-- Referencia: https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content -->
-    <link rel="preload" href="https://192.168.1.42:3000/img/logo/architecturer-logo-blanco.svg" as="image">
     <link rel="preload" href="https://192.168.1.42:3000/video/inicio/video-poster.webp?v=2" as="image" media="(min-width: 634px)">
     <link rel="preload" href="https://192.168.1.42:3000/video/inicio/video-movil-poster.webp?v=3" as="image" media="(max-width: 633px)">
     
@@ -140,7 +139,9 @@
     @@include('partials/google-tag-manager-body-tag.html')
 
     <!-- Header tag -->
-    @@include('partials/header-tag.html')
+    <header class="header-general">
+        @@include('partials/header-tag.html')
+    </header>
     <!-- @@include('partials/header-cambiar-en-scroll.html') -->
 
 

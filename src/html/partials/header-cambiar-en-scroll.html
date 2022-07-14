@@ -1,3 +1,7 @@
+<!-- Div auxiliar para mostrar u ocultar el header transparente y con fondo. (Importante el + 1px del top para que funcione bien.) -->
+<!-- NOTA: para hacer comprobaciones, se puede hacer visible este div añadiendole: width: 20px; background: red; -->
+<div id="div-auxiliar-mostrar-ocultar-headers" style="position: absolute; top: calc(100vh + 1px); bottom: 0;"></div>
+
 <!-- Mostrar u ocultar el header transparente o con fondo según la visibilidad de #div-auxiliar-mostrar-ocultar-headers. Abajo están las animaciones necesarias. -->
 <amp-position-observer target="div-auxiliar-mostrar-ocultar-headers" intersection-ratios="0" on="enter: ocultarHeaderTransparente.start, mostrarHeaderConFondo.start; exit: mostrarHeaderTransparente.start, ocultarHeaderConFondo.start;" layout="nodisplay"></amp-position-observer>
 

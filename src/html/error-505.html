@@ -6,7 +6,6 @@
 
     <!-- AMP Page Image Preloads (Preload an important image in the first viewport to improve page load time.) -->
     <!-- Referencia: https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content -->
-    <link rel="preload" href="https://192.168.1.42:3000/img/logo/architecturer-logo-blanco.svg" as="image">
     
 
 
@@ -86,7 +85,9 @@
     @@include('partials/google-tag-manager-body-tag.html')
 
     <!-- Header tag -->
-    @@include('partials/header-tag-paginas-con-fondo-negro.html')
+    <header class="header-paginas-con-fondo-negro">
+        @@include('partials/header-tag.html')
+    </header>
     @@include('partials/header-cambiar-en-scroll.html')
 
 
