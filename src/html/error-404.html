@@ -129,7 +129,11 @@
     
 
     <!-- Menú móvil (sidebar) -->
-    @@include('partials/sidebars/sidebar-menu-movil.html')
+    @@include('partials/sidebars/sidebar-menu-movil-parte-1.html')
+    <li>
+        <a href="${{ _web.url-otro-idioma }}$/${{ _nombres_archivos-otro-idioma.error-404 }}$.html" class="menu-cambiar-idioma"><span class="ocultar-texto">${{ _general.cambiar-el-idioma }}$</span>${{ _header.bandera }}$</a>
+    </li>
+    @@include('partials/sidebars/sidebar-menu-movil-parte-2.html')
 
     
     <!-- Banner de aceptación de cookies -->
