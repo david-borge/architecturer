@@ -22,6 +22,15 @@ main {
 
 
 
+// Enlaces - Ocultar textos
+.ocultar-texto {
+    font-size: 0;
+    line-height: 0;
+    color: transparent;
+}
+
+
+
 // Fondos
 .fondo-color-principal {
     background-color: $color-principal;
