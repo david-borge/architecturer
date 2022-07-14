@@ -158,24 +158,6 @@ const { dest, parallel, series } = require('gulp');
 
 
 
-/***** Configuración de la web *****/
-
-
-// Configuración de la web: URL de desarrollo y URL de producción
-const url_desarrollo = "https://192.168.1.42:3000";  // TODO: si cambia la URL de desarrollo, también hay que cambiarla en todos los archivos de la carpeta src y también en la tarea watch().
-
-const url_produccion = "https://www.davidborge.com/architecturer";
-// const url_produccion = "https://www.davidborge.es/architecturer";
-
-// const url_produccion = "https://localhost/architecturer/dist/en";
-// const url_produccion = "https://localhost/architecturer/dist/es-es";
-
-
-/***** Fin de: Configuración de la web *****/
-
-
-
-
 /***** Configuración de Gulp *****/
 
 
@@ -291,6 +273,39 @@ notifier.defaults({
 
 
 /***** Fin de: Configuración de Gulp *****/
+
+
+
+
+/***** Configuración de la web *****/
+
+
+// Configuración de la web: URL de desarrollo
+const url_desarrollo = "https://192.168.1.42:3000";  // TODO: si cambia la URL de desarrollo, también hay que cambiarla en todos los archivos de la carpeta src y también en la tarea watch().
+
+
+// Configuración de la web: URL de producción
+switch ( localization ) {
+
+    case "es-es": {
+        url_produccion = "https://www.davidborge.es/architecturer";
+        //  url_produccion = "https://localhost/architecturer/dist/es-es";
+        break;
+    }
+
+    case "en": {
+        url_produccion = "https://www.davidborge.com/architecturer";
+        //  url_produccion = "https://localhost/architecturer/dist/en";
+        break;
+    }
+
+    default:
+        break;
+
+}
+
+
+/***** Fin de: Configuración de la web *****/
 
 
 
