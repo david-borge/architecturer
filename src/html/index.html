@@ -24,7 +24,7 @@
     <meta property="og:title" content="${{ _web.titulo }}$ - ${{ _web.descripcion }}$" />
     <meta property="og:description" content="${{ index.descripcion }}$">
     <meta property="og:url" content="https://192.168.1.42:3000/" />
-    <meta property="og:image" content="https://192.168.1.42:3000/img/logo/architecturer-compartir.jpg?v=2">
+    <meta property="og:image" content="https://192.168.1.42:3000/img/logo/architecturer-compartir-${{ _lang.codigo-de-idioma }}$.jpg">
 
     
     <!-- Hash del script #script-cambiar-palabras-h1 -->
@@ -57,7 +57,7 @@
             "email":"${{ _web.correo-electronico }}$",
             "telephone":"${{ _web.telefono-prefijo }}$ ${{ _web.telefono }}$",
             "image":[
-               "https://192.168.1.42:3000/img/logo/architecturer-compartir.jpg"
+               "https://192.168.1.42:3000/img/logo/architecturer-compartir-${{ _lang.codigo-de-idioma }}$.jpg"
             ]
          }
     </script>
