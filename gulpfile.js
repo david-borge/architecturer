@@ -288,13 +288,13 @@ const url_desarrollo = "https://192.168.1.42:3000";  // TODO: si cambia la URL d
 switch ( localization ) {
 
     case "es-es": {
-        url_produccion = "https://www.davidborge.es/architecturer";
+        url_produccion = "https://davidborge.es/architecturer";
         //  url_produccion = "https://localhost/architecturer/dist/es-es";
         break;
     }
 
     case "en": {
-        url_produccion = "https://www.davidborge.com/architecturer";
+        url_produccion = "https://davidborge.com/architecturer";
         //  url_produccion = "https://localhost/architecturer/dist/en";
         break;
     }
@@ -1580,28 +1580,28 @@ exports.build = series([
                             amp_optimizer,
                             // FIXME: validar_amp
                             /* TODO: Validar AMP usando la terminar: ejecutar los siguientes comandos todos a la vez comprobar todas las páginas a la vez:
-                                amphtml-validator https://www.davidborge.es/pruebas/gulp-amp-template/aviso-legal.html
-                                amphtml-validator https://www.davidborge.es/pruebas/gulp-amp-template/contacto.html
-                                amphtml-validator https://www.davidborge.es/pruebas/gulp-amp-template/error-403.html
-                                amphtml-validator https://www.davidborge.es/pruebas/gulp-amp-template/error-404.html
-                                amphtml-validator https://www.davidborge.es/pruebas/gulp-amp-template/error-405.html
-                                amphtml-validator https://www.davidborge.es/pruebas/gulp-amp-template/error-500.html
-                                amphtml-validator https://www.davidborge.es/pruebas/gulp-amp-template/error-505.html
-                                amphtml-validator https://www.davidborge.es/pruebas/gulp-amp-template/gracias.html
-                                amphtml-validator https://www.davidborge.es/pruebas/gulp-amp-template/index.html
-                                amphtml-validator https://www.davidborge.es/pruebas/gulp-amp-template/politica-de-cookies.html
-                                amphtml-validator https://www.davidborge.es/pruebas/gulp-amp-template/politica-de-privacidad.html
-                                amphtml-validator https://www.davidborge.com/pruebas/gulp-amp-template/legal-notice.html
-                                amphtml-validator https://www.davidborge.com/pruebas/gulp-amp-template/contact.html
-                                amphtml-validator https://www.davidborge.com/pruebas/gulp-amp-template/error-403.html
-                                amphtml-validator https://www.davidborge.com/pruebas/gulp-amp-template/error-404.html
-                                amphtml-validator https://www.davidborge.com/pruebas/gulp-amp-template/error-405.html
-                                amphtml-validator https://www.davidborge.com/pruebas/gulp-amp-template/error-500.html
-                                amphtml-validator https://www.davidborge.com/pruebas/gulp-amp-template/error-505.html
-                                amphtml-validator https://www.davidborge.com/pruebas/gulp-amp-template/thank-you.html
-                                amphtml-validator https://www.davidborge.com/pruebas/gulp-amp-template/index.html
-                                amphtml-validator https://www.davidborge.com/pruebas/gulp-amp-template/cookies-policy.html
-                                amphtml-validator https://www.davidborge.com/pruebas/gulp-amp-template/privacy-policy.html
+                                amphtml-validator https://davidborge.es/pruebas/gulp-amp-template/aviso-legal.html
+                                amphtml-validator https://davidborge.es/pruebas/gulp-amp-template/contacto.html
+                                amphtml-validator https://davidborge.es/pruebas/gulp-amp-template/error-403.html
+                                amphtml-validator https://davidborge.es/pruebas/gulp-amp-template/error-404.html
+                                amphtml-validator https://davidborge.es/pruebas/gulp-amp-template/error-405.html
+                                amphtml-validator https://davidborge.es/pruebas/gulp-amp-template/error-500.html
+                                amphtml-validator https://davidborge.es/pruebas/gulp-amp-template/error-505.html
+                                amphtml-validator https://davidborge.es/pruebas/gulp-amp-template/gracias.html
+                                amphtml-validator https://davidborge.es/pruebas/gulp-amp-template/index.html
+                                amphtml-validator https://davidborge.es/pruebas/gulp-amp-template/politica-de-cookies.html
+                                amphtml-validator https://davidborge.es/pruebas/gulp-amp-template/politica-de-privacidad.html
+                                amphtml-validator https://davidborge.com/pruebas/gulp-amp-template/legal-notice.html
+                                amphtml-validator https://davidborge.com/pruebas/gulp-amp-template/contact.html
+                                amphtml-validator https://davidborge.com/pruebas/gulp-amp-template/error-403.html
+                                amphtml-validator https://davidborge.com/pruebas/gulp-amp-template/error-404.html
+                                amphtml-validator https://davidborge.com/pruebas/gulp-amp-template/error-405.html
+                                amphtml-validator https://davidborge.com/pruebas/gulp-amp-template/error-500.html
+                                amphtml-validator https://davidborge.com/pruebas/gulp-amp-template/error-505.html
+                                amphtml-validator https://davidborge.com/pruebas/gulp-amp-template/thank-you.html
+                                amphtml-validator https://davidborge.com/pruebas/gulp-amp-template/index.html
+                                amphtml-validator https://davidborge.com/pruebas/gulp-amp-template/cookies-policy.html
+                                amphtml-validator https://davidborge.com/pruebas/gulp-amp-template/privacy-policy.html
                             */
                         ]);
 
