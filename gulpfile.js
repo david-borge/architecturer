@@ -703,6 +703,47 @@ exports.generar_y_optimizar_imagenes_reponsive_con_cache = generar_y_optimizar_i
 
 
 
+// |- Optimizar una imagen. Uso esto porque las imágenes tardan un tiempo en optimizarse y no queremos que eso pase cada vez que cambiemos cualquier cosa en el proyecto.
+//    Instalación: npm install --save-dev gulp-cache
+//    Documentación: https://www.npmjs.com/package/gulp-cache
+//    IMPORTANTE: para limpiar la caché, ejecutar la tarea: gulp clear_cache
+function generar_y_optimizar_una_imagen_reponsive(terminar_tarea) {
+
+    // En la terminal, se indica el inicio de esta tarea con: Starting 'generar_y_optimizar_una_imagen_reponsive'...
+
+    // Código que se ejecutará al ejecutar esta tarea de Gulp
+    // console.log("Hola desde la tarea de Gulp generar_y_optimizar_una_imagen_reponsive!");  // Imprime el mensaje en la terminal
+
+    var array_tareas = [];
+
+    // Imágenes de las que hay que generar imágenes responsive
+    array_tareas.push(
+
+        gulp.src( [
+                    "./src/img/banderas/**/*.*"  // Poner aquí la imágen a optimizar
+                ] )
+            .pipe( srcset([{
+                    // match:  '(min-width: 576px)',  // El tamaño mínimo o máximo de las imágenes de las cuales hay que generar imágenes responsive.
+                    width:  [1],  // El 1 indica que también hay que tener la imagen original
+                    // width:  [1, 1400, 1200, 992, 768, 576],  // El 1 indica que también hay que tener la imagen original
+                    format: ['svg']  // Formatos de imágenes que hay que generar
+                    // format: ['jpg', 'webp']  // Formatos de imágenes que hay que generar
+                }]) )
+            .pipe( cache( image() ) )  // A imagemin() se le puede pasar un parámetro de configuración con distintas opciones para distintos tipos de archivo.
+            .pipe( gulp.dest(filesPathDest.img + "/banderas") )
+
+    );
+
+    return mergeStream(array_tareas);
+
+    // Terminar esta tarea
+    terminar_tarea(); // Corresponde con el mensaje de la terminal: Finished 'generar_y_optimizar_una_imagen_reponsive' after xxxx ms
+
+}
+exports.generar_y_optimizar_una_imagen_reponsive = generar_y_optimizar_una_imagen_reponsive;
+
+
+
 // Tarea Gulp: combinar CSS, eliminar CSS innecesario; página por página.
 
 // |- Eliminar CSS innecesario.

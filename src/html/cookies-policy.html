@@ -89,11 +89,15 @@
     <header class="header-paginas-con-fondo-blanco">
         @@include('partials/header-tag-parte-1.html')
         <li>
-            <a href="${{ _web.url-otro-idioma }}$/${{ _nombres_archivos-otro-idioma.cookies-policy }}$.html" class="menu-cambiar-idioma"><span class="ocultar-texto">${{ _general.cambiar-el-idioma }}$</span>${{ _header.bandera }}$</a>
+            <a href="${{ _web.url-otro-idioma }}$/${{ _nombres_archivos-otro-idioma.cookies-policy }}$.html" class="menu-cambiar-idioma">
+                @@include('partials/elementos-menu-contenido-cambiar-idioma.html')
+            </a>
         </li>
         @@include('partials/header-tag-parte-2.html')
         <li>
-            <a href="${{ _web.url-otro-idioma }}$/${{ _nombres_archivos-otro-idioma.cookies-policy }}$.html" class="menu-cambiar-idioma"><span class="ocultar-texto">${{ _general.cambiar-el-idioma }}$</span>${{ _header.bandera }}$</a>
+            <a href="${{ _web.url-otro-idioma }}$/${{ _nombres_archivos-otro-idioma.cookies-policy }}$.html" class="menu-cambiar-idioma">
+                @@include('partials/elementos-menu-contenido-cambiar-idioma.html')
+            </a>
         </li>
         @@include('partials/header-tag-parte-3.html')
     </header>
@@ -138,7 +142,9 @@
     <!-- Menú móvil (sidebar) -->
     @@include('partials/sidebars/sidebar-menu-movil-parte-1.html')
     <li>
-        <a href="${{ _web.url-otro-idioma }}$/${{ _nombres_archivos-otro-idioma.cookies-policy }}$.html" class="menu-cambiar-idioma"><span class="ocultar-texto">${{ _general.cambiar-el-idioma }}$</span>${{ _header.bandera }}$</a>
+        <a href="${{ _web.url-otro-idioma }}$/${{ _nombres_archivos-otro-idioma.cookies-policy }}$.html" class="menu-cambiar-idioma">
+            @@include('partials/elementos-menu-contenido-cambiar-idioma.html')
+        </a>
     </li>
     @@include('partials/sidebars/sidebar-menu-movil-parte-2.html')
 
