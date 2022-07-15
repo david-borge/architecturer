@@ -6,7 +6,8 @@
 
 // Main
 main {
-    overflow-x: hidden;  // Solucionar overflow horizontal en iPhone provocado por las imágenes y vídeos con algún margen lateral inusual para su colocación.
+    overflow-x: hidden;  // IMPORTANTE: Solucionar overflow horizontal en iPhone provocado por las imágenes y vídeos con algún margen lateral inusual para su colocación.
+    overflow-y: hidden;  // IMPORTANTE: Solucionar scroll vertical errático en Safari (macOS y iPhone).
 }
 
 
