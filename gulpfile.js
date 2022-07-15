@@ -1591,6 +1591,10 @@ exports.build = series([
                                 amphtml-validator https://davidborge.es/pruebas/gulp-amp-template/index.html
                                 amphtml-validator https://davidborge.es/pruebas/gulp-amp-template/politica-de-cookies.html
                                 amphtml-validator https://davidborge.es/pruebas/gulp-amp-template/politica-de-privacidad.html
+                                amphtml-validator https://davidborge.es/pruebas/gulp-amp-template/portfolio-individual-1.html
+                                amphtml-validator https://davidborge.es/pruebas/gulp-amp-template/portfolio-individual-2.html
+                                amphtml-validator https://davidborge.es/pruebas/gulp-amp-template/portfolio.html
+                                amphtml-validator https://davidborge.es/pruebas/gulp-amp-template/sobre-nosotros.html
                                 amphtml-validator https://davidborge.com/pruebas/gulp-amp-template/legal-notice.html
                                 amphtml-validator https://davidborge.com/pruebas/gulp-amp-template/contact.html
                                 amphtml-validator https://davidborge.com/pruebas/gulp-amp-template/error-403.html
@@ -1602,6 +1606,10 @@ exports.build = series([
                                 amphtml-validator https://davidborge.com/pruebas/gulp-amp-template/index.html
                                 amphtml-validator https://davidborge.com/pruebas/gulp-amp-template/cookies-policy.html
                                 amphtml-validator https://davidborge.com/pruebas/gulp-amp-template/privacy-policy.html
+                                amphtml-validator https://davidborge.com/pruebas/gulp-amp-template/single-portfolio-1.html
+                                amphtml-validator https://davidborge.com/pruebas/gulp-amp-template/single-portfolio-2.html
+                                amphtml-validator https://davidborge.com/pruebas/gulp-amp-template/portfolio.html
+                                amphtml-validator https://davidborge.com/pruebas/gulp-amp-template/about-us.html
                             */
                         ]);
 
