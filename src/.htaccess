@@ -17,7 +17,7 @@ Header set Strict-Transport-Security "max-age=31536000" env=HTTPS
 
 
 #### Activar Content Security Policy (CSP) ####
-# FIXME: MUY IMPORTANTE: esto hace que falle la validación AMP (a través de la extensión "AMP Validator" de Chrome y al añadir #development=1 a la URL), así que hay que cambiar el nombre del .htaccess mientras se hace la validación.
+# FIXME: MUY IMPORTANTE: esto hace que falle la validación AMP (a través de la extensión "AMP Validator" de Chrome y al añadir #development=1 a la URL), así que hay que cambiar el nombre del .htaccess mientras se hace la validación. El error que sale en la consola es: Uncaught (in promise) RuntimeError: Aborted(CompileError: WebAssembly.instantiate(): Wasm code generation disallowed by embedder). Build with -sASSERTIONS for more info. validator_wasm.js
 # Documentación: https://content-security-policy.com/examples/htaccess/
 # Documentación para AMP (la documentación es incorrecta; no se puede usar <meta http-equiv="Content-Security-Policy" content="..." /> con AMP; hay que hacerlo con .htaccess): https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/secure-pages/?format=websites
 # Ejemplo completo de CSP para AMP (https://github.com/ampproject/amphtml/blob/main/examples/csp.amp.html)
