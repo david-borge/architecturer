@@ -1284,6 +1284,7 @@ exports.amp_optimizer = amp_optimizer;
 
 
 // FIXME: Tarea Gulp: Validar AMP.
+// FIXME: probar a ejecutar los comandos de validación de AMP con una funcion usando https://www.npmjs.com/package/gulp-exec
 // Instalación: npm install --save-dev gulp-amphtml-validator
 // Documentación: https://www.npmjs.com/package/gulp-amphtml-validator
 function validar_amp(terminar_tarea) {
