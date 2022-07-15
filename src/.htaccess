@@ -17,12 +17,68 @@ Header set Strict-Transport-Security "max-age=31536000" env=HTTPS
 
 
 #### Activar Content Security Policy (CSP) ####
+# FIXME: MUY IMPORTANTE: esto hace que falle la validación AMP (a través de la extensión "AMP Validator" de Chrome y al añadir #development=1 a la URL), así que hay que cambiar el nombre del .htaccess mientras se hace la validación.
 # Documentación: https://content-security-policy.com/examples/htaccess/
 # Documentación para AMP (la documentación es incorrecta; no se puede usar <meta http-equiv="Content-Security-Policy" content="..." /> con AMP; hay que hacerlo con .htaccess): https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/secure-pages/?format=websites
-# Documentación contra ataques XSS: https://web.dev/csp-xss/
-# Comprobación: https://cspvalidator.org/
-# Comprobación: https://csp-evaluator.withgoogle.com/
-# Header add Content-Security-Policy "default-src * data: blob:; script-src blob 'unsafe-eval' 'unsafe-inline' https: https://cdn.ampproject.org/v0.js https://cdn.ampproject.org/v0/ https://cdn.ampproject.org/viewer/ https://cdn.ampproject.org/rtv/ https://cdn.ampproject.org/v0.mjs https://192.168.1.42:3000/service-worker-pagina-estas-offline-y-optimizaciones-amp.min.js https://cdn.ampproject.org/v0/validator_wasm.js; object-src 'none'; style-src 'unsafe-inline' https://cdn.ampproject.org/rtv/ https://cdn.materialdesignicons.com https://cloud.typography.com https://fast.fonts.net https://fonts.googleapis.com https://maxcdn.bootstrapcdn.com https://p.typekit.net https://use.fontawesome.com https://use.typekit.net; worker-src blob: https://192.168.1.42:3000/5b9feb56-2f7c-431b-800c-991e3ac687e9 https://192.168.1.42:3000/service-worker-pagina-estas-offline-y-optimizaciones-amp.min.js; base-uri 'none'"
+# Ejemplo completo de CSP para AMP (https://github.com/ampproject/amphtml/blob/main/examples/csp.amp.html)
+# Validador: https://cspvalidator.org/
+# Comprobación (detallada): https://csp-evaluator.withgoogle.com/
+# TODO: recoger los fallos de seguridad (https://web.dev/reporting-api/)
+# [Creo que no se puede con AMP] Documentación contra ataques XSS: https://web.dev/csp-xss/
+# [Creo que no se puede con AMP] Documentación CSP estricto (basada en nonces o hashes): https://web.dev/strict-csp/
+Header add Content-Security-Policy " default-src * data: blob:; script-src blob:  https://cdn.ampproject.org/v0/ https://cdn.ampproject.org/v0.js https://cdn.ampproject.org/v0.mjs https://cdn.ampproject.org/v0/validator_wasm.js https://cdn.ampproject.org/rtv/ https://cdn.ampproject.org/viewer/ https://192.168.1.42:3000/service-worker-pagina-estas-offline-y-optimizaciones-amp.min.js; object-src 'none'; base-uri 'none'; style-src 'unsafe-inline' https://cdn.ampproject.org/rtv/ https://fonts.googleapis.com; worker-src blob: https://192.168.1.42:3000/5b9feb56-2f7c-431b-800c-991e3ac687e9 https://192.168.1.42:3000/service-worker-pagina-estas-offline-y-optimizaciones-amp.min.js;"
+
+# Explicado línea por línea:
+# Header add Content-Security-Policy
+#             "
+#                 # Ejemplo completo (https://github.com/ampproject/amphtml/blob/main/examples/csp.amp.html)
+#                 # default-src * data: blob:; script-src blob: https://cdn.ampproject.org/v0.js https://cdn.ampproject.org/v0/ https://cdn.ampproject.org/viewer/ https://cdn.ampproject.org/rtv/; object-src 'none'; style-src 'unsafe-inline' https://cdn.ampproject.org/rtv/ https://cdn.materialdesignicons.com https://cloud.typography.com https://fast.fonts.net https://fonts.googleapis.com https://maxcdn.bootstrapcdn.com https://p.typekit.net https://use.fontawesome.com https://use.typekit.net; report-uri https://csp-collector.appspot.com/csp/amp
+
+#                 # directiva default-src: se puede usar como alterantiva general que englobaría a script-src y object-src (entre otras)
+#                 default-src * data: blob:;
+
+#                 # directiva script-src: secures a page from unsafe scripts.
+#                 # Esta directiva script-src es de tipo Allowlist, es decir, es una lista de los scripts que marco como seguros en la CSP. Este tipo de script-src se puede bypassear con facilidad, así que es mejor usar una directiva script-src basada en nonces o hashes.
+#                 script-src blob:
+#                                 https://cdn.ampproject.org/v0/
+#                                 https://cdn.ampproject.org/v0.js
+#                                 https://cdn.ampproject.org/v0.mjs
+#                                 https://cdn.ampproject.org/v0/validator_wasm.js
+#                                 https://cdn.ampproject.org/rtv/
+#                                 https://cdn.ampproject.org/viewer/
+#                                 https://192.168.1.42:3000/service-worker-pagina-estas-offline-y-optimizaciones-amp.min.js;
+                                
+#                 # [Creo que no se puede con AMP] directiva script-src: secures a page from unsafe scripts.
+#                 # Esta directiva script-src está basada en nonces (A nonce is a random number used only once that can be used to mark a <script> tag as trusted) o hashes, lo que hace que la ejecución de los scripts sea más segura todavía, porque solo permite ejecutar los scripts con el nonce o hash correcto. Además, así no hace falta listar todos los scripts a mano como en las directivas script-scr de tipo Allowlist.
+#                 # Documentación CSP estricto (basada en nonces o hashes): https://web.dev/strict-csp/
+#                 # script-src 'sha256-{HASHED_INLINE_SCRIPT_1}' 'sha256-{HASHED_INLINE_SCRIPT_2}' 'strict-dynamic';
+
+#                 # directiva object-src: secures a page from unsafe plugins
+#                 object-src 'none';
+
+#                 # directiva base-uri: prevents the injection of unauthorized <base> tags which can be used to redirect all relative URLs (like scripts) to an attacker-controlled domain.
+#                 base-uri 'none';
+
+#                 # directiva style-src: funciona como script-src, pero se aplica a las hojas de estilo.
+#                     #- unsafe-inline es para retro-compatibilidad con navegadores que no funcionen con nonces (A nonce is a random number used only once that can be used to mark a <script> tag as trusted) o hashes.
+#                 style-src 'unsafe-inline'
+#                                 https://cdn.ampproject.org/rtv/
+#                                 # https://cdn.materialdesignicons.com
+#                                 # https://cloud.typography.com
+#                                 # https://fast.fonts.net
+#                                 https://fonts.googleapis.com
+#                                 # https://maxcdn.bootstrapcdn.com
+#                                 # https://p.typekit.net
+#                                 # https://use.fontawesome.com
+#                                 # https://use.typekit.net
+#                                 ;
+
+#                 # directiva worker-src:  funciona como script-src, pero se aplica a los service workers.
+#                 worker-src blob:
+#                                 https://192.168.1.42:3000/5b9feb56-2f7c-431b-800c-991e3ac687e9
+#                                 https://192.168.1.42:3000/service-worker-pagina-estas-offline-y-optimizaciones-amp.min.js;
+
+#             "
 
 
 
