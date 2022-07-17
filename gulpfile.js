@@ -1617,9 +1617,9 @@ exports.build = series([
                             minificar_archivos_json,
                             borrar_carpetas_innecesarias_de_dist,
                             reemplazar_url_desarrollo_por_url_produccion,
-                            reemplazar_otros_textos,
                             cambiar_nombres_archivos_en_otros_idiomas,
                             amp_optimizer,
+                            reemplazar_otros_textos,
                             // FIXME: validar_amp
                             /* TODO: Validar AMP usando la terminar: ejecutar los siguientes comandos todos a la vez comprobar todas las páginas a la vez:
                                 amphtml-validator https://davidborge.es/pruebas/gulp-amp-template/aviso-legal.html

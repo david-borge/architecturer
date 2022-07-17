@@ -17,6 +17,7 @@ Header set Strict-Transport-Security "max-age=31536000" env=HTTPS
 
 
 #### Activar Content Security Policy (CSP) ####
+# MUCHO CUIDADO: las políticas CSP definidas en un .htaccess afectan a todas las subcarpetas, aunque las subcarpetas tengan otro .htaccess con otra CSP distinta.
 # FIXME: MUY IMPORTANTE: esto hace que falle la validación AMP (a través de la extensión "AMP Validator" de Chrome y al añadir #development=1 a la URL), así que hay que cambiar el nombre del .htaccess mientras se hace la validación. El error que sale en la consola es: Uncaught (in promise) RuntimeError: Aborted(CompileError: WebAssembly.instantiate(): Wasm code generation disallowed by embedder). Build with -sASSERTIONS for more info. validator_wasm.js
 # Documentación: https://content-security-policy.com/examples/htaccess/
 # Documentación para AMP (la documentación es incorrecta; no se puede usar <meta http-equiv="Content-Security-Policy" content="..." /> con AMP; hay que hacerlo con .htaccess): https://amp.dev/documentation/guides-and-tutorials/optimize-and-measure/secure-pages/?format=websites
@@ -26,7 +27,7 @@ Header set Strict-Transport-Security "max-age=31536000" env=HTTPS
 # TODO: recoger los fallos de seguridad (https://web.dev/reporting-api/)
 # [Creo que no se puede con AMP] Documentación contra ataques XSS: https://web.dev/csp-xss/
 # [Creo que no se puede con AMP] Documentación CSP estricto (basada en nonces o hashes): https://web.dev/strict-csp/
-Header add Content-Security-Policy " default-src * data: blob:; script-src blob:  https://cdn.ampproject.org/v0/ https://cdn.ampproject.org/v0.js https://cdn.ampproject.org/v0.mjs https://cdn.ampproject.org/v0/validator_wasm.js https://cdn.ampproject.org/rtv/ https://cdn.ampproject.org/viewer/ https://192.168.1.42:3000/service-worker-pagina-estas-offline-y-optimizaciones-amp.min.js; object-src 'none'; base-uri 'none'; style-src 'unsafe-inline' https://cdn.ampproject.org/rtv/ https://fonts.googleapis.com; worker-src blob: https://192.168.1.42:3000/5b9feb56-2f7c-431b-800c-991e3ac687e9 https://192.168.1.42:3000/service-worker-pagina-estas-offline-y-optimizaciones-amp.min.js;"
+Header add Content-Security-Policy " default-src * data: blob:; script-src 'unsafe-inline' blob:  https://cdn.ampproject.org/v0/ https://cdn.ampproject.org/v0.js https://cdn.ampproject.org/v0.mjs https://cdn.ampproject.org/v0/validator_wasm.js https://cdn.ampproject.org/rtv/ https://cdn.ampproject.org/viewer/ https://192.168.1.42:3000/service-worker-pagina-estas-offline-y-optimizaciones-amp.min.js; object-src 'none'; base-uri 'none'; style-src 'unsafe-inline' https://cdn.ampproject.org/rtv/ https://fonts.googleapis.com; worker-src blob: https://192.168.1.42:3000/5b9feb56-2f7c-431b-800c-991e3ac687e9 https://192.168.1.42:3000/service-worker-pagina-estas-offline-y-optimizaciones-amp.min.js;"
 
 # Explicado línea por línea:
 # Header add Content-Security-Policy
